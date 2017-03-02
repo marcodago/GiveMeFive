@@ -3,27 +3,161 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		91513D3C1C0A42BC00505E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91513D3B1C0A42BC00505E46 /* AppDelegate.swift */; };
-		91513D3E1C0A42BC00505E46 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91513D3D1C0A42BC00505E46 /* FirstViewController.swift */; };
-		91513D401C0A42BC00505E46 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91513D3F1C0A42BC00505E46 /* SecondViewController.swift */; };
+		908C17F50408F32F00A77762 /* Pods_GiveMeFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889FC8D785419AD37A052763 /* Pods_GiveMeFive.framework */; };
+		9107B0F71CE4C7E1003DC769 /* Two Fingers-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9107B0F61CE4C7E1003DC769 /* Two Fingers-50.png */; };
+		9108DA361E51B41900F01A31 /* touchID.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA351E51B41900F01A31 /* touchID.png */; };
+		9108DA411E51D72500F01A31 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA381E51D72500F01A31 /* Contents.json */; };
+		9108DA421E51D72500F01A31 /* TouchID_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA391E51D72500F01A31 /* TouchID_off.png */; };
+		9108DA431E51D72500F01A31 /* TouchID_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3A1E51D72500F01A31 /* TouchID_off@2x.png */; };
+		9108DA441E51D72500F01A31 /* TouchID_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3B1E51D72500F01A31 /* TouchID_off@3x.png */; };
+		9108DA451E51D72500F01A31 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3D1E51D72500F01A31 /* Contents.json */; };
+		9108DA461E51D72500F01A31 /* TouchID_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3E1E51D72500F01A31 /* TouchID_on.png */; };
+		9108DA471E51D72500F01A31 /* TouchID_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3F1E51D72500F01A31 /* TouchID_on@2x.png */; };
+		9108DA481E51D72500F01A31 /* TouchID_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA401E51D72500F01A31 /* TouchID_on@3x.png */; };
+		912281A01C4460D500A4F51F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9122819F1C4460D500A4F51F /* WebKit.framework */; };
+		912446421C3EF7EF00B87A7F /* GM5 background.png in Resources */ = {isa = PBXBuildFile; fileRef = 912446381C3EF7EF00B87A7F /* GM5 background.png */; };
+		912446431C3EF7EF00B87A7F /* GM5 Icon big.png in Resources */ = {isa = PBXBuildFile; fileRef = 912446391C3EF7EF00B87A7F /* GM5 Icon big.png */; };
+		912446441C3EF7EF00B87A7F /* GM5 Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9124463A1C3EF7EF00B87A7F /* GM5 Icon.png */; };
+		9127F0F91E3F8682009C2E38 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127F0F81E3F8682009C2E38 /* Utils.swift */; };
+		9144439D1C6B158400753BD9 /* Checklist-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 914443981C6B158400753BD9 /* Checklist-50.png */; };
+		9144439E1C6B158400753BD9 /* Home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 914443991C6B158400753BD9 /* Home-50.png */; };
+		9144439F1C6B158400753BD9 /* Map Marker-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9144439A1C6B158400753BD9 /* Map Marker-50.png */; };
+		914443A01C6B158400753BD9 /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9144439B1C6B158400753BD9 /* Settings-50.png */; };
+		914443A11C6B158400753BD9 /* Speech Bubble-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9144439C1C6B158400753BD9 /* Speech Bubble-50.png */; };
+		914757041CE99AC800E7167F /* Apple Watch Apps-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 914757021CE99AC800E7167F /* Apple Watch Apps-50.png */; };
+		914757051CE99AC800E7167F /* watch-friends-watchos2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 914757031CE99AC800E7167F /* watch-friends-watchos2.jpg */; };
+		91513D401C0A42BC00505E46 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91513D3F1C0A42BC00505E46 /* MapViewController.swift */; };
 		91513D431C0A42BC00505E46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91513D411C0A42BC00505E46 /* Main.storyboard */; };
 		91513D451C0A42BC00505E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91513D441C0A42BC00505E46 /* Assets.xcassets */; };
-		91513D481C0A42BC00505E46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91513D461C0A42BC00505E46 /* LaunchScreen.storyboard */; };
+		91513D501C0A443400505E46 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91513D4F1C0A443400505E46 /* SettingsViewController.swift */; };
+		91513D551C0A461200505E46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91513D511C0A461200505E46 /* AppDelegate.swift */; };
+		91513D561C0A461200505E46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91513D521C0A461200505E46 /* LaunchScreen.storyboard */; };
+		91513D721C0A48D800505E46 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D591C0A48D800505E46 /* AudioToolbox.framework */; };
+		91513D731C0A48D800505E46 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D5A1C0A48D800505E46 /* MapKit.framework */; };
+		91513D7E1C0A48D800505E46 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D661C0A48D800505E46 /* SystemConfiguration.framework */; };
+		91513D7F1C0A48D800505E46 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D671C0A48D800505E46 /* MobileCoreServices.framework */; };
+		91513D801C0A48D800505E46 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D681C0A48D800505E46 /* Security.framework */; };
+		91513D811C0A48D800505E46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D691C0A48D800505E46 /* CoreLocation.framework */; };
+		91513D821C0A48D800505E46 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D6A1C0A48D800505E46 /* CFNetwork.framework */; };
+		91513D831C0A48D800505E46 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D6B1C0A48D800505E46 /* libz.tbd */; };
+		91513D841C0A48D800505E46 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D6C1C0A48D800505E46 /* CoreGraphics.framework */; };
+		91513D851C0A48D800505E46 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D6D1C0A48D800505E46 /* StoreKit.framework */; };
+		91513D861C0A48D800505E46 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D6E1C0A48D800505E46 /* libsqlite3.tbd */; };
+		915453481E68179F00C8CD35 /* BeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915453471E68179F00C8CD35 /* BeaconViewController.swift */; };
+		915929A91C98211000E49E23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915929A81C98211000E49E23 /* ViewController.swift */; };
+		9159E4641C4E244D00BC62A2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159E4631C4E244D00BC62A2 /* ChatViewController.swift */; };
+		91620A3B1C988D830016A848 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91620A3A1C988D830016A848 /* HomeViewController.swift */; };
+		9193CDCB1DC15EF800B578E1 /* TabBarConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9193CDCA1DC15EF800B578E1 /* TabBarConfigurationViewController.swift */; };
+		919886A61C0C54170082C5E0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919886A51C0C54170082C5E0 /* AddressBookUI.framework */; };
+		919886CC1C0D9BAD0082C5E0 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919886CB1C0D9BAD0082C5E0 /* LocalAuthentication.framework */; };
+		919D01171CAA991E0030FDEB /* SupportingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D01161CAA991E0030FDEB /* SupportingFunctions.swift */; };
+		91B8AFF11CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B8AFEF1CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png */; };
+		91B8AFF21CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B8AFF01CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png */; };
+		91C1A33A1CF44BB100130DA2 /* IBM logo-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C1A3391CF44BB100130DA2 /* IBM logo-50.png */; };
+		91C4F9A21DE5AC4C00B62492 /* TouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4F9A11DE5AC4C00B62492 /* TouchIDViewController.swift */; };
+		91C865D21CE5208B00538D14 /* Cool-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C865D11CE5208B00538D14 /* Cool-50.png */; };
+		91CC8F3E1DBA54EB00398AFD /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC8F3D1DBA54EB00398AFD /* PrivacyViewController.swift */; };
+		91CC8F401DBA59CD00398AFD /* PrivacyPolicy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 91CC8F3F1DBA59CD00398AFD /* PrivacyPolicy.pdf */; };
+		91D74D3D1CF31F76003AE1F1 /* Camera-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D74D3A1CF31F76003AE1F1 /* Camera-50.png */; };
+		91D74D3E1CF31F76003AE1F1 /* Microphone-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D74D3B1CF31F76003AE1F1 /* Microphone-50.png */; };
+		91D74D3F1CF31F76003AE1F1 /* Swift-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D74D3C1CF31F76003AE1F1 /* Swift-50.png */; };
+		91DCF3CC1CA42E6600AE7F2D /* Busy_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CA1CA42E6600AE7F2D /* Busy_button.png */; };
+		91DCF3CD1CA42E6600AE7F2D /* Free_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CB1CA42E6600AE7F2D /* Free_button.png */; };
+		91DCF3CF1CA5501800AE7F2D /* PWD_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CE1CA5501800AE7F2D /* PWD_help.png */; };
+		91E827101D9D7DEA0046F7D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */; };
+		91FE1DF81C52366A0042627C /* GM5 small-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FE1DF71C52366A0042627C /* GM5 small-Icon.png */; };
+		91FE1DFA1C5238980042627C /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		911E42081CDB4E1900E676A1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		91513D381C0A42BC00505E46 /* GiveMeFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiveMeFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		91513D3B1C0A42BC00505E46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		91513D3D1C0A42BC00505E46 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		91513D3F1C0A42BC00505E46 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2ABC11D07C5204B51DD8E9E3 /* Pods-GiveMeFive.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiveMeFive.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive.distribution.xcconfig"; sourceTree = "<group>"; };
+		889FC8D785419AD37A052763 /* Pods_GiveMeFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiveMeFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F71B0BE03A84FAB3FCA6B1F /* Pods-GiveMeFive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiveMeFive.release.xcconfig"; path = "Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive.release.xcconfig"; sourceTree = "<group>"; };
+		9107B0F61CE4C7E1003DC769 /* Two Fingers-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Two Fingers-50.png"; sourceTree = "<group>"; };
+		9108DA351E51B41900F01A31 /* touchID.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touchID.png; sourceTree = "<group>"; };
+		9108DA381E51D72500F01A31 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		9108DA391E51D72500F01A31 /* TouchID_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TouchID_off.png; sourceTree = "<group>"; };
+		9108DA3A1E51D72500F01A31 /* TouchID_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TouchID_off@2x.png"; sourceTree = "<group>"; };
+		9108DA3B1E51D72500F01A31 /* TouchID_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TouchID_off@3x.png"; sourceTree = "<group>"; };
+		9108DA3D1E51D72500F01A31 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		9108DA3E1E51D72500F01A31 /* TouchID_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TouchID_on.png; sourceTree = "<group>"; };
+		9108DA3F1E51D72500F01A31 /* TouchID_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TouchID_on@2x.png"; sourceTree = "<group>"; };
+		9108DA401E51D72500F01A31 /* TouchID_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TouchID_on@3x.png"; sourceTree = "<group>"; };
+		9122819F1C4460D500A4F51F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		912446381C3EF7EF00B87A7F /* GM5 background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 background.png"; sourceTree = "<group>"; };
+		912446391C3EF7EF00B87A7F /* GM5 Icon big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon big.png"; sourceTree = "<group>"; };
+		9124463A1C3EF7EF00B87A7F /* GM5 Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon.png"; sourceTree = "<group>"; };
+		9127F0F81E3F8682009C2E38 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		914443981C6B158400753BD9 /* Checklist-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checklist-50.png"; sourceTree = "<group>"; };
+		914443991C6B158400753BD9 /* Home-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50.png"; sourceTree = "<group>"; };
+		9144439A1C6B158400753BD9 /* Map Marker-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map Marker-50.png"; sourceTree = "<group>"; };
+		9144439B1C6B158400753BD9 /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings-50.png"; sourceTree = "<group>"; };
+		9144439C1C6B158400753BD9 /* Speech Bubble-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble-50.png"; sourceTree = "<group>"; };
+		914757021CE99AC800E7167F /* Apple Watch Apps-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Apple Watch Apps-50.png"; sourceTree = "<group>"; };
+		914757031CE99AC800E7167F /* watch-friends-watchos2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "watch-friends-watchos2.jpg"; sourceTree = "<group>"; };
+		91513D3F1C0A42BC00505E46 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		91513D421C0A42BC00505E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91513D441C0A42BC00505E46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		91513D471C0A42BC00505E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		91513D491C0A42BC00505E46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91513D491C0A42BC00505E46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GiveMeFive/Info.plist; sourceTree = "<group>"; };
+		91513D4F1C0A443400505E46 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		91513D511C0A461200505E46 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		91513D521C0A461200505E46 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		91513D591C0A48D800505E46 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		91513D5A1C0A48D800505E46 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = "<absolute>"; };
+		91513D661C0A48D800505E46 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		91513D671C0A48D800505E46 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = "<absolute>"; };
+		91513D681C0A48D800505E46 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		91513D691C0A48D800505E46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
+		91513D6A1C0A48D800505E46 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = "<absolute>"; };
+		91513D6B1C0A48D800505E46 /* libz.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/lib/libz.tbd; sourceTree = "<absolute>"; };
+		91513D6C1C0A48D800505E46 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
+		91513D6D1C0A48D800505E46 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = "<absolute>"; };
+		91513D6E1C0A48D800505E46 /* libsqlite3.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/lib/libsqlite3.tbd; sourceTree = "<absolute>"; };
+		915453471E68179F00C8CD35 /* BeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconViewController.swift; sourceTree = "<group>"; };
+		915929A21C981FF500E49E23 /* GiveMeFive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GiveMeFive-Bridging-Header.h"; sourceTree = "<group>"; };
+		915929A81C98211000E49E23 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9159E4631C4E244D00BC62A2 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		91620A3A1C988D830016A848 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		916B929A1C42B39100CA5F22 /* GiveMeFive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = GiveMeFive.entitlements; path = GiveMeFive/GiveMeFive.entitlements; sourceTree = "<group>"; };
+		9193CDCA1DC15EF800B578E1 /* TabBarConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarConfigurationViewController.swift; sourceTree = "<group>"; };
+		919886A41C0B19CA0082C5E0 /* GiveMeFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiveMeFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		919886A51C0C54170082C5E0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		919886CB1C0D9BAD0082C5E0 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		919D01161CAA991E0030FDEB /* SupportingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportingFunctions.swift; sourceTree = "<group>"; };
+		91B8AFEF1CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon Watch 38mm.png"; sourceTree = "<group>"; };
+		91B8AFF01CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon Watch 42mm.png"; sourceTree = "<group>"; };
+		91C1A3391CF44BB100130DA2 /* IBM logo-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IBM logo-50.png"; sourceTree = "<group>"; };
+		91C4F9A11DE5AC4C00B62492 /* TouchIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDViewController.swift; sourceTree = "<group>"; };
+		91C865D11CE5208B00538D14 /* Cool-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cool-50.png"; sourceTree = "<group>"; };
+		91CC8F3D1DBA54EB00398AFD /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		91CC8F3F1DBA59CD00398AFD /* PrivacyPolicy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = PrivacyPolicy.pdf; path = GiveMeFive/PrivacyPolicy.pdf; sourceTree = "<group>"; };
+		91D74D3A1CF31F76003AE1F1 /* Camera-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera-50.png"; sourceTree = "<group>"; };
+		91D74D3B1CF31F76003AE1F1 /* Microphone-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Microphone-50.png"; sourceTree = "<group>"; };
+		91D74D3C1CF31F76003AE1F1 /* Swift-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Swift-50.png"; sourceTree = "<group>"; };
+		91DCF3CA1CA42E6600AE7F2D /* Busy_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Busy_button.png; path = ../GiveMeFive/Busy_button.png; sourceTree = "<group>"; };
+		91DCF3CB1CA42E6600AE7F2D /* Free_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Free_button.png; path = ../GiveMeFive/Free_button.png; sourceTree = "<group>"; };
+		91DCF3CE1CA5501800AE7F2D /* PWD_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PWD_help.png; sourceTree = "<group>"; };
+		91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		91FE1DF71C52366A0042627C /* GM5 small-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 small-Icon.png"; sourceTree = "<group>"; };
+		91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		DDF4DD70C2A5D2BC82D1BA74 /* Pods-GiveMeFive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiveMeFive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,40 +165,170 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				919886A61C0C54170082C5E0 /* AddressBookUI.framework in Frameworks */,
+				91513D721C0A48D800505E46 /* AudioToolbox.framework in Frameworks */,
+				91513D821C0A48D800505E46 /* CFNetwork.framework in Frameworks */,
+				91513D811C0A48D800505E46 /* CoreLocation.framework in Frameworks */,
+				91513D841C0A48D800505E46 /* CoreGraphics.framework in Frameworks */,
+				91513D831C0A48D800505E46 /* libz.tbd in Frameworks */,
+				91513D861C0A48D800505E46 /* libsqlite3.tbd in Frameworks */,
+				919886CC1C0D9BAD0082C5E0 /* LocalAuthentication.framework in Frameworks */,
+				91513D731C0A48D800505E46 /* MapKit.framework in Frameworks */,
+				91513D7F1C0A48D800505E46 /* MobileCoreServices.framework in Frameworks */,
+				91513D801C0A48D800505E46 /* Security.framework in Frameworks */,
+				91513D851C0A48D800505E46 /* StoreKit.framework in Frameworks */,
+				91513D7E1C0A48D800505E46 /* SystemConfiguration.framework in Frameworks */,
+				912281A01C4460D500A4F51F /* WebKit.framework in Frameworks */,
+				908C17F50408F32F00A77762 /* Pods_GiveMeFive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		910539AB1CF4380400B46D96 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */,
+				919886A41C0B19CA0082C5E0 /* GiveMeFive.app */,
+				915929A21C981FF500E49E23 /* GiveMeFive-Bridging-Header.h */,
+				916B929A1C42B39100CA5F22 /* GiveMeFive.entitlements */,
+				91513D491C0A42BC00505E46 /* Info.plist */,
+				91CC8F3F1DBA59CD00398AFD /* PrivacyPolicy.pdf */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		9108DA371E51D72500F01A31 /* TouchID_off.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				9108DA381E51D72500F01A31 /* Contents.json */,
+				9108DA391E51D72500F01A31 /* TouchID_off.png */,
+				9108DA3A1E51D72500F01A31 /* TouchID_off@2x.png */,
+				9108DA3B1E51D72500F01A31 /* TouchID_off@3x.png */,
+			);
+			name = TouchID_off.imageset;
+			path = GiveMeFive/Assets.xcassets/TouchID_off.imageset;
+			sourceTree = SOURCE_ROOT;
+		};
+		9108DA3C1E51D72500F01A31 /* TouchID_on.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				9108DA3D1E51D72500F01A31 /* Contents.json */,
+				9108DA3E1E51D72500F01A31 /* TouchID_on.png */,
+				9108DA3F1E51D72500F01A31 /* TouchID_on@2x.png */,
+				9108DA401E51D72500F01A31 /* TouchID_on@3x.png */,
+			);
+			name = TouchID_on.imageset;
+			path = GiveMeFive/Assets.xcassets/TouchID_on.imageset;
+			sourceTree = SOURCE_ROOT;
+		};
+		912446371C3EF7EF00B87A7F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9108DA371E51D72500F01A31 /* TouchID_off.imageset */,
+				9108DA3C1E51D72500F01A31 /* TouchID_on.imageset */,
+				9108DA351E51B41900F01A31 /* touchID.png */,
+				91C1A3391CF44BB100130DA2 /* IBM logo-50.png */,
+				91D74D3A1CF31F76003AE1F1 /* Camera-50.png */,
+				91D74D3B1CF31F76003AE1F1 /* Microphone-50.png */,
+				91D74D3C1CF31F76003AE1F1 /* Swift-50.png */,
+				914757021CE99AC800E7167F /* Apple Watch Apps-50.png */,
+				914757031CE99AC800E7167F /* watch-friends-watchos2.jpg */,
+				91C865D11CE5208B00538D14 /* Cool-50.png */,
+				9107B0F61CE4C7E1003DC769 /* Two Fingers-50.png */,
+				91B8AFEF1CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png */,
+				91B8AFF01CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png */,
+				91DCF3CE1CA5501800AE7F2D /* PWD_help.png */,
+				914443991C6B158400753BD9 /* Home-50.png */,
+				9144439A1C6B158400753BD9 /* Map Marker-50.png */,
+				9144439C1C6B158400753BD9 /* Speech Bubble-50.png */,
+				9144439B1C6B158400753BD9 /* Settings-50.png */,
+				914443981C6B158400753BD9 /* Checklist-50.png */,
+				91FE1DF71C52366A0042627C /* GM5 small-Icon.png */,
+				91DCF3CA1CA42E6600AE7F2D /* Busy_button.png */,
+				91DCF3CB1CA42E6600AE7F2D /* Free_button.png */,
+				912446391C3EF7EF00B87A7F /* GM5 Icon big.png */,
+				9124463A1C3EF7EF00B87A7F /* GM5 Icon.png */,
+				912446381C3EF7EF00B87A7F /* GM5 background.png */,
+			);
+			path = images;
+			sourceTree = SOURCE_ROOT;
+		};
 		91513D2F1C0A42BC00505E46 = {
 			isa = PBXGroup;
 			children = (
 				91513D3A1C0A42BC00505E46 /* GiveMeFive */,
-				91513D391C0A42BC00505E46 /* Products */,
+				910539AB1CF4380400B46D96 /* Support */,
+				91513D711C0A48D800505E46 /* Frameworks */,
+				91513D651C0A48D800505E46 /* Images */,
+				FA3F98A49372FE8BD3D5E67E /* Pods */,
 			);
-			sourceTree = "<group>";
-		};
-		91513D391C0A42BC00505E46 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				91513D381C0A42BC00505E46 /* GiveMeFive.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		91513D3A1C0A42BC00505E46 /* GiveMeFive */ = {
 			isa = PBXGroup;
 			children = (
-				91513D3B1C0A42BC00505E46 /* AppDelegate.swift */,
-				91513D3D1C0A42BC00505E46 /* FirstViewController.swift */,
-				91513D3F1C0A42BC00505E46 /* SecondViewController.swift */,
+				91513D521C0A461200505E46 /* LaunchScreen.storyboard */,
 				91513D411C0A42BC00505E46 /* Main.storyboard */,
+				91513D511C0A461200505E46 /* AppDelegate.swift */,
+				9159E4631C4E244D00BC62A2 /* ChatViewController.swift */,
+				91620A3A1C988D830016A848 /* HomeViewController.swift */,
+				91513D3F1C0A42BC00505E46 /* MapViewController.swift */,
+				915453471E68179F00C8CD35 /* BeaconViewController.swift */,
+				91CC8F3D1DBA54EB00398AFD /* PrivacyViewController.swift */,
+				91513D4F1C0A443400505E46 /* SettingsViewController.swift */,
+				91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */,
+				919D01161CAA991E0030FDEB /* SupportingFunctions.swift */,
+				91C4F9A11DE5AC4C00B62492 /* TouchIDViewController.swift */,
+				9193CDCA1DC15EF800B578E1 /* TabBarConfigurationViewController.swift */,
+				915929A81C98211000E49E23 /* ViewController.swift */,
 				91513D441C0A42BC00505E46 /* Assets.xcassets */,
-				91513D461C0A42BC00505E46 /* LaunchScreen.storyboard */,
-				91513D491C0A42BC00505E46 /* Info.plist */,
+				9127F0F81E3F8682009C2E38 /* Utils.swift */,
 			);
 			path = GiveMeFive;
+			sourceTree = "<group>";
+		};
+		91513D651C0A48D800505E46 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				912446371C3EF7EF00B87A7F /* images */,
+			);
+			name = Images;
+			path = "/Users/marcodago/Desktop/GitHub Desktop 212/GiveMeFive_2.0/../../IOS Samples/ParseLoginApp Completa/ParseLoginApp/ParseLoginApp";
+			sourceTree = "<absolute>";
+		};
+		91513D711C0A48D800505E46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9122819F1C4460D500A4F51F /* WebKit.framework */,
+				91513D6B1C0A48D800505E46 /* libz.tbd */,
+				91513D6E1C0A48D800505E46 /* libsqlite3.tbd */,
+				919886A51C0C54170082C5E0 /* AddressBookUI.framework */,
+				91513D591C0A48D800505E46 /* AudioToolbox.framework */,
+				91513D6A1C0A48D800505E46 /* CFNetwork.framework */,
+				91513D6C1C0A48D800505E46 /* CoreGraphics.framework */,
+				91513D691C0A48D800505E46 /* CoreLocation.framework */,
+				919886CB1C0D9BAD0082C5E0 /* LocalAuthentication.framework */,
+				91513D5A1C0A48D800505E46 /* MapKit.framework */,
+				91513D671C0A48D800505E46 /* MobileCoreServices.framework */,
+				91513D681C0A48D800505E46 /* Security.framework */,
+				91513D6D1C0A48D800505E46 /* StoreKit.framework */,
+				91513D661C0A48D800505E46 /* SystemConfiguration.framework */,
+				889FC8D785419AD37A052763 /* Pods_GiveMeFive.framework */,
+			);
+			name = Frameworks;
+			path = /DAGO001/ParseLoginApp;
+			sourceTree = "<absolute>";
+		};
+		FA3F98A49372FE8BD3D5E67E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDF4DD70C2A5D2BC82D1BA74 /* Pods-GiveMeFive.debug.xcconfig */,
+				8F71B0BE03A84FAB3FCA6B1F /* Pods-GiveMeFive.release.xcconfig */,
+				2ABC11D07C5204B51DD8E9E3 /* Pods-GiveMeFive.distribution.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +338,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 91513D4C1C0A42BC00505E46 /* Build configuration list for PBXNativeTarget "GiveMeFive" */;
 			buildPhases = (
+				FA99FE820CD987FD5DA5153A /* [CP] Check Pods Manifest.lock */,
 				91513D341C0A42BC00505E46 /* Sources */,
 				91513D351C0A42BC00505E46 /* Frameworks */,
 				91513D361C0A42BC00505E46 /* Resources */,
+				911E42081CDB4E1900E676A1 /* Embed Watch Content */,
+				ACF978DA078C7ADC4F3C5B24 /* [CP] Embed Pods Frameworks */,
+				F99A850F309EB7C541C1281E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -84,7 +352,7 @@
 			);
 			name = GiveMeFive;
 			productName = GiveMeFive;
-			productReference = 91513D381C0A42BC00505E46 /* GiveMeFive.app */;
+			productReference = 919886A41C0B19CA0082C5E0 /* GiveMeFive.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -93,18 +361,42 @@
 		91513D301C0A42BC00505E46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "MWA@IBM";
 				TargetAttributes = {
 					91513D371C0A42BC00505E46 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = N58V986SJX;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
 			buildConfigurationList = 91513D331C0A42BC00505E46 /* Build configuration list for PBXProject "GiveMeFive" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +404,7 @@
 				Base,
 			);
 			mainGroup = 91513D2F1C0A42BC00505E46;
-			productRefGroup = 91513D391C0A42BC00505E46 /* Products */;
+			productRefGroup = 91513D2F1C0A42BC00505E46;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -126,22 +418,113 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91513D481C0A42BC00505E46 /* LaunchScreen.storyboard in Resources */,
+				912446441C3EF7EF00B87A7F /* GM5 Icon.png in Resources */,
+				914757041CE99AC800E7167F /* Apple Watch Apps-50.png in Resources */,
+				91D74D3E1CF31F76003AE1F1 /* Microphone-50.png in Resources */,
+				914757051CE99AC800E7167F /* watch-friends-watchos2.jpg in Resources */,
+				912446421C3EF7EF00B87A7F /* GM5 background.png in Resources */,
+				91DCF3CF1CA5501800AE7F2D /* PWD_help.png in Resources */,
+				9108DA361E51B41900F01A31 /* touchID.png in Resources */,
+				91D74D3F1CF31F76003AE1F1 /* Swift-50.png in Resources */,
+				91513D561C0A461200505E46 /* LaunchScreen.storyboard in Resources */,
 				91513D451C0A42BC00505E46 /* Assets.xcassets in Resources */,
+				91DCF3CD1CA42E6600AE7F2D /* Free_button.png in Resources */,
+				9108DA481E51D72500F01A31 /* TouchID_on@3x.png in Resources */,
+				9108DA411E51D72500F01A31 /* Contents.json in Resources */,
+				914443A11C6B158400753BD9 /* Speech Bubble-50.png in Resources */,
+				91D74D3D1CF31F76003AE1F1 /* Camera-50.png in Resources */,
+				91CC8F401DBA59CD00398AFD /* PrivacyPolicy.pdf in Resources */,
 				91513D431C0A42BC00505E46 /* Main.storyboard in Resources */,
+				91E827101D9D7DEA0046F7D8 /* GoogleService-Info.plist in Resources */,
+				91DCF3CC1CA42E6600AE7F2D /* Busy_button.png in Resources */,
+				91C865D21CE5208B00538D14 /* Cool-50.png in Resources */,
+				9108DA461E51D72500F01A31 /* TouchID_on.png in Resources */,
+				91B8AFF21CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png in Resources */,
+				9108DA471E51D72500F01A31 /* TouchID_on@2x.png in Resources */,
+				9108DA451E51D72500F01A31 /* Contents.json in Resources */,
+				91FE1DF81C52366A0042627C /* GM5 small-Icon.png in Resources */,
+				91C1A33A1CF44BB100130DA2 /* IBM logo-50.png in Resources */,
+				9144439E1C6B158400753BD9 /* Home-50.png in Resources */,
+				9144439F1C6B158400753BD9 /* Map Marker-50.png in Resources */,
+				914443A01C6B158400753BD9 /* Settings-50.png in Resources */,
+				9108DA431E51D72500F01A31 /* TouchID_off@2x.png in Resources */,
+				9108DA441E51D72500F01A31 /* TouchID_off@3x.png in Resources */,
+				9107B0F71CE4C7E1003DC769 /* Two Fingers-50.png in Resources */,
+				9108DA421E51D72500F01A31 /* TouchID_off.png in Resources */,
+				912446431C3EF7EF00B87A7F /* GM5 Icon big.png in Resources */,
+				91B8AFF11CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png in Resources */,
+				9144439D1C6B158400753BD9 /* Checklist-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ACF978DA078C7ADC4F3C5B24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F99A850F309EB7C541C1281E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA99FE820CD987FD5DA5153A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		91513D341C0A42BC00505E46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91513D401C0A42BC00505E46 /* SecondViewController.swift in Sources */,
-				91513D3C1C0A42BC00505E46 /* AppDelegate.swift in Sources */,
-				91513D3E1C0A42BC00505E46 /* FirstViewController.swift in Sources */,
+				919D01171CAA991E0030FDEB /* SupportingFunctions.swift in Sources */,
+				915929A91C98211000E49E23 /* ViewController.swift in Sources */,
+				91FE1DFA1C5238980042627C /* SubscriptionsViewController.swift in Sources */,
+				91513D551C0A461200505E46 /* AppDelegate.swift in Sources */,
+				91513D401C0A42BC00505E46 /* MapViewController.swift in Sources */,
+				9193CDCB1DC15EF800B578E1 /* TabBarConfigurationViewController.swift in Sources */,
+				91C4F9A21DE5AC4C00B62492 /* TouchIDViewController.swift in Sources */,
+				91513D501C0A443400505E46 /* SettingsViewController.swift in Sources */,
+				91CC8F3E1DBA54EB00398AFD /* PrivacyViewController.swift in Sources */,
+				915453481E68179F00C8CD35 /* BeaconViewController.swift in Sources */,
+				91620A3B1C988D830016A848 /* HomeViewController.swift in Sources */,
+				9159E4641C4E244D00BC62A2 /* ChatViewController.swift in Sources */,
+				9127F0F91E3F8682009C2E38 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,14 +537,6 @@
 				91513D421C0A42BC00505E46 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		91513D461C0A42BC00505E46 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				91513D471C0A42BC00505E46 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -180,13 +555,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -203,11 +582,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = Automatic;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -224,13 +606,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -241,34 +627,143 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = Automatic;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		91513D4D1C0A42BC00505E46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDF4DD70C2A5D2BC82D1BA74 /* Pods-GiveMeFive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = GiveMeFive/GiveMeFive.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GiveMeFive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mdago.GiveMeFive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.iphone.marcodago.GiveMeFive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "GiveMeFive-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		91513D4E1C0A42BC00505E46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F71B0BE03A84FAB3FCA6B1F /* Pods-GiveMeFive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = GiveMeFive/GiveMeFive.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GiveMeFive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mdago.GiveMeFive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.iphone.marcodago.GiveMeFive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "GiveMeFive-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		91C960C91DA3E33600A07E97 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = Automatic;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		91C960CA1DA3E33600A07E97 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ABC11D07C5204B51DD8E9E3 /* Pods-GiveMeFive.distribution.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = GiveMeFive/GiveMeFive.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = GiveMeFive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.iphone.marcodago.GiveMeFive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "GiveMeFive-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Distribution;
 		};
 /* End XCBuildConfiguration section */
 
@@ -278,6 +773,7 @@
 			buildConfigurations = (
 				91513D4A1C0A42BC00505E46 /* Debug */,
 				91513D4B1C0A42BC00505E46 /* Release */,
+				91C960C91DA3E33600A07E97 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -287,8 +783,10 @@
 			buildConfigurations = (
 				91513D4D1C0A42BC00505E46 /* Debug */,
 				91513D4E1C0A42BC00505E46 /* Release */,
+				91C960CA1DA3E33600A07E97 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

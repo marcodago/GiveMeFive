@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E144f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GM5 background.png" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-DC-nie">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A MWA@IBM project (c) All rights reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lSf-QY-AjY">
+                                <rect key="frame" x="37" y="560" width="301" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="7dA-4Z-uwq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="GM5 Icon big.png" translatesAutoresizingMaskIntoConstraints="NO" id="v19-M8-9SW">
+                                <rect key="frame" x="97" y="243" width="180" height="180"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GiveMeFive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obb-NZ-Q3R">
+                                <rect key="frame" x="62" y="119" width="250" height="40"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99987119436264038" green="0.99998223781585693" blue="0.99984109401702881" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="obb-NZ-Q3R" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="46" id="5XX-sy-T7E"/>
+                            <constraint firstItem="cM6-DC-nie" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="8wI-yT-w4K"/>
+                            <constraint firstItem="cM6-DC-nie" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="VUv-F0-yjw"/>
+                            <constraint firstItem="cM6-DC-nie" firstAttribute="centerY" secondItem="v19-M8-9SW" secondAttribute="centerY" id="WQg-l1-kd1"/>
+                            <constraint firstAttribute="trailing" secondItem="cM6-DC-nie" secondAttribute="trailing" id="Z9v-YY-Hbq"/>
+                            <constraint firstItem="v19-M8-9SW" firstAttribute="top" secondItem="obb-NZ-Q3R" secondAttribute="bottom" constant="84" id="b6m-Us-1mN"/>
+                            <constraint firstItem="obb-NZ-Q3R" firstAttribute="centerX" secondItem="v19-M8-9SW" secondAttribute="centerX" id="cQg-LB-WPh"/>
+                            <constraint firstItem="v19-M8-9SW" firstAttribute="centerX" secondItem="lSf-QY-AjY" secondAttribute="centerX" id="ebs-Cq-0kB"/>
+                            <constraint firstItem="cM6-DC-nie" firstAttribute="centerX" secondItem="obb-NZ-Q3R" secondAttribute="centerX" id="fNc-AC-2Tb"/>
+                            <constraint firstItem="cM6-DC-nie" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="jmi-cV-Iib"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="lSf-QY-AjY" secondAttribute="bottom" constant="87" id="qMM-8N-V7a"/>
+                            <constraint firstItem="obb-NZ-Q3R" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="99" id="rQe-8g-yDr"/>
+                            <constraint firstItem="lSf-QY-AjY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="21" id="zAh-E7-wE3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GM5 Icon big.png" width="180" height="180"/>
+        <image name="GM5 background.png" width="712" height="1120"/>
+    </resources>
+</document>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16C32f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Profilo" representedClassName="Profilo" syncable="YES" codeGenerationType="class">
+        <attribute name="cognome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="privacy" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ruoli" inverseName="newRelationship" inverseEntity="Ruoli" syncable="YES"/>
+    </entity>
+    <entity name="Ruoli" representedClassName="Ruoli" syncable="YES" codeGenerationType="class">
+        <attribute name="guest" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="host" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pwd" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tutor" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profilo" inverseName="newRelationship" inverseEntity="Profilo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Profilo" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Ruoli" positionX="-353" positionY="-27" width="128" height="133"/>
+    </elements>
+</model>
