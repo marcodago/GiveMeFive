@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  GiveMeFive
 //
-//  Created by Marco D'Agostino on 05/02/16.
-//  Copyright © 2016 MWA@IBM. All rights reserved.
+//  Created by Marco D'Agostino on 02/03/2017
 //
 
 import UIKit

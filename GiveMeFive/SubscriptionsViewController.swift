@@ -2,8 +2,7 @@
 //  SubscriptionViewController.swift
 //  UITableView Sample
 //
-//  Created by Marco D'Agostino on 20/01/16.
-//  Copyright © 2016 MWA@IBM. All rights reserved.
+//  Created by Marco D'Agostino on 02/03/2017
 //
 
 

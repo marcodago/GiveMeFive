@@ -2,8 +2,7 @@
 //  BeaconViewController.swift
 //  GiveMeFive
 //
-//  Created by Marco D'Agostino on 01/03/17.
-//  Copyright © 2017 Marco D'Agostino. All rights reserved.
+//  Created by Marco D'Agostino on 02/03/2017
 //
 
 import UIKit

@@ -2,8 +2,7 @@
 //  SettingsViewController.swift
 //  GiveMeFive
 //
-//  Created by Marco D'Agostino on 28/11/15.
-//  Copyright © 2015 MWA@IBM. All rights reserved.
+//  Created by Marco D'Agostino on 02/03/2017
 //
 
 import UIKit
