@@ -31,11 +31,14 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
+
+        CaptureWifiData()
+        view.backgroundColor = UIColor.white
+        startScanning()
+
         
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestAlwaysAuthorization()         // Ask for Authorisation from the User.
+        self.locationManager.requestWhenInUseAuthorization()      // For use in foreground
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -64,14 +67,58 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     var wifiname = String ()
     var apMACid = String ()
+   
     
+    @IBOutlet weak var distanceReading: UILabel!
     
-    // Verifico se app gira su simulatore o su device
+    func startScanning() {
+        
+        let uuid = UUID(uuidString: "13CDC31D-9234-468F-8829-3B63985B2411")!
+        let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 17, minor: 72, identifier: "MyBeacon")
+        locationManager.startMonitoring(for: beaconRegion)
+        locationManager.startRangingBeacons(in: beaconRegion)
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        if beacons.count > 0 {
+            let beacon = beacons[0]
+            update(distance: beacon.proximity)
+        } else {
+            update(distance: .unknown)
+        }
+    }
+    
+    func update(distance: CLProximity) {
+        UIView.animate(withDuration: 0.8) { [unowned self] in
+            switch distance {
+            case .unknown:
+                self.view.backgroundColor = UIColor.white
+                self.distanceReading.text = "Too far from signal"
+                
+            case .far:
+                self.view.backgroundColor = UIColor.red
+                self.distanceReading.text = "Still far from signal"
+                
+            case .near:
+                self.view.backgroundColor = UIColor.yellow
+                self.distanceReading.text = "Near the signal"
+                
+            case .immediate:
+                self.view.backgroundColor = UIColor.green
+                self.distanceReading.text = "Close to signal"
+            }
+        }
+    }
     
     func CaptureWifiData () {
         
-        if RealDevice.isSimulator {
+        if RealDevice.isSimulator {    // Verifico se app gira su simulatore o su device
+            
             print ("Running on Simulator")
+            wifiname = "WiFi"
+            apMACid = "Not Available"
+            
         } else {
             
             let interfaces:CFArray! = CNCopySupportedInterfaces()
@@ -94,9 +141,16 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     }
     
     func saveCurrentLocation(_ center:CLLocationCoordinate2D){
-        let message = "\(center.latitude) , \(center.longitude)"
-        self.coordinates.text = message
-        self.wifidata.text = wifiname + " - " + apMACid
+        
+        let x = center.latitude
+        let y = center.longitude
+        let xLat = Double(round(10000 * x) / 10000)
+        let xLon = Double(round(10000 * y) / 10000)
+        
+        let lblcoordinates = "\(xLat) , \(xLon)"
+        let lblwifidata = "\(wifiname) , \(apMACid)"
+        self.coordinates.text = lblcoordinates
+        self.wifidata.text = lblwifidata
         myLocation = center
     }
     

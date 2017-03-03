@@ -47,7 +47,6 @@
 		91513D841C0A48D800505E46 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D6C1C0A48D800505E46 /* CoreGraphics.framework */; };
 		91513D851C0A48D800505E46 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D6D1C0A48D800505E46 /* StoreKit.framework */; };
 		91513D861C0A48D800505E46 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 91513D6E1C0A48D800505E46 /* libsqlite3.tbd */; };
-		915453481E68179F00C8CD35 /* BeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915453471E68179F00C8CD35 /* BeaconViewController.swift */; };
 		915929A91C98211000E49E23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915929A81C98211000E49E23 /* ViewController.swift */; };
 		9159E4641C4E244D00BC62A2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159E4631C4E244D00BC62A2 /* ChatViewController.swift */; };
 		91620A3B1C988D830016A848 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91620A3A1C988D830016A848 /* HomeViewController.swift */; };
@@ -130,7 +129,6 @@
 		91513D6C1C0A48D800505E46 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
 		91513D6D1C0A48D800505E46 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = "<absolute>"; };
 		91513D6E1C0A48D800505E46 /* libsqlite3.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/usr/lib/libsqlite3.tbd; sourceTree = "<absolute>"; };
-		915453471E68179F00C8CD35 /* BeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconViewController.swift; sourceTree = "<group>"; };
 		915929A21C981FF500E49E23 /* GiveMeFive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GiveMeFive-Bridging-Header.h"; sourceTree = "<group>"; };
 		915929A81C98211000E49E23 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9159E4631C4E244D00BC62A2 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 				9159E4631C4E244D00BC62A2 /* ChatViewController.swift */,
 				91620A3A1C988D830016A848 /* HomeViewController.swift */,
 				91513D3F1C0A42BC00505E46 /* MapViewController.swift */,
-				915453471E68179F00C8CD35 /* BeaconViewController.swift */,
 				91CC8F3D1DBA54EB00398AFD /* PrivacyViewController.swift */,
 				91513D4F1C0A443400505E46 /* SettingsViewController.swift */,
 				91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */,
@@ -521,7 +518,6 @@
 				91C4F9A21DE5AC4C00B62492 /* TouchIDViewController.swift in Sources */,
 				91513D501C0A443400505E46 /* SettingsViewController.swift in Sources */,
 				91CC8F3E1DBA54EB00398AFD /* PrivacyViewController.swift in Sources */,
-				915453481E68179F00C8CD35 /* BeaconViewController.swift in Sources */,
 				91620A3B1C988D830016A848 /* HomeViewController.swift in Sources */,
 				9159E4641C4E244D00BC62A2 /* ChatViewController.swift in Sources */,
 				9127F0F91E3F8682009C2E38 /* Utils.swift in Sources */,

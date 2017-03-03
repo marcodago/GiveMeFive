@@ -165,13 +165,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(HomeViewController.invokeinsertRecords), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
         
-        
-        // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
-        
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        
+        self.locationManager.requestAlwaysAuthorization()        // Ask for Authorisation from the User.
+        self.locationManager.requestWhenInUseAuthorization()     // For use in foreground
+
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
