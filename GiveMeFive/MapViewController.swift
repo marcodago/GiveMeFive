@@ -154,12 +154,18 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         let xLon = Double(round(10000 * y) / 10000)
         
         let lblcoordinates = "\(xLat) , \(xLon)"
-//        let lblwifidata = "\(wifiname) , \(apMACid)"      // to be used in passing SSID & MAC address (BSSID)
-        let esito = translateMACtoLocation(mac: apMACid)    // to be used to pass AP location
-        let lblwifidata = "\(esito!)"
         self.coordinates.text = lblcoordinates
-        self.wifidata.text = lblwifidata
         myLocation = center
+
+        if wifiname != "IBM" {
+            let lblwifidata = "\(wifiname) , \(apMACid)"      // to be used in passing SSID & MAC address (BSSID)
+            self.wifidata.text = lblwifidata
+        } else {
+            let esito = translateMACtoLocation(mac: apMACid)    // to be used to pass AP location
+            let lblwifidata = "\(esito!)"
+            self.wifidata.text = lblwifidata
+        }
+        
     }
     
     
