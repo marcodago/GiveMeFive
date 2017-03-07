@@ -28,6 +28,7 @@
 		9144439F1C6B158400753BD9 /* Map Marker-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9144439A1C6B158400753BD9 /* Map Marker-50.png */; };
 		914443A01C6B158400753BD9 /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9144439B1C6B158400753BD9 /* Settings-50.png */; };
 		914443A11C6B158400753BD9 /* Speech Bubble-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9144439C1C6B158400753BD9 /* Speech Bubble-50.png */; };
+		9145DE531E6F038B00F55ED9 /* gm5-ap-seg.json in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE521E6F038B00F55ED9 /* gm5-ap-seg.json */; };
 		914757041CE99AC800E7167F /* Apple Watch Apps-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 914757021CE99AC800E7167F /* Apple Watch Apps-50.png */; };
 		914757051CE99AC800E7167F /* watch-friends-watchos2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 914757031CE99AC800E7167F /* watch-friends-watchos2.jpg */; };
 		91513D401C0A42BC00505E46 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91513D3F1C0A42BC00505E46 /* MapViewController.swift */; };
@@ -109,6 +110,7 @@
 		9144439A1C6B158400753BD9 /* Map Marker-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map Marker-50.png"; sourceTree = "<group>"; };
 		9144439B1C6B158400753BD9 /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings-50.png"; sourceTree = "<group>"; };
 		9144439C1C6B158400753BD9 /* Speech Bubble-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble-50.png"; sourceTree = "<group>"; };
+		9145DE521E6F038B00F55ED9 /* gm5-ap-seg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "gm5-ap-seg.json"; sourceTree = "<group>"; };
 		914757021CE99AC800E7167F /* Apple Watch Apps-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Apple Watch Apps-50.png"; sourceTree = "<group>"; };
 		914757031CE99AC800E7167F /* watch-friends-watchos2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "watch-friends-watchos2.jpg"; sourceTree = "<group>"; };
 		91513D3F1C0A42BC00505E46 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		91513D2F1C0A42BC00505E46 = {
 			isa = PBXGroup;
 			children = (
+				9145DE521E6F038B00F55ED9 /* gm5-ap-seg.json */,
 				91513D3A1C0A42BC00505E46 /* GiveMeFive */,
 				910539AB1CF4380400B46D96 /* Support */,
 				91513D711C0A48D800505E46 /* Frameworks */,
@@ -436,6 +439,7 @@
 				91DCF3CC1CA42E6600AE7F2D /* Busy_button.png in Resources */,
 				91C865D21CE5208B00538D14 /* Cool-50.png in Resources */,
 				9108DA461E51D72500F01A31 /* TouchID_on.png in Resources */,
+				9145DE531E6F038B00F55ED9 /* gm5-ap-seg.json in Resources */,
 				91B8AFF21CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png in Resources */,
 				9108DA471E51D72500F01A31 /* TouchID_on@2x.png in Resources */,
 				9108DA451E51D72500F01A31 /* Contents.json in Resources */,

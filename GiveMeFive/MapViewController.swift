@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Foundation
 import CoreLocation
 import NetworkExtension
 import SystemConfiguration.CaptiveNetwork
@@ -67,8 +68,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     var wifiname = String ()
     var apMACid = String ()
+    var esito = String ()
    
-    
     @IBOutlet weak var distanceReading: UILabel!
     
     func startScanning() {
@@ -80,6 +81,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         locationManager.startUpdatingLocation()
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         if beacons.count > 0 {
             let beacon = beacons[0]
@@ -88,6 +90,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             update(distance: .unknown)
         }
     }
+    
     
     func update(distance: CLProximity) {
         UIView.animate(withDuration: 0.8) { [unowned self] in
@@ -111,6 +114,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         }
     }
     
+    
     func CaptureWifiData () {
         
         if RealDevice.isSimulator {    // Verifico se app gira su simulatore o su device
@@ -133,12 +137,14 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                     apMACid = interfaceData?["BSSID"] as! String
                     
                 } else {
+
                     wifiname = "WiFi"
                     apMACid = "Not Available"
                 }
             }
         }
     }
+    
     
     func saveCurrentLocation(_ center:CLLocationCoordinate2D){
         
@@ -148,11 +154,14 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         let xLon = Double(round(10000 * y) / 10000)
         
         let lblcoordinates = "\(xLat) , \(xLon)"
-        let lblwifidata = "\(wifiname) , \(apMACid)"
+//        let lblwifidata = "\(wifiname) , \(apMACid)"      // to be used in passing SSID & MAC address (BSSID)
+        let esito = translateMACtoLocation(mac: apMACid)    // to be used to pass AP location
+        let lblwifidata = "\(esito!)"
         self.coordinates.text = lblcoordinates
         self.wifidata.text = lblwifidata
         myLocation = center
     }
+    
     
     func centerMap(_ center:CLLocationCoordinate2D){
         self.saveCurrentLocation(center)
@@ -164,10 +173,31 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         map.setRegion(newRegion, animated: true)
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         
         centerMap(locValue)
     }
     
+    
+    func translateMACtoLocation(mac: String) -> (String?) {
+        do {
+            if let file = Bundle.main.url(forResource: "gm5-ap-seg", withExtension: "json") {
+                let data = try Data(contentsOf: file)
+                let jsonArray = try JSONSerialization.jsonObject(with: data, options: [])
+                let object = jsonArray as? [String: Any]
+                if let wifilocation = object?[apMACid] as? [String: AnyObject],
+                    let value = wifilocation["APLocation"] as? String {
+                    return value
+                } else {
+                    return nil
+                }
+            } else {
+                return nil
+            }
+        } catch {
+            return nil
+        }
+    }
 }

@@ -1,0 +1,404 @@
+{
+   "78:ba:f9:e9:a9:d0": {
+      "APLocation": " Building A > Ground Floor"
+   },
+   "78:ba:f9:e9:ad:50": {
+      "APLocation": " Building A > Ground Floor"
+   },
+   "54:a2:74:05:3a:f0": {
+      "APLocation": " Building A > Ground Floor"
+   },
+   "54:a2:74:16:5d:b0": {
+      "APLocation": " Building A > Ground Floor"
+   },
+   "78:ba:f9:e9:b1:50": {
+      "APLocation": " Building A > Ground Floor"
+   },
+   "54:a2:74:05:29:30": {
+      "APLocation": " Building A > Ground Floor"
+   },
+   "54:a2:74:05:29:50": {
+      "APLocation": " Building A > Ground Floor"
+   },
+   "54:a2:74:16:3b:00": {
+      "APLocation": " Building A > 1st Floor"
+   },
+   "54:a2:74:16:5d:00": {
+      "APLocation": " Building A > 1st Floor"
+   },
+   "54:a2:74:18:1e:f0": {
+      "APLocation": " Building A > 1st Floor"
+   },
+   "54:a2:74:04:f7:40": {
+      "APLocation": " Building A > 1st Floor"
+   },
+   "54:a2:74:05:42:c0": {
+      "APLocation": " Building A > 1st Floor"
+   },
+   "78:ba:f9:fa:dd:30": {
+      "APLocation": " Building A > 1st Floor"
+   },
+   "78:ba:f9:fa:d3:20": {
+      "APLocation": " Building A > 1st Floor"
+   },
+   "54:a2:74:16:4e:60": {
+      "APLocation": " Building A > 2nd Floor"
+   },
+   "54:a2:74:18:1f:d0": {
+      "APLocation": " Building A > 2nd Floor"
+   },
+   "54:a2:74:16:15:e0": {
+      "APLocation": " Building A > 2nd Floor"
+   },
+   "54:a2:74:05:31:90": {
+      "APLocation": " Building A > 2nd Floor"
+   },
+   "54:a2:74:18:50:c0": {
+      "APLocation": " Building A > 2nd Floor"
+   },
+   "54:a2:74:16:4b:30": {
+      "APLocation": " Building A > 2nd Floor"
+   },
+   "54:a2:74:16:4f:a0": {
+      "APLocation": " Building A > 2nd Floor"
+   },
+   "54:a2:74:16:45:00": {
+      "APLocation": " Building A > 3rd Floor"
+   },
+   "54:a2:74:1c:ba:d0": {
+      "APLocation": " Building A > 3rd Floor"
+   },
+   "54:a2:74:16:5a:d0": {
+      "APLocation": " Building A > 3rd Floor"
+   },
+   "78:ba:f9:fa:d4:80": {
+      "APLocation": " Building A > 3rd Floor"
+   },
+   "54:a2:74:05:25:c0": {
+      "APLocation": " Building A > 3rd Floor"
+   },
+   "54:a2:74:18:4c:80": {
+      "APLocation": " Building A > 3rd Floor"
+   },
+   "54:a2:74:16:48:70": {
+      "APLocation": " Building A > 4th Floor"
+   },
+   "78:ba:f9:fa:d2:70": {
+      "APLocation": " Building A > 4th Floor"
+   },
+   "54:a2:74:05:2a:00": {
+      "APLocation": " Building A > 4th Floor"
+   },
+   "54:a2:74:18:1b:b0": {
+      "APLocation": " Building A > 4th Floor"
+   },
+   "78:ba:f9:fa:d2:30": {
+      "APLocation": " Building A > 4th Floor"
+   },
+   "54:a2:74:16:58:c0": {
+      "APLocation": " Building A > Basement"
+   },
+   "54:a2:74:16:54:20": {
+      "APLocation": " Building A > Basement"
+   },
+   "78:ba:f9:fa:d0:30": {
+      "APLocation": " Building A > Basement"
+   },
+   "78:ba:f9:fa:d5:c0": {
+      "APLocation": " Building B > Ground Floor"
+   },
+   "54:a2:74:1c:c7:f0": {
+      "APLocation": " Building B > Ground Floor"
+   },
+   "54:a2:74:16:4b:70": {
+      "APLocation": " Building B > Ground Floor"
+   },
+   "54:a2:74:16:48:60": {
+      "APLocation": " Building B > 1st Floor"
+   },
+   "78:ba:f9:fa:d8:10": {
+      "APLocation": " Building B > 1st Floor"
+   },
+   "78:ba:f9:bb:eb:a0": {
+      "APLocation": " Building B > 1st Floor"
+   },
+   "54:a2:74:16:4f:30": {
+      "APLocation": " Building B > 2nd Floor"
+   },
+   "78:ba:f9:e9:af:10": {
+      "APLocation": " Building B > 2nd Floor"
+   },
+   "78:ba:f9:fa:d3:80": {
+      "APLocation": " Building B > 2nd Floor"
+   },
+   "78:ba:f9:fa:cb:d0": {
+      "APLocation": " Building B > 3rd Floor"
+   },
+   "78:ba:f9:fa:ce:50": {
+      "APLocation": " Building B > 3rd Floor"
+   },
+   "78:ba:f9:fa:dc:80": {
+      "APLocation": " Building B > 3rd Floor"
+   },
+   "54:a2:74:18:46:f0": {
+      "APLocation": " Building B > 3rd Floor"
+   },
+   "54:a2:74:05:42:e0": {
+      "APLocation": " Building B > 3rd Floor"
+   },
+   "54:a2:74:05:08:20": {
+      "APLocation": " Building B > 3rd Floor"
+   },
+   "54:a2:74:18:52:d0": {
+      "APLocation": " Building B > 4th Floor"
+   },
+   "54:a2:74:18:59:50": {
+      "APLocation": " Building B > 4th Floor"
+   },
+   "54:a2:74:1c:c6:90": {
+      "APLocation": " Building B > 4th Floor"
+   },
+   "78:ba:f9:fa:d6:a0": {
+      "APLocation": " Building B > 4th Floor"
+   },
+   "54:a2:74:16:48:80": {
+      "APLocation": " Building B > 4th Floor"
+   },
+   "54:a2:74:05:40:50": {
+      "APLocation": " Building B > 4th Floor"
+   },
+   "54:a2:74:1c:c4:50": {
+      "APLocation": " Building B > Root Area"
+   },
+   "54:a2:74:16:46:10": {
+      "APLocation": " Building B > Basement"
+   },
+   "00:3a:99:7d:9a:80": {
+      "APLocation": " Building C > Ground Floor"
+   },
+   "00:1c:57:8b:8f:a0": {
+      "APLocation": " Building C > Ground Floor"
+   },
+   "00:1c:57:8b:8b:c0": {
+      "APLocation": " Building C > Ground Floor"
+   },
+   "00:1c:f9:72:50:50": {
+      "APLocation": " Building C > Ground Floor"
+   },
+   "00:22:be:93:82:e0": {
+      "APLocation": " Building C > Ground Floor"
+   },
+   "00:3a:99:7d:a7:b0": {
+      "APLocation": " Building C > 1st Floor"
+   },
+   "00:1d:e5:8c:f8:d0": {
+      "APLocation": " Building C > 1st Floor"
+   },
+   "00:1d:e5:8c:f1:80": {
+      "APLocation": " Building C > 1st Floor"
+   },
+   "00:3a:99:91:bb:00": {
+      "APLocation": " Building C > 1st Floor"
+   },
+   "00:1c:57:8b:c4:60": {
+      "APLocation": " Building C > 1st Floor"
+   },
+   "00:3a:99:91:be:10": {
+      "APLocation": " Building C > 2nd Floor"
+   },
+   "00:1d:e5:8d:1f:f0": {
+      "APLocation": " Building C > 2nd Floor"
+   },
+   "00:1d:e5:8c:fa:30": {
+      "APLocation": " Building C > 2nd Floor"
+   },
+   "00:3a:99:7d:a6:f0": {
+      "APLocation": " Building C > 2nd Floor"
+   },
+   "00:1d:e5:8c:f1:e0": {
+      "APLocation": " Building C > 2nd Floor"
+   },
+   "00:3a:99:91:c0:80": {
+      "APLocation": " Building C > 3rd Floor"
+   },
+   "00:1d:e5:8c:f8:50": {
+      "APLocation": " Building C > 3rd Floor"
+   },
+   "00:1d:e5:8c:14:20": {
+      "APLocation": " Building C > 3rd Floor"
+   },
+   "00:1b:2b:69:58:90": {
+      "APLocation": " Building C > 3rd Floor"
+   },
+   "00:1d:e5:8d:20:c0": {
+      "APLocation": " Building C > 3rd Floor"
+   },
+   "00:3a:99:7d:ad:10": {
+      "APLocation": " Building C > 4th Floor"
+   },
+   "00:1d:e5:8c:f5:b0": {
+      "APLocation": " Building C > 4th Floor"
+   },
+   "00:1d:e5:8c:f3:40": {
+      "APLocation": " Building C > 4th Floor"
+   },
+   "00:3a:99:91:b7:a0": {
+      "APLocation": " Building C > 4th Floor"
+   },
+   "00:1d:e5:8c:f1:70": {
+      "APLocation": " Building C > 4th Floor"
+   },
+   "78:ba:f9:fa:d9:80": {
+      "APLocation": " Building C > Root Area"
+   },
+   "f4:cf:e2:4b:c6:d0": {
+      "APLocation": " Building C > Basement"
+   },
+   "54:a2:74:05:34:f0": {
+      "APLocation": " Building D > Ground Floor"
+   },
+   "78:ba:f9:fa:d7:50": {
+      "APLocation": " Building D > Ground Floor"
+   },
+   "54:a2:74:16:56:60": {
+      "APLocation": " Building D > Ground Floor"
+   },
+   "54:a2:74:16:4a:10": {
+      "APLocation": " Building D > Ground Floor"
+   },
+   "78:ba:f9:e9:ad:b0": {
+      "APLocation": " Building D > Ground Floor"
+   },
+   "54:a2:74:16:61:e0": {
+      "APLocation": " Building D > Ground Floor"
+   },
+   "54:a2:74:05:43:60": {
+      "APLocation": " Building D > Ground Floor"
+   },
+   "54:a2:74:18:4c:60": {
+      "APLocation": " Building D > 1st Floor"
+   },
+   "54:a2:74:18:4e:10": {
+      "APLocation": " Building D > 1st Floor"
+   },
+   "54:a2:74:18:4d:10": {
+      "APLocation": " Building D > 1st Floor"
+   },
+   "78:ba:f9:fa:df:b0": {
+      "APLocation": " Building D > 1st Floor"
+   },
+   "54:a2:74:16:4f:c0": {
+      "APLocation": " Building D > 1st Floor"
+   },
+   "54:a2:74:18:58:10": {
+      "APLocation": " Building D > 1st Floor"
+   },
+   "54:a2:74:18:59:e0": {
+      "APLocation": " Building D > 1st Floor"
+   },
+   "54:a2:74:18:57:b0": {
+      "APLocation": " Building D > 2nd Floor"
+   },
+   "54:a2:74:16:4e:20": {
+      "APLocation": " Building D > 2nd Floor"
+   },
+   "54:a2:74:1c:c7:80": {
+      "APLocation": " Building D > 2nd Floor"
+   },
+   "54:a2:74:16:62:20": {
+      "APLocation": " Building D > 2nd Floor"
+   },
+   "78:ba:f9:fa:d9:40": {
+      "APLocation": " Building D > 2nd Floor"
+   },
+   "54:a2:74:18:59:a0": {
+      "APLocation": " Building D > 2nd Floor"
+   },
+   "54:a2:74:18:4f:a0": {
+      "APLocation": " Building D > 2nd Floor"
+   },
+   "54:a2:74:16:4b:e0": {
+      "APLocation": " Building D > 3rd Floor"
+   },
+   "54:a2:74:18:49:d0": {
+      "APLocation": " Building D > 3rd Floor"
+   },
+   "78:ba:f9:fa:cf:90": {
+      "APLocation": " Building D > 3rd Floor"
+   },
+   "54:a2:74:05:29:60": {
+      "APLocation": " Building D > 3rd Floor"
+   },
+   "78:ba:f9:fa:d8:a0": {
+      "APLocation": " Building D > 3rd Floor"
+   },
+   "54:a2:74:18:4a:f0": {
+      "APLocation": " Building D > 3rd Floor"
+   },
+   "54:a2:74:05:31:20": {
+      "APLocation": " Building D > 3rd Floor"
+   },
+   "78:ba:f9:8d:54:80": {
+      "APLocation": " Building D > 4th Floor"
+   },
+   "54:a2:74:05:2a:a0": {
+      "APLocation": " Building D > 4th Floor"
+   },
+   "54:a2:74:16:49:90": {
+      "APLocation": " Building D > 4th Floor"
+   },
+   "54:a2:74:18:56:60": {
+      "APLocation": " Building D > 4th Floor"
+   },
+   "78:ba:f9:e9:b1:90": {
+      "APLocation": " Building D > 4th Floor"
+   },
+   "54:a2:74:18:54:70": {
+      "APLocation": " Building D > 4th Floor"
+   },
+   "54:a2:74:05:3b:10": {
+      "APLocation": " Building D > 4th Floor"
+   },
+   "54:a2:74:18:4a:80": {
+      "APLocation": " Building D > 4th Floor"
+   },
+   "54:a2:74:05:2f:f0": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "78:ba:f9:e9:ae:10": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "00:1d:e5:8c:f6:70": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "54:a2:74:05:2d:70": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "54:a2:74:18:4b:40": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "54:a2:74:05:2b:00": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "78:ba:f9:fa:e0:20": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "54:a2:74:16:49:d0": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "54:a2:74:16:4a:60": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "54:a2:74:1c:c9:f0": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "54:a2:74:05:2c:f0": {
+      "APLocation": " Building D > Basement Forum"
+   },
+   "54:a2:74:18:4b:70": {
+      "APLocation": " Reception-East > Reception-East"
+   },
+   "54:a2:74:16:55:10": {
+      "APLocation": " Reception-West > Reception-West"
+   }
+}
