@@ -59,6 +59,8 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        CaptureWifiData()
+        startScanning()
         map.showsUserLocation = true;
     }
     
@@ -157,13 +159,17 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         self.coordinates.text = lblcoordinates
         myLocation = center
 
-        if wifiname != "IBM" {
-            let lblwifidata = "\(wifiname) , \(apMACid)"      // to be used in passing SSID & MAC address (BSSID)
-            self.wifidata.text = lblwifidata
-        } else {
+        if wifiname == "IBM" {
+            
             let esito = translateMACtoLocation(mac: apMACid)    // to be used to pass AP location
             let lblwifidata = "\(esito!)"
             self.wifidata.text = lblwifidata
+
+        } else {
+            
+            let lblwifidata = "\(wifiname) , \(apMACid)"      // to be used in passing SSID & MAC address (BSSID)
+            self.wifidata.text = lblwifidata
+
         }
         
     }
@@ -188,6 +194,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     
     func translateMACtoLocation(mac: String) -> (String?) {
+        
         do {
             if let file = Bundle.main.url(forResource: "gm5-ap-seg", withExtension: "json") {
                 let data = try Data(contentsOf: file)
@@ -196,13 +203,19 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                 if let wifilocation = object?[apMACid] as? [String: AnyObject],
                     let value = wifilocation["APLocation"] as? String {
                     return value
+                    
                 } else {
+                    
                     return nil
                 }
+                
             } else {
+                
                 return nil
             }
+            
         } catch {
+            
             return nil
         }
     }
