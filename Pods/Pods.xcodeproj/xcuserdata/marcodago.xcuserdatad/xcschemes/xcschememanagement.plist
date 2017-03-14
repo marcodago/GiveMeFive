@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<true/>
 		</dict>
-		<key>Pods-GiveMeFive.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
