@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import BMSCore
+import BMSPush
 import CoreData
 import CoreLocation
 import AddressBookUI
@@ -18,10 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        // Inizializza l'SDK Core for Swift con l'area, la rotta e la GUID IBM Bluemix
+        let myBMSClient = BMSClient.sharedInstance
+        myBMSClient.initialize(bluemixAppRoute: "http://imfpush.ng.bluemix.net/imfpush/v1/apps/8a74c0e6-2f76-496e-ba57-159a3aab4229", bluemixAppGUID: "8a74c0e6-2f76-496e-ba57-159a3aab4229", bluemixRegion: "BMSClient.REGION_US_SOUTH")
         
-        // Registro il servizio di pushnotification
-        registerForRemoteNotification()
-        
+        let push = BMSPushClient.sharedInstance
+        push.initializeWithAppGUID(appGUID: "8a74c0e6-2f76-496e-ba57-159a3aab4229", clientSecret: "732a9030-9f9f-44b4-a1e4-c0a85c6a7e00")
+
         // Memorizzo il primo UUID generato e lo riutilizzo per fornire indicazione univoca del device connesso
         let userDefaults = UserDefaults.standard
         var usaTouch: String = "0"
@@ -65,32 +71,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         return true
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("User Info = ",notification.request.content.userInfo)
-        completionHandler([.alert, .badge, .sound])
-    }
-    
-    @available(iOS 10.0, *)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("User Info = ",response.notification.request.content.userInfo)
-        completionHandler()
-    }
-    
-    
-    func registerForRemoteNotification() {
-        if #available(iOS 10.0, *) {
-            let center = UNUserNotificationCenter.current()
-            center.delegate = self
-            center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
-                if error == nil{
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
+    func application (_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
+        
+        let push =  BMSPushClient.sharedInstance
+        push.registerWithDeviceToken(deviceToken: deviceToken) { (response, statusCode, error) -> Void in
+            if error.isEmpty {
+                print( "Response during device registration : \(response)")
+                print( "status code during device registration : \(statusCode)")
+            } else{
+                print( "Error during device registration \(error) ")
+                print( "Error during device registration \n  - status code: \(statusCode) \n Error :\(error) \n")
             }
-        } else {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
         }
     }
+    
+
+    private func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        //Il dizionario UserInfo conterrà i dati inviati dal server
+    }
+
     
     //questa funzione gestisce il collegamento dell'app all'URL di Google Sign-In
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {

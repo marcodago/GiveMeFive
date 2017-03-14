@@ -71,6 +71,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var wifiname = String ()
     var apMACid = String ()
     var esito = String ()
+    var LBLwifidata = String ()
    
     @IBOutlet weak var distanceReading: UILabel!
     
@@ -155,23 +156,21 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         let xLat = Double(round(10000 * x) / 10000)
         let xLon = Double(round(10000 * y) / 10000)
         
-        let lblcoordinates = "\(xLat) , \(xLon)"
-        self.coordinates.text = lblcoordinates
-        myLocation = center
-
         if wifiname == "IBM" {
             
             let esito = translateMACtoLocation(mac: apMACid)    // to be used to pass AP location
-            let lblwifidata = "\(esito!)"
-            self.wifidata.text = lblwifidata
-
+            LBLwifidata = "\(esito!)"
+           
         } else {
             
-            let lblwifidata = "\(wifiname) , \(apMACid)"      // to be used in passing SSID & MAC address (BSSID)
-            self.wifidata.text = lblwifidata
-
+            LBLwifidata = "\(wifiname) , \(apMACid)"      // to be used in passing SSID & MAC address (BSSID)
+ 
         }
         
+        let lblcoordinates = "\(xLat) , \(xLon)"
+        self.coordinates.text = lblcoordinates
+        self.wifidata.text = LBLwifidata
+        myLocation = center
     }
     
     

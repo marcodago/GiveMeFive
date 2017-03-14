@@ -69,6 +69,7 @@
 		91DCF3CD1CA42E6600AE7F2D /* Free_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CB1CA42E6600AE7F2D /* Free_button.png */; };
 		91DCF3CF1CA5501800AE7F2D /* PWD_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CE1CA5501800AE7F2D /* PWD_help.png */; };
 		91E827101D9D7DEA0046F7D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */; };
+		91EC59F91E77F37D002AB9BB /* IBM-Push-credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = 91EC59F81E77F37D002AB9BB /* IBM-Push-credentials.json */; };
 		91FE1DF81C52366A0042627C /* GM5 small-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FE1DF71C52366A0042627C /* GM5 small-Icon.png */; };
 		91FE1DFA1C5238980042627C /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,16 @@
 			files = (
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91F033C91E72FB9800824409 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -155,6 +166,7 @@
 		91DCF3CB1CA42E6600AE7F2D /* Free_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Free_button.png; path = ../GiveMeFive/Free_button.png; sourceTree = "<group>"; };
 		91DCF3CE1CA5501800AE7F2D /* PWD_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PWD_help.png; sourceTree = "<group>"; };
 		91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		91EC59F81E77F37D002AB9BB /* IBM-Push-credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "IBM-Push-credentials.json"; sourceTree = "<group>"; };
 		91FE1DF71C52366A0042627C /* GM5 small-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 small-Icon.png"; sourceTree = "<group>"; };
 		91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		DDF4DD70C2A5D2BC82D1BA74 /* Pods-GiveMeFive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiveMeFive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive.debug.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				9145DE521E6F038B00F55ED9 /* gm5-ap-seg.json */,
+				91EC59F81E77F37D002AB9BB /* IBM-Push-credentials.json */,
 				91513D3A1C0A42BC00505E46 /* GiveMeFive */,
 				910539AB1CF4380400B46D96 /* Support */,
 				91513D711C0A48D800505E46 /* Frameworks */,
@@ -345,6 +358,7 @@
 				911E42081CDB4E1900E676A1 /* Embed Watch Content */,
 				ACF978DA078C7ADC4F3C5B24 /* [CP] Embed Pods Frameworks */,
 				F99A850F309EB7C541C1281E /* [CP] Copy Pods Resources */,
+				91F033C91E72FB9800824409 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -361,12 +375,13 @@
 		91513D301C0A42BC00505E46 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "MWA@IBM";
 				TargetAttributes = {
 					91513D371C0A42BC00505E46 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = PP64RT7P8Z;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -447,6 +462,7 @@
 				91C1A33A1CF44BB100130DA2 /* IBM logo-50.png in Resources */,
 				9144439E1C6B158400753BD9 /* Home-50.png in Resources */,
 				9144439F1C6B158400753BD9 /* Map Marker-50.png in Resources */,
+				91EC59F91E77F37D002AB9BB /* IBM-Push-credentials.json in Resources */,
 				914443A01C6B158400753BD9 /* Settings-50.png in Resources */,
 				9108DA431E51D72500F01A31 /* TouchID_off@2x.png in Resources */,
 				9108DA441E51D72500F01A31 /* TouchID_off@3x.png in Resources */,
@@ -561,10 +577,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
 				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -586,7 +603,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = Automatic;
+				PROVISIONING_PROFILE_SPECIFIER = "cd28e408-b264-400c-8460-a324cc412940";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
@@ -612,10 +629,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
 				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -630,7 +648,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = Automatic;
+				PROVISIONING_PROFILE_SPECIFIER = "cd28e408-b264-400c-8460-a324cc412940";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
@@ -642,12 +660,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDF4DD70C2A5D2BC82D1BA74 /* Pods-GiveMeFive.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GiveMeFive/GiveMeFive.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -655,7 +675,7 @@
 				INFOPLIST_FILE = GiveMeFive/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.marcodago.GiveMeFive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.marcodago.GiveMeFive1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "cd28e408-b264-400c-8460-a324cc412940";
@@ -670,12 +690,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F71B0BE03A84FAB3FCA6B1F /* Pods-GiveMeFive.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GiveMeFive/GiveMeFive.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -683,7 +705,7 @@
 				INFOPLIST_FILE = GiveMeFive/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.marcodago.GiveMeFive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.marcodago.GiveMeFive1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "cd28e408-b264-400c-8460-a324cc412940";
@@ -712,10 +734,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
 				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -730,7 +753,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = Automatic;
+				PROVISIONING_PROFILE_SPECIFIER = "cd28e408-b264-400c-8460-a324cc412940";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
@@ -742,12 +765,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2ABC11D07C5204B51DD8E9E3 /* Pods-GiveMeFive.distribution.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = GiveMeFive/GiveMeFive.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: marcodago@it.ibm.com (AL55ZRUTZ2)";
+				DEVELOPMENT_TEAM = PP64RT7P8Z;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -755,7 +780,7 @@
 				INFOPLIST_FILE = GiveMeFive/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.marcodago.GiveMeFive;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.marcodago.GiveMeFive1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "cd28e408-b264-400c-8460-a324cc412940";

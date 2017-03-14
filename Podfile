@@ -5,5 +5,9 @@
 use_frameworks!
 
 target 'GiveMeFive' do
-	pod 'Google/SignIn'
+	platform :ios, '8.0'
+	pod 'BMSCore'
+	pod 'BMSPush'
+   pod 'BMSAnalyticsAPI'
+   pod 'Google/SignIn'
 end
