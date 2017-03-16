@@ -1,9 +1,8 @@
 //
 //  Utils.swift
-//  GiveMeFive
+//  GiveMeFive 1.3.4
 //
 //  Created by Marco D'Agostino on 30/01/17.
-//  Copyright © 2017 MWA@IBM. All rights reserved.
 //
 
 import UIKit

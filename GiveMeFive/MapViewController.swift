@@ -1,6 +1,6 @@
 //
 //  MapViewController.swift
-//  GiveMeFive
+//  GiveMeFive 1.3.4
 //
 //  Created by Marco D'Agostino on 02/03/2017
 //
@@ -155,11 +155,15 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         let y = center.longitude
         let xLat = Double(round(10000 * x) / 10000)
         let xLon = Double(round(10000 * y) / 10000)
-        
+
+        let esito = translateMACtoLocation(mac: apMACid)    // to be used to pass AP location
+
         if wifiname == "IBM" {
             
-            let esito = translateMACtoLocation(mac: apMACid)    // to be used to pass AP location
-            LBLwifidata = "\(esito!)"
+            if esito != nil {
+            
+                LBLwifidata = "\(esito)"
+            }
            
         } else {
             
