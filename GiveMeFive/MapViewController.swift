@@ -32,7 +32,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         CaptureWifiData()
         view.backgroundColor = UIColor.white
         startScanning()

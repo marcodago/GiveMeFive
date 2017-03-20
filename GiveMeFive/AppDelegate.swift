@@ -21,13 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        
         // Inizializza l'SDK Core for Swift con l'area, la rotta e la GUID IBM Bluemix
         let myBMSClient = BMSClient.sharedInstance
-        myBMSClient.initialize(bluemixAppRoute: "http://imfpush.ng.bluemix.net/imfpush/v1/apps/8a74c0e6-2f76-496e-ba57-159a3aab4229", bluemixAppGUID: "8a74c0e6-2f76-496e-ba57-159a3aab4229", bluemixRegion: "BMSClient.REGION_US_SOUTH")
+        
+        myBMSClient.initialize(bluemixRegion: "BMSClient.REGION_US_SOUTH")
+        
+//        myBMSClient.initialize(bluemixAppRoute: "http://imfpush.ng.bluemix.net/imfpush/v1/apps/8a74c0e6-2f76-496e-ba57-159a3aab4229", bluemixAppGUID: "8a74c0e6-2f76-496e-ba57-159a3aab4229", bluemixRegion: "BMSClient.REGION_US_SOUTH")
         
         let push = BMSPushClient.sharedInstance
         push.initializeWithAppGUID(appGUID: "8a74c0e6-2f76-496e-ba57-159a3aab4229", clientSecret: "732a9030-9f9f-44b4-a1e4-c0a85c6a7e00")
-
+        BMSPushClient.sharedInstance.initializeWithAppGUID(appGUID: "8a74c0e6-2f76-496e-ba57-159a3aab4229", clientSecret:"732a9030-9f9f-44b4-a1e4-c0a85c6a7e00")
+       
         // Memorizzo il primo UUID generato e lo riutilizzo per fornire indicazione univoca del device connesso
         let userDefaults = UserDefaults.standard
         var usaTouch: String = "0"
@@ -39,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
             userDefaults.synchronize()
             
         }
+        
         
         usaTouch = String(userDefaults.string(forKey: "switchStateTouch")!)
         
@@ -71,6 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         return true
     }
     
+    
     func application (_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
         
         let push =  BMSPushClient.sharedInstance
@@ -84,9 +95,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
             }
         }
     }
-    
 
-    private func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    
+    private func application (_ application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         //Il dizionario UserInfo conterrà i dati inviati dal server
     }
 
