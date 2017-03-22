@@ -18,6 +18,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
+    var strDeviceToken : String = ""
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -25,17 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
             // Enable or disable features based on authorization.
         }
-        
+
         // Inizializza l'SDK Core for Swift con l'area, la rotta e la GUID IBM Bluemix
         let myBMSClient = BMSClient.sharedInstance
         
         myBMSClient.initialize(bluemixRegion: "BMSClient.REGION_US_SOUTH")
         
-//        myBMSClient.initialize(bluemixAppRoute: "http://imfpush.ng.bluemix.net/imfpush/v1/apps/8a74c0e6-2f76-496e-ba57-159a3aab4229", bluemixAppGUID: "8a74c0e6-2f76-496e-ba57-159a3aab4229", bluemixRegion: "BMSClient.REGION_US_SOUTH")
+        myBMSClient.initialize(bluemixAppRoute: "http://imfpush.ng.bluemix.net/imfpush/v1/apps/7306070c-02c0-4be5-bc92-682e36bc079a", bluemixAppGUID: "7306070c-02c0-4be5-bc92-682e36bc079a", bluemixRegion: "BMSClient.REGION_US_SOUTH")
         
         let push = BMSPushClient.sharedInstance
-        push.initializeWithAppGUID(appGUID: "8a74c0e6-2f76-496e-ba57-159a3aab4229", clientSecret: "732a9030-9f9f-44b4-a1e4-c0a85c6a7e00")
-        BMSPushClient.sharedInstance.initializeWithAppGUID(appGUID: "8a74c0e6-2f76-496e-ba57-159a3aab4229", clientSecret:"732a9030-9f9f-44b4-a1e4-c0a85c6a7e00")
+        push.initializeWithAppGUID(appGUID: "7306070c-02c0-4be5-bc92-682e36bc079a", clientSecret: "e51dab99-51fb-4ee0-8ac9-530be81ce56d")
+        BMSPushClient.sharedInstance.initializeWithAppGUID(appGUID: "7306070c-02c0-4be5-bc92-682e36bc079a", clientSecret:"e51dab99-51fb-4ee0-8ac9-530be81ce56d")
        
         // Memorizzo il primo UUID generato e lo riutilizzo per fornire indicazione univoca del device connesso
         let userDefaults = UserDefaults.standard
@@ -82,6 +84,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     }
     
     
+    
+    
+    
+    //Called when a notification is delivered to a foreground app.
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("User Info = ",notification.request.content.userInfo)
+        completionHandler([.alert, .badge, .sound])
+    }
+    
+    //Called to let your app know which action was selected by the user for a given notification.
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("User Info = ",response.notification.request.content.userInfo)
+        completionHandler()
+    }
+    
+    
+    func registerForRemoteNotification() {
+        if #available(iOS 10.0, *) {
+            let center  = UNUserNotificationCenter.current()
+            center.delegate = self
+            center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
+                if error == nil{
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+        else {
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+    }
+    
+    
+    
+    
+    
+    
     func application (_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
         
         let push =  BMSPushClient.sharedInstance
@@ -97,7 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     }
 
     
-    private func application (_ application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    func application (_ application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         //Il dizionario UserInfo conterrà i dati inviati dal server
     }
 
