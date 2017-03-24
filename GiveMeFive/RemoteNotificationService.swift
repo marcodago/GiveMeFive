@@ -1,9 +1,8 @@
 //
 //  RemoteNotificationService.swift
-//  GiveMeFive
+//  GiveMeFive 1.3.5
 //
 //  Created by Marco D'Agostino on 22/03/17.
-//  Copyright © 2017 MWA@IBM. All rights reserved.
 //
 
 
