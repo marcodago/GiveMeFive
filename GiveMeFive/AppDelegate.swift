@@ -18,27 +18,16 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
-    var strDeviceToken : String = ""
-
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
-            // Enable or disable features based on authorization.
+        RemoteNotificationService.initializeAPN()
+        
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in }
+            UIApplication.shared.registerForRemoteNotifications()
         }
-
-        // Inizializza l'SDK Core for Swift con l'area, la rotta e la GUID IBM Bluemix
-        let myBMSClient = BMSClient.sharedInstance
         
-        myBMSClient.initialize(bluemixRegion: "BMSClient.REGION_US_SOUTH")
-        
-        myBMSClient.initialize(bluemixAppRoute: "http://imfpush.ng.bluemix.net/imfpush/v1/apps/7306070c-02c0-4be5-bc92-682e36bc079a", bluemixAppGUID: "7306070c-02c0-4be5-bc92-682e36bc079a", bluemixRegion: "BMSClient.REGION_US_SOUTH")
-        
-        let push = BMSPushClient.sharedInstance
-        push.initializeWithAppGUID(appGUID: "7306070c-02c0-4be5-bc92-682e36bc079a", clientSecret: "e51dab99-51fb-4ee0-8ac9-530be81ce56d")
-        BMSPushClient.sharedInstance.initializeWithAppGUID(appGUID: "7306070c-02c0-4be5-bc92-682e36bc079a", clientSecret:"e51dab99-51fb-4ee0-8ac9-530be81ce56d")
-       
         // Memorizzo il primo UUID generato e lo riutilizzo per fornire indicazione univoca del device connesso
         let userDefaults = UserDefaults.standard
         var usaTouch: String = "0"
@@ -48,9 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
             userDefaults.set(UUID, forKey: "AppUUID")
             userDefaults.set(false, forKey: "switchStateTouch")
             userDefaults.synchronize()
-            
         }
-        
         
         usaTouch = String(userDefaults.string(forKey: "switchStateTouch")!)
         
@@ -84,65 +71,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     }
     
     
-    
-    
-    
-    //Called when a notification is delivered to a foreground app.
-    @available(iOS 10.0, *)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("User Info = ",notification.request.content.userInfo)
-        completionHandler([.alert, .badge, .sound])
-    }
-    
-    //Called to let your app know which action was selected by the user for a given notification.
-    @available(iOS 10.0, *)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("User Info = ",response.notification.request.content.userInfo)
-        completionHandler()
-    }
-    
-    
-    func registerForRemoteNotification() {
-        if #available(iOS 10.0, *) {
-            let center  = UNUserNotificationCenter.current()
-            center.delegate = self
-            center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
-                if error == nil{
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-            }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        RemoteNotificationService.registerDeviceToken(deviceToken)
+        print("device Token", deviceToken.base64EncodedString())
+        var token: String = ""
+        for i in 0..<deviceToken.count {
+            token += String(format: "%02.2hhx", deviceToken[i] as CVarArg)
         }
-        else {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.sound, .alert, .badge], categories: nil))
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-    }
-    
-    
-    
-    
-    
-    
-    func application (_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
         
-        let push =  BMSPushClient.sharedInstance
-        push.registerWithDeviceToken(deviceToken: deviceToken) { (response, statusCode, error) -> Void in
-            if error.isEmpty {
-                print( "Response during device registration : \(response)")
-                print( "status code during device registration : \(statusCode)")
-            } else{
-                print( "Error during device registration \(error) ")
-                print( "Error during device registration \n  - status code: \(statusCode) \n Error :\(error) \n")
-            }
-        }
+        print(token)
     }
-
     
-    func application (_ application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        //Il dizionario UserInfo conterrà i dati inviati dal server
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("Noti data", userInfo)
+        completionHandler(UIBackgroundFetchResult.newData)
     }
-
     
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error)
+    }
+    
+
     //questa funzione gestisce il collegamento dell'app all'URL di Google Sign-In
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
