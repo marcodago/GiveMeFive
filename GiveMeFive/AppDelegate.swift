@@ -22,12 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         RemoteNotificationService.initializeAPN()
-        
-        if #available(iOS 10, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in }
-            UIApplication.shared.registerForRemoteNotifications()
-        }
-        
+                
         // Memorizzo il primo UUID generato e lo riutilizzo per fornire indicazione univoca del device connesso
         let userDefaults = UserDefaults.standard
         var usaTouch: String = "0"

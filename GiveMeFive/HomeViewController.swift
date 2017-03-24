@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import Foundation
 import CoreLocation
+import UserNotifications
 import NetworkExtension
 import SystemConfiguration.CaptiveNetwork
 
@@ -147,6 +148,12 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var myLocation: CLLocationCoordinate2D!
     
     override func viewDidLoad() {
+        
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in }
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+
         super.viewDidLoad()
         
         nome.text = String( describing: UserDefaults.standard.object(forKey: "googlename")! )

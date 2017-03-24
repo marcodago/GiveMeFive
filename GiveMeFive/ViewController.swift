@@ -26,6 +26,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
         self.navigationController?.isNavigationBarHidden = true
+        
     }
     
     // Gestisce la chiusura della view di Google Sign-In

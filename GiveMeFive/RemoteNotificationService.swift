@@ -27,20 +27,15 @@ class RemoteNotificationService {
     
     static func registerDeviceToken(_ deviceToken: Data) {
         push.initializeWithAppGUID(appGUID: APPGUID, clientSecret: clientSecret)
-        
-        if let userid = String(UserDefaults.standard.string(forKey: "googleuserid")!) {
+        push.registerWithDeviceToken(deviceToken: deviceToken) { (response, statusCode, error) -> Void in
             
-            push.registerWithDeviceToken(deviceToken: deviceToken, WithUserId: userid) { (response, statusCode, error) -> Void in
-                
-                if error.isEmpty {
-                    print("Response during device registration : \(response)")
-                    print("status code during device registration : \(statusCode)")
-                } else {
-                    print("Error during device registration \(error) ")
-                    print("Error during device registration \n  - status code: \(statusCode) \n Error :\(error) \n")
-                }
+            if error.isEmpty {
+                print("Response during device registration : \(response)")
+                print("status code during device registration : \(statusCode)")
+            } else {
+                print("Error during device registration \(error) ")
+                print("Error during device registration \n  - status code: \(statusCode) \n Error :\(error) \n")
             }
         }
-        
     }
 }
