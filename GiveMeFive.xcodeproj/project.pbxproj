@@ -23,6 +23,7 @@
 		912446431C3EF7EF00B87A7F /* GM5 Icon big.png in Resources */ = {isa = PBXBuildFile; fileRef = 912446391C3EF7EF00B87A7F /* GM5 Icon big.png */; };
 		912446441C3EF7EF00B87A7F /* GM5 Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9124463A1C3EF7EF00B87A7F /* GM5 Icon.png */; };
 		9127F0F91E3F8682009C2E38 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127F0F81E3F8682009C2E38 /* Utils.swift */; };
+		913378071E867CE500E35FF1 /* captcha.wav in Resources */ = {isa = PBXBuildFile; fileRef = 913378061E867CE500E35FF1 /* captcha.wav */; };
 		913E02AB1E82EC5B00D1F3CC /* RemoteNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E02AA1E82EC5B00D1F3CC /* RemoteNotificationService.swift */; };
 		9144439D1C6B158400753BD9 /* Checklist-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 914443981C6B158400753BD9 /* Checklist-50.png */; };
 		9144439E1C6B158400753BD9 /* Home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 914443991C6B158400753BD9 /* Home-50.png */; };
@@ -116,6 +117,7 @@
 		912446391C3EF7EF00B87A7F /* GM5 Icon big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon big.png"; sourceTree = "<group>"; };
 		9124463A1C3EF7EF00B87A7F /* GM5 Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon.png"; sourceTree = "<group>"; };
 		9127F0F81E3F8682009C2E38 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		913378061E867CE500E35FF1 /* captcha.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = captcha.wav; sourceTree = "<group>"; };
 		913E02AA1E82EC5B00D1F3CC /* RemoteNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationService.swift; sourceTree = "<group>"; };
 		914443981C6B158400753BD9 /* Checklist-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checklist-50.png"; sourceTree = "<group>"; };
 		914443991C6B158400753BD9 /* Home-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50.png"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		910539AB1CF4380400B46D96 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				913378061E867CE500E35FF1 /* captcha.wav */,
 				91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */,
 				919886A41C0B19CA0082C5E0 /* GiveMeFive.app */,
 				915929A21C981FF500E49E23 /* GiveMeFive-Bridging-Header.h */,
@@ -453,6 +456,7 @@
 				91DCF3CC1CA42E6600AE7F2D /* Busy_button.png in Resources */,
 				91C865D21CE5208B00538D14 /* Cool-50.png in Resources */,
 				9108DA461E51D72500F01A31 /* TouchID_on.png in Resources */,
+				913378071E867CE500E35FF1 /* captcha.wav in Resources */,
 				9145DE531E6F038B00F55ED9 /* gm5-ap-seg.json in Resources */,
 				91B8AFF21CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png in Resources */,
 				9108DA471E51D72500F01A31 /* TouchID_on@2x.png in Resources */,
