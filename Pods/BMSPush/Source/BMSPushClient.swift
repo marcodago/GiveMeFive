@@ -953,50 +953,50 @@ import BMSCore
     public enum IMFPushErrorvalues: Int {
         
         /// - IMFPushErrorInternalError: Denotes the Internal Server Error occured.
-        case IMFPushErrorInternalError = 1
+        case imfPushErrorInternalError = 1
         
         /// - IMFPushErrorEmptyTagArray: Denotes the Empty Tag Array Error.
-        case IMFPushErrorEmptyTagArray = 2
+        case imfPushErrorEmptyTagArray = 2
         
         /// - IMFPushRegistrationVerificationError: Denotes the Previous Push registration Error.
-        case IMFPushRegistrationVerificationError = 3
+        case imfPushRegistrationVerificationError = 3
         
         /// - IMFPushRegistrationError: Denotes the First Time Push registration Error.
-        case IMFPushRegistrationError = 4
+        case imfPushRegistrationError = 4
         
         /// - IMFPushRegistrationUpdateError: Denotes the Device updation Error.
-        case IMFPushRegistrationUpdateError = 5
+        case imfPushRegistrationUpdateError = 5
         
         /// - IMFPushRetrieveSubscriptionError: Denotes the Subscribed tags retrieval error.
-        case IMFPushRetrieveSubscriptionError = 6
+        case imfPushRetrieveSubscriptionError = 6
         
         /// - IMFPushRetrieveSubscriptionError: Denotes the Available tags retrieval error.
-        case IMFPushRetrieveTagsError = 7
+        case imfPushRetrieveTagsError = 7
         
         /// - IMFPushTagSubscriptionError: Denotes the Tag Subscription error.
-        case IMFPushTagSubscriptionError = 8
+        case imfPushTagSubscriptionError = 8
         
         /// - IMFPushTagUnsubscriptionError: Denotes the tag Unsubscription error.
-        case IMFPushTagUnsubscriptionError = 9
+        case imfPushTagUnsubscriptionError = 9
         
         /// - BMSPushUnregitrationError: Denotes the Push Unregistration error.
-        case BMSPushUnregitrationError = 10
+        case bmsPushUnregitrationError = 10
     }
     
     
     /**
      A singleton that serves as an entry point to Bluemix client- Push service communication.
      */
-    public class BMSPushClient: NSObject {
+    open class BMSPushClient: NSObject {
         
         // MARK: Properties (Public)
         
         /// This singleton should be used for all `BMSPushClient` activity.
-        public static let sharedInstance = BMSPushClient()
+        open static let sharedInstance = BMSPushClient()
         
-        private var _notificationOptions : BMSPushClientOptions?
+        fileprivate var _notificationOptions : BMSPushClientOptions?
         
-        public var notificationOptions:BMSPushClientOptions? {
+        open var notificationOptions:BMSPushClientOptions? {
             get{
                 return _notificationOptions
             }
@@ -1007,22 +1007,22 @@ import BMSCore
         
         
         // Specifies the bluemix push clientSecret value
-        public private(set) var clientSecret: String?
-        public private(set) var applicationId: String?
+        open fileprivate(set) var clientSecret: String?
+        open fileprivate(set) var applicationId: String?
         
         // used to test in test zone and dev zone
-        public static var overrideServerHost = "";
+        open static var overrideServerHost = "";
         
         // MARK: Properties (private)
         
         /// `BMSClient` object.
-        private var bmsClient = BMSClient.sharedInstance
+        fileprivate var bmsClient = BMSClient.sharedInstance
         
         // Notification Count
         
-        private var notificationcount:Int = 0
+        fileprivate var notificationcount:Int = 0
         
-        private var isInitialized = false;
+        fileprivate var isInitialized = false;
         
         // MARK: Initializers
         
@@ -1034,17 +1034,17 @@ import BMSCore
          - parameter clientSecret:    The clientSecret of the Push Service
          - parameter appGUID:    The pushAppGUID of the Push Service
          */
-        public func initializeWithAppGUID (appGUID appGUID: String, clientSecret: String) {
+        open func initializeWithAppGUID (appGUID: String, clientSecret: String) {
             
             if validateString(clientSecret) {
                 self.clientSecret = clientSecret
                 self.applicationId = appGUID
                 isInitialized = true;
                 
-                let settings = UIUserNotificationSettings(forTypes: [.Alert,.Badge,.Sound], categories: nil)
+                let settings = UIUserNotificationSettings(types: [.alert,.badge,.sound], categories: nil)
                 
-                UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-                UIApplication.sharedApplication().registerForRemoteNotifications()
+                UIApplication.shared.registerUserNotificationSettings(settings)
+                UIApplication.shared.registerForRemoteNotifications()
             }
             else{
                 self.sendAnalyticsData(LogLevel.error, logStringData: "Error while registration - Client secret is not valid")
@@ -1061,7 +1061,7 @@ import BMSCore
          - parameter appGUID:    The pushAppGUID of the Push Service
          - parameter options: The optional push notification options
          */
-        public func initializeWithAppGUID (appGUID: String, clientSecret: String, options: BMSPushClientOptions) {
+        open func initializeWithAppGUID (_ appGUID: String, clientSecret: String, options: BMSPushClientOptions) {
             
             if validateString(clientSecret) {
                 self.clientSecret = clientSecret
@@ -1083,28 +1083,28 @@ import BMSCore
                     replyActionButtonOne.identifier = firstActionButton.identifier
                     replyActionButtonOne.title = firstActionButton.title
                     replyActionButtonOne.activationMode = firstActionButton.activationMode
-                    replyActionButtonOne.authenticationRequired = firstActionButton.authenticationRequired!
+                    replyActionButtonOne.isAuthenticationRequired = firstActionButton.authenticationRequired!
                     
                     let replyActionButtonTwo : UIMutableUserNotificationAction = UIMutableUserNotificationAction()
                     replyActionButtonTwo.identifier = secondActionButton.identifier
                     replyActionButtonTwo.title = secondActionButton.title
                     replyActionButtonTwo.activationMode = secondActionButton.activationMode
-                    replyActionButtonTwo.authenticationRequired = secondActionButton.authenticationRequired!
+                    replyActionButtonTwo.isAuthenticationRequired = secondActionButton.authenticationRequired!
                     
                     let responseCategory : UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
                     responseCategory.identifier = pushCategoryIdentifier
                     
                     let replyActions: [UIUserNotificationAction] = [replyActionButtonOne, replyActionButtonTwo]
                     
-                    responseCategory.setActions(replyActions, forContext:UIUserNotificationActionContext.Default)
-                    responseCategory.setActions(replyActions, forContext:UIUserNotificationActionContext.Minimal)
+                    responseCategory.setActions(replyActions, for:UIUserNotificationActionContext.default)
+                    responseCategory.setActions(replyActions, for:UIUserNotificationActionContext.minimal)
                     
                     let categories = NSSet(object: responseCategory)
                 
-                let settings = UIUserNotificationSettings(forTypes: [.Alert,.Badge,.Sound], categories: categories as? Set<UIUserNotificationCategory>)
+                let settings = UIUserNotificationSettings(types: [.alert,.badge,.sound], categories: categories as? Set<UIUserNotificationCategory>)
                     
-                    UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-                    UIApplication.sharedApplication().registerForRemoteNotifications()
+                    UIApplication.shared.registerUserNotificationSettings(settings)
+                    UIApplication.shared.registerForRemoteNotifications()
                     
                 
             }
@@ -1122,7 +1122,7 @@ import BMSCore
          - parameter appGUID:    The pushAppGUID of the Push Service
          */
         @available(*, deprecated, message="This method was deprecated , please use initializeWithAppGUID(appGUID:_  clientSecret:_ )")
-        public func initializeWithAppGUID (appGUID appGUID: String) {
+        open func initializeWithAppGUID (appGUID: String) {
             self.applicationId = appGUID;
             isInitialized = true;
         }
@@ -1144,7 +1144,7 @@ import BMSCore
          - Parameter completionHandler: The closure that will be called when this request finishes. The response will contain response (String), StatusCode (Int) and error (string).
          */
         
-        public func registerWithDeviceToken(deviceToken:NSData , WithUserId:String?, completionHandler: (response:String?, statusCode:Int?, error:String) -> Void) {
+        open func registerWithDeviceToken(_ deviceToken:Data , WithUserId:String?, completionHandler: (response:String?, statusCode:Int?, error:String) -> Void) {
             
             
             if (isInitialized){
@@ -1159,9 +1159,9 @@ import BMSCore
                     BMSPushUtils.saveValueToNSUserDefaults(devId, key: "deviceId")
                     
                     var token:String = deviceToken.description
-                    token = token.stringByReplacingOccurrencesOfString("<", withString: "")
-                    token = token.stringByReplacingOccurrencesOfString(">", withString: "")
-                    token = token.stringByReplacingOccurrencesOfString(" ", withString: "").stringByTrimmingCharactersInSet(NSCharacterSet.symbolCharacterSet())
+                    token = token.replacingOccurrences(of: "<", with: "")
+                    token = token.replacingOccurrences(of: ">", with: "")
+                    token = token.replacingOccurrences(of: " ", with: "").trimmingCharacters(in: CharacterSet.symbols)
                     
                     
                     let urlBuilder = BMSPushUrlBuilder(applicationID: self.applicationId!, clientSecret: clientSecret!)
@@ -1192,10 +1192,10 @@ import BMSCore
                                 let headers = urlBuilder.addHeader()
                                 let method =  HttpMethod.POST
                                 
-                                let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .UseProtocolCachePolicy)
+                                let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .useProtocolCachePolicy)
                                // let getRequest = BaseRequest(url: resourceURL, headers: headers, queryParameters: nil, method: method, timeout: 60)
                                 
-                                let data =  "{\"\(IMFPUSH_DEVICE_ID)\": \"\(devId)\", \"\(IMFPUSH_TOKEN)\": \"\(token)\", \"\(IMFPUSH_PLATFORM)\": \"A\", \"\(IMFPUSH_USERID)\": \"\(WithUserId!)\"}".dataUsingEncoding(NSUTF8StringEncoding)
+                                let data =  "{\"\(IMFPUSH_DEVICE_ID)\": \"\(devId)\", \"\(IMFPUSH_TOKEN)\": \"\(token)\", \"\(IMFPUSH_PLATFORM)\": \"A\", \"\(IMFPUSH_USERID)\": \"\(WithUserId!)\"}".data(using: String.Encoding.utf8)
                                 
                                 // MARK: Registering for the First Time
                                 getRequest.send(requestBody: data!, completionHandler: { (response, error)  -> Void in
@@ -1212,7 +1212,7 @@ import BMSCore
                                     else if let responseError = error {
                                         
                                         self.sendAnalyticsData(LogLevel.error, logStringData: "Error during device registration - Error is: \(responseError.localizedDescription)")
-                                        completionHandler(response: "", statusCode: IMFPushErrorvalues.IMFPushRegistrationError.rawValue, error: "Error during device registration - Error is: \(responseError.localizedDescription)")
+                                        completionHandler(response: "", statusCode: IMFPushErrorvalues.imfPushRegistrationError.rawValue, error: "Error during device registration - Error is: \(responseError.localizedDescription)")
                                     }
                                 })
                                 
@@ -1228,15 +1228,15 @@ import BMSCore
                                 
                                 self.sendAnalyticsData(LogLevel.debug, logStringData: "Device is already registered. Return the device Id - Response is: \(response?.responseText)")
                                 let respJson = response?.responseText
-                                let data = respJson!.dataUsingEncoding(NSUTF8StringEncoding)
-                                let jsonResponse:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
+                                let data = respJson!.data(using: String.Encoding.utf8)
+                                let jsonResponse:NSDictionary = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                                 
-                                let rToken = jsonResponse.objectForKey(IMFPUSH_TOKEN) as! String
-                                let rDevId = jsonResponse.objectForKey(IMFPUSH_DEVICE_ID) as! String
-                                let userId = jsonResponse.objectForKey(IMFPUSH_USERID) as! String
+                                let rToken = jsonResponse.object(forKey: IMFPUSH_TOKEN) as! String
+                                let rDevId = jsonResponse.object(forKey: IMFPUSH_DEVICE_ID) as! String
+                                let userId = jsonResponse.object(forKey: IMFPUSH_USERID) as! String
                                 
-                                if ((rToken.compare(token)) != NSComparisonResult.OrderedSame) ||
-                                    (!(WithUserId!.isEmpty) && (WithUserId!.compare(userId) != NSComparisonResult.OrderedSame)) || (devId.compare(rDevId) != NSComparisonResult.OrderedSame){
+                                if ((rToken.compare(token)) != ComparisonResult.orderedSame) ||
+                                    (!(WithUserId!.isEmpty) && (WithUserId!.compare(userId) != ComparisonResult.orderedSame)) || (devId.compare(rDevId) != ComparisonResult.orderedSame){
                                     
                                     // MARK: Updating the registered device ,userID, token or deviceId changed
                                     
@@ -1246,11 +1246,11 @@ import BMSCore
                                     let headers = urlBuilder.addHeader()
                                     
                                     let method =  HttpMethod.PUT
-                                    let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .UseProtocolCachePolicy)
+                                    let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .useProtocolCachePolicy)
 
                                    // let getRequest = BaseRequest(url: resourceURL, headers: headers, queryParameters: nil, method: method, timeout: 60)
                                     
-                                    let data =  "{\"\(IMFPUSH_DEVICE_ID)\": \"\(devId)\", \"\(IMFPUSH_TOKEN)\": \"\(token)\", \"\(IMFPUSH_USERID)\": \"\(WithUserId!)\"}".dataUsingEncoding(NSUTF8StringEncoding)
+                                    let data =  "{\"\(IMFPUSH_DEVICE_ID)\": \"\(devId)\", \"\(IMFPUSH_TOKEN)\": \"\(token)\", \"\(IMFPUSH_USERID)\": \"\(WithUserId!)\"}".data(using: String.Encoding.utf8)
                                     
                                     getRequest.send(requestBody: data!, completionHandler: { (response, error) -> Void in
                                         
@@ -1265,7 +1265,7 @@ import BMSCore
                                         else if let responseError = error {
                                             
                                             self.sendAnalyticsData(LogLevel.error, logStringData: "Error during device updatation - Error is : \(responseError.description)")
-                                            completionHandler(response: "", statusCode: IMFPushErrorvalues.IMFPushRegistrationUpdateError.rawValue, error: "Error during device updatation - Error is : \(responseError.description)")
+                                            completionHandler(response: "", statusCode: IMFPushErrorvalues.imfPushRegistrationUpdateError.rawValue, error: "Error during device updatation - Error is : \(responseError.description)")
                                         }
                                     })
                                 }
@@ -1281,7 +1281,7 @@ import BMSCore
                         else if let responseError = error {
                             
                             self.sendAnalyticsData(LogLevel.error, logStringData: "Error while verifying previous registration - Error is: \(responseError.localizedDescription)")
-                            completionHandler(response: "", statusCode: IMFPushErrorvalues.IMFPushRegistrationVerificationError.rawValue , error: "Error while verifying previous registration - Error is: \(responseError.localizedDescription)")
+                            completionHandler(response: "", statusCode: IMFPushErrorvalues.imfPushRegistrationVerificationError.rawValue , error: "Error while verifying previous registration - Error is: \(responseError.localizedDescription)")
                             
                         }
                         
@@ -1289,12 +1289,12 @@ import BMSCore
                 }else{
                     
                     self.sendAnalyticsData(LogLevel.error, logStringData: "Error while registration - Provide a valid userId value")
-                    completionHandler(response: "", statusCode: IMFPushErrorvalues.IMFPushRegistrationError.rawValue , error: "Error while registration - Provide a valid userId value")
+                    completionHandler(response: "", statusCode: IMFPushErrorvalues.imfPushRegistrationError.rawValue , error: "Error while registration - Provide a valid userId value")
                 }
             }else{
                 
                 self.sendAnalyticsData(LogLevel.error, logStringData: "Error while registration - BMSPush is not initialized")
-                completionHandler(response: "", statusCode: IMFPushErrorvalues.IMFPushRegistrationError.rawValue , error: "Error while registration - BMSPush is not initialized")
+                completionHandler(response: "", statusCode: IMFPushErrorvalues.imfPushRegistrationError.rawValue , error: "Error while registration - BMSPush is not initialized")
             }
             
         }
@@ -1311,7 +1311,7 @@ import BMSCore
          - Parameter completionHandler: The closure that will be called when this request finishes. The response will contain response (String), StatusCode (Int) and error (string).
          */
         
-        public func registerWithDeviceToken (deviceToken:NSData, completionHandler: (response:String?, statusCode:Int?, error:String) -> Void) {
+        open func registerWithDeviceToken (_ deviceToken:Data, completionHandler: (response:String?, statusCode:Int?, error:String) -> Void) {
             
             // Generate new ID
             // TODO: This need to be verified. The Device Id is not storing anywhere in BMSCore
@@ -1323,9 +1323,9 @@ import BMSCore
                 BMSPushUtils.saveValueToNSUserDefaults(devId, key: "deviceId")
                 
                 var token:String = deviceToken.description
-                token = token.stringByReplacingOccurrencesOfString("<", withString: "")
-                token = token.stringByReplacingOccurrencesOfString(">", withString: "")
-                token = token.stringByReplacingOccurrencesOfString(" ", withString: "").stringByTrimmingCharactersInSet(NSCharacterSet.symbolCharacterSet())
+                token = token.replacingOccurrences(of: "<", with: "")
+                token = token.replacingOccurrences(of: ">", with: "")
+                token = token.replacingOccurrences(of: " ", with: "").trimmingCharacters(in: CharacterSet.symbols)
                 
                 
                 
@@ -1357,11 +1357,11 @@ import BMSCore
                             let headers = urlBuilder.addHeader()
                             let method =  HttpMethod.POST
                             
-                            let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .UseProtocolCachePolicy)
+                            let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .useProtocolCachePolicy)
 
                             //let getRequest = BaseRequest(url: resourceURL, headers: headers, queryParameters: nil, method: method, timeout: 60)
                             
-                            let data =  "{\"\(IMFPUSH_DEVICE_ID)\": \"\(devId)\", \"\(IMFPUSH_TOKEN)\": \"\(token)\", \"\(IMFPUSH_PLATFORM)\": \"A\"}".dataUsingEncoding(NSUTF8StringEncoding)
+                            let data =  "{\"\(IMFPUSH_DEVICE_ID)\": \"\(devId)\", \"\(IMFPUSH_TOKEN)\": \"\(token)\", \"\(IMFPUSH_PLATFORM)\": \"A\"}".data(using: String.Encoding.utf8)
                             
                             // MARK: Registering for the First Time
                             getRequest.send(requestBody: data!, completionHandler: { (response, error) -> Void in
@@ -1378,7 +1378,7 @@ import BMSCore
                                 else if let responseError = error {
                                     
                                     self.sendAnalyticsData(LogLevel.error, logStringData: "Error during device registration - Error is: \(responseError.localizedDescription)")
-                                    completionHandler(response: "", statusCode: IMFPushErrorvalues.IMFPushRegistrationError.rawValue, error: "Error during device registration - Error is: \(responseError.localizedDescription)")
+                                    completionHandler(response: "", statusCode: IMFPushErrorvalues.imfPushRegistrationError.rawValue, error: "Error during device registration - Error is: \(responseError.localizedDescription)")
                                 }
                             })
                             
@@ -1394,14 +1394,14 @@ import BMSCore
                             
                             self.sendAnalyticsData(LogLevel.debug, logStringData: "Device is already registered. Return the device Id - Response is: \(response?.responseText)")
                             let respJson = response?.responseText
-                            let data = respJson!.dataUsingEncoding(NSUTF8StringEncoding)
-                            let jsonResponse:NSDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
+                            let data = respJson!.data(using: String.Encoding.utf8)
+                            let jsonResponse:NSDictionary = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                             
-                            let rToken = jsonResponse.objectForKey(IMFPUSH_TOKEN) as! String
-                            let rDevId = jsonResponse.objectForKey(IMFPUSH_DEVICE_ID) as! String
-                            let userId = jsonResponse.objectForKey(IMFPUSH_USERID) as! String
+                            let rToken = jsonResponse.object(forKey: IMFPUSH_TOKEN) as! String
+                            let rDevId = jsonResponse.object(forKey: IMFPUSH_DEVICE_ID) as! String
+                            let userId = jsonResponse.object(forKey: IMFPUSH_USERID) as! String
                             
-                            if ((rToken.compare(token)) != NSComparisonResult.OrderedSame) || (devId.compare(rDevId) != NSComparisonResult.OrderedSame) || (userId != "anonymous") {
+                            if ((rToken.compare(token)) != ComparisonResult.orderedSame) || (devId.compare(rDevId) != ComparisonResult.orderedSame) || (userId != "anonymous") {
                                 
                                 // MARK: Updating the registered userID , token or deviceId changed
                                 
@@ -1412,12 +1412,12 @@ import BMSCore
                                 
                                 let method =  HttpMethod.PUT
                                 
-                                let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .UseProtocolCachePolicy)
+                                let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .useProtocolCachePolicy)
 
                                // let getRequest = BaseRequest(url: resourceURL, headers: headers, queryParameters: nil, method: method, timeout: 60)
                                 
                                 
-                                let data =  "{\"\(IMFPUSH_DEVICE_ID)\": \"\(devId)\", \"\(IMFPUSH_TOKEN)\": \"\(token)\"}".dataUsingEncoding(NSUTF8StringEncoding)
+                                let data =  "{\"\(IMFPUSH_DEVICE_ID)\": \"\(devId)\", \"\(IMFPUSH_TOKEN)\": \"\(token)\"}".data(using: String.Encoding.utf8)
                                 
                                 getRequest.send(requestBody: data!, completionHandler: { (response, error)  -> Void in
                                     
@@ -1432,7 +1432,7 @@ import BMSCore
                                     else if let responseError = error {
                                         
                                         self.sendAnalyticsData(LogLevel.error, logStringData: "Error during device updatation - Error is : \(responseError.description)")
-                                        completionHandler(response: "", statusCode: IMFPushErrorvalues.IMFPushRegistrationUpdateError.rawValue, error: "Error during device updatation - Error is : \(responseError.description)")
+                                        completionHandler(response: "", statusCode: IMFPushErrorvalues.imfPushRegistrationUpdateError.rawValue, error: "Error during device updatation - Error is : \(responseError.description)")
                                     }
                                     
                                 })
@@ -1450,13 +1450,13 @@ import BMSCore
                     else if let responseError = error {
                         
                         self.sendAnalyticsData(LogLevel.error, logStringData: "Error while verifying previous registration - Error is: \(responseError.localizedDescription)")
-                        completionHandler(response: "", statusCode: IMFPushErrorvalues.IMFPushRegistrationVerificationError.rawValue , error: "Error while verifying previous registration - Error is: \(responseError.localizedDescription)")
+                        completionHandler(response: "", statusCode: IMFPushErrorvalues.imfPushRegistrationVerificationError.rawValue , error: "Error while verifying previous registration - Error is: \(responseError.localizedDescription)")
                     }
                 })
             }else{
                 
                 self.sendAnalyticsData(LogLevel.error, logStringData: "Error while registration - BMSPush is not initialized")
-                completionHandler(response: "", statusCode: IMFPushErrorvalues.IMFPushRegistrationError.rawValue , error: "Error while registration - BMSPush is not initialized")
+                completionHandler(response: "", statusCode: IMFPushErrorvalues.imfPushRegistrationError.rawValue , error: "Error while registration - BMSPush is not initialized")
             }
         }
         
@@ -1469,7 +1469,7 @@ import BMSCore
          
          - Parameter completionHandler: The closure that will be called when this request finishes. The response will contain response (NSMutableArray), StatusCode (Int) and error (string).
          */
-        public func retrieveAvailableTagsWithCompletionHandler (completionHandler: (response:NSMutableArray?, statusCode:Int?, error:String) -> Void){
+        open func retrieveAvailableTagsWithCompletionHandler (_ completionHandler: (response:NSMutableArray?, statusCode:Int?, error:String) -> Void){
             
             
             self.sendAnalyticsData(LogLevel.debug, logStringData: "Entering retrieveAvailableTagsWithCompletitionHandler.")
@@ -1497,7 +1497,7 @@ import BMSCore
                 } else if let responseError = error {
                     
                     self.sendAnalyticsData(LogLevel.error, logStringData: "Error while retrieving available tags - Error is: \(responseError.description)")
-                    completionHandler(response: [], statusCode: IMFPushErrorvalues.IMFPushRetrieveTagsError.rawValue,error: "Error while retrieving available tags - Error is: \(responseError.description)")
+                    completionHandler(response: [], statusCode: IMFPushErrorvalues.imfPushRetrieveTagsError.rawValue,error: "Error while retrieving available tags - Error is: \(responseError.description)")
                     
                 }
             })
@@ -1513,7 +1513,7 @@ import BMSCore
          - parameter tagsArray: the array that contains name tags.
          - Parameter completionHandler: The closure that will be called when this request finishes. The response will contain response (NSMutableDictionary), StatusCode (Int) and error (string).
          */
-        public func subscribeToTags (tagsArray:NSArray, completionHandler: (response:NSMutableDictionary?, statusCode:Int?, error:String) -> Void) {
+        open func subscribeToTags (_ tagsArray:NSArray, completionHandler: (response:NSMutableDictionary?, statusCode:Int?, error:String) -> Void) {
             
             
             self.sendAnalyticsData(LogLevel.debug, logStringData:"Entering: subscribeToTags." )
@@ -1531,13 +1531,13 @@ import BMSCore
                 
                 let method =  HttpMethod.POST
                 
-                let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .UseProtocolCachePolicy)
+                let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .useProtocolCachePolicy)
 
                 //let getRequest = BaseRequest(url: resourceURL, headers: headers, queryParameters: nil, method: method, timeout: 60)
                 
                 let mappedArray = tagsArray.flatMap{"\($0)"}.description;
                 
-                let data =  "{\"\(IMFPUSH_TAGNAMES)\":\(mappedArray), \"\(IMFPUSH_DEVICE_ID)\":\"\(devId)\"}".dataUsingEncoding(NSUTF8StringEncoding)
+                let data =  "{\"\(IMFPUSH_TAGNAMES)\":\(mappedArray), \"\(IMFPUSH_DEVICE_ID)\":\"\(devId)\"}".data(using: String.Encoding.utf8)
                 
                 getRequest.send(requestBody: data!, completionHandler: { (response, error) -> Void in
                     
@@ -1556,7 +1556,7 @@ import BMSCore
                         let subscriptionResponse = NSMutableDictionary()
                         
                         self.sendAnalyticsData(LogLevel.error, logStringData: "Error while subscribing to tags - Error is: \(responseError.description)")
-                        completionHandler(response: subscriptionResponse, statusCode: IMFPushErrorvalues.IMFPushTagSubscriptionError.rawValue,error: "Error while retrieving available tags - Error is: \(responseError.description)")
+                        completionHandler(response: subscriptionResponse, statusCode: IMFPushErrorvalues.imfPushTagSubscriptionError.rawValue,error: "Error while retrieving available tags - Error is: \(responseError.description)")
                         
                     }
                 })
@@ -1566,7 +1566,7 @@ import BMSCore
                 let subscriptionResponse = NSMutableDictionary()
                 
                 self.sendAnalyticsData(LogLevel.error, logStringData: "Error.  Tag array cannot be null. Create tags in your Bluemix App")
-                completionHandler(response: subscriptionResponse, statusCode: IMFPushErrorvalues.IMFPushErrorEmptyTagArray.rawValue, error: "Error.  Tag array cannot be null. Create tags in your Bluemix App")
+                completionHandler(response: subscriptionResponse, statusCode: IMFPushErrorvalues.imfPushErrorEmptyTagArray.rawValue, error: "Error.  Tag array cannot be null. Create tags in your Bluemix App")
             }
         }
         
@@ -1580,7 +1580,7 @@ import BMSCore
          
          - Parameter completionHandler: The closure that will be called when this request finishes. The response will contain response (NSMutableArray), StatusCode (Int) and error (string).
          */
-        public func retrieveSubscriptionsWithCompletionHandler (completionHandler: (response:NSMutableArray?, statusCode:Int?, error:String) -> Void) {
+        open func retrieveSubscriptionsWithCompletionHandler (_ completionHandler: (response:NSMutableArray?, statusCode:Int?, error:String) -> Void) {
             
             
             self.sendAnalyticsData(LogLevel.debug, logStringData: "Entering retrieveSubscriptionsWithCompletitionHandler.")
@@ -1614,7 +1614,7 @@ import BMSCore
                     
                     self.sendAnalyticsData(LogLevel.error, logStringData: "Error while retrieving subscriptions - Error is: \(responseError.localizedDescription)")
                     
-                    completionHandler(response: [], statusCode: IMFPushErrorvalues.IMFPushRetrieveSubscriptionError.rawValue,error: "Error while retrieving subscriptions - Error is: \(responseError.localizedDescription)")
+                    completionHandler(response: [], statusCode: IMFPushErrorvalues.imfPushRetrieveSubscriptionError.rawValue,error: "Error while retrieving subscriptions - Error is: \(responseError.localizedDescription)")
                     
                 }
             })
@@ -1630,7 +1630,7 @@ import BMSCore
          - Parameter tagsArray: The list of tags that need to be unsubscribed.
          - Parameter completionHandler: The closure that will be called when this request finishes. The response will contain response (NSMutableDictionary), StatusCode (Int) and error (string).
          */
-        public func unsubscribeFromTags (tagsArray:NSArray, completionHandler: (response:NSMutableDictionary?, statusCode:Int?, error:String) -> Void) {
+        open func unsubscribeFromTags (_ tagsArray:NSArray, completionHandler: (response:NSMutableDictionary?, statusCode:Int?, error:String) -> Void) {
             
             self.sendAnalyticsData(LogLevel.debug, logStringData: "Entering: unsubscribeFromTags")
             
@@ -1648,13 +1648,13 @@ import BMSCore
                 
                 let method =  HttpMethod.POST
                 
-                let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .UseProtocolCachePolicy)
+                let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60, cachePolicy: .useProtocolCachePolicy)
 
                 //let getRequest = BaseRequest(url: resourceURL, headers: headers, queryParameters: nil, method: method, timeout: 60)
                 
                 let data1 = tagsArray.flatMap{"\($0)"}.description;
                 
-                let data =  "{\"\(IMFPUSH_TAGNAMES)\":\(data1), \"\(IMFPUSH_DEVICE_ID)\":\"\(devId)\"}".dataUsingEncoding(NSUTF8StringEncoding)
+                let data =  "{\"\(IMFPUSH_TAGNAMES)\":\(data1), \"\(IMFPUSH_DEVICE_ID)\":\"\(devId)\"}".data(using: String.Encoding.utf8)
                 
                 getRequest.send(requestBody: data, completionHandler: { (response, error) -> Void in
                     
@@ -1674,7 +1674,7 @@ import BMSCore
                         let unSubscriptionResponse = NSMutableDictionary()
                         
                         self.sendAnalyticsData(LogLevel.error, logStringData: "Error while unsubscribing from tags - Error is: \(responseError.description)")
-                        completionHandler(response: unSubscriptionResponse, statusCode: IMFPushErrorvalues.IMFPushTagUnsubscriptionError.rawValue,error: "Error while retrieving available tags - Error is: \(responseError.description)")
+                        completionHandler(response: unSubscriptionResponse, statusCode: IMFPushErrorvalues.imfPushTagUnsubscriptionError.rawValue,error: "Error while retrieving available tags - Error is: \(responseError.description)")
                     }
                 })
             } else {
@@ -1682,7 +1682,7 @@ import BMSCore
                 let unSubscriptionResponse = NSMutableDictionary()
                 
                 self.sendAnalyticsData(LogLevel.error, logStringData: "Error.  Tag array cannot be null.")
-                completionHandler(response: unSubscriptionResponse, statusCode: IMFPushErrorvalues.IMFPushErrorEmptyTagArray.rawValue, error: "Error.  Tag array cannot be null.")
+                completionHandler(response: unSubscriptionResponse, statusCode: IMFPushErrorvalues.imfPushErrorEmptyTagArray.rawValue, error: "Error.  Tag array cannot be null.")
             }
         }
         
@@ -1693,7 +1693,7 @@ import BMSCore
          
          - Parameter completionHandler: The closure that will be called when this request finishes. The response will contain response (String), StatusCode (Int) and error (string).
          */
-        public func unregisterDevice (completionHandler: (response:String?, statusCode:Int?, error:String) -> Void) {
+        open func unregisterDevice (_ completionHandler: (response:String?, statusCode:Int?, error:String) -> Void) {
             
             self.sendAnalyticsData(LogLevel.debug, logStringData: "Entering unregisterDevice.")
             let authManager  = BMSClient.sharedInstance.authorizationManager
@@ -1724,12 +1724,12 @@ import BMSCore
                 } else if let responseError = error  {
                     
                     self.sendAnalyticsData(LogLevel.error, logStringData: "Error while unregistering device - Error is: \(responseError.description)")
-                    completionHandler(response:"", statusCode: IMFPushErrorvalues.BMSPushUnregitrationError.rawValue,error: "Error while unregistering device - Error is: \(responseError.description)")
+                    completionHandler(response:"", statusCode: IMFPushErrorvalues.bmsPushUnregitrationError.rawValue,error: "Error while unregistering device - Error is: \(responseError.description)")
                 }
             })
         }
         
-        public func sendMessageDeliveryStatus (messageId:String, completionHandler: (response:String?, statusCode:Int?, error:String) -> Void) {
+        open func sendMessageDeliveryStatus (_ messageId:String, completionHandler: (response:String?, statusCode:Int?, error:String) -> Void) {
             
             self.sendAnalyticsData(LogLevel.debug, logStringData: "Entering sendMessageDeliveryStatus.")
             let authManager  = BMSClient.sharedInstance.authorizationManager
@@ -1744,7 +1744,7 @@ import BMSCore
             
             var status = "";
             
-            if ( UIApplication.sharedApplication().applicationState == UIApplicationState.Background){
+            if ( UIApplication.shared.applicationState == UIApplicationState.background){
                 status = "SEEN";
             } else{
                 status = "OPEN"
@@ -1755,7 +1755,7 @@ import BMSCore
                     IMFPUSH_DEVICE_ID:devId,
                     IMFPUSH_STATUS:status
                 ]
-                let data = try? NSJSONSerialization.dataWithJSONObject(json, options: [])
+                let data = try? JSONSerialization.data(withJSONObject: json, options: [])
                 
                 let getRequest = Request(url: resourceURL, method: method, headers: headers, queryParameters: nil, timeout: 60)
                 
@@ -1790,7 +1790,7 @@ import BMSCore
         //Begin Logger implementation
         
         // Setting Log info
-        internal func sendAnalyticsData (logType:LogLevel, logStringData:String){
+        internal func sendAnalyticsData (_ logType:LogLevel, logStringData:String){
             var devId = String()
             let authManager  = BMSClient.sharedInstance.authorizationManager
             devId = authManager.deviceIdentity.ID!
@@ -1832,7 +1832,7 @@ import BMSCore
             }
         }
         
-        internal func validateString(object:String) -> Bool{
+        internal func validateString(_ object:String) -> Bool{
             if (object.isEmpty || object == "") {
                 return false;
             }

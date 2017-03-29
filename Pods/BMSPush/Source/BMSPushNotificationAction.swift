@@ -9,9 +9,9 @@
 import Foundation
 
 
-public class BMSPushNotificationAction : NSObject {
+open class BMSPushNotificationAction : NSObject {
     
-    public static let sharedInstance = BMSPushClient()
+    open static let sharedInstance = BMSPushClient()
     
     var identifier: String
     var title: String

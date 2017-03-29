@@ -386,40 +386,40 @@ public typealias BMSCompletionHandler = (Response?, NSError?) -> Void
     - important: It is recommended to use the `Request` class instead of `BaseRequest`, since it will replace `BaseRequest` in the future.
 */
 @available(*, deprecated, message="Please use the Request class instead.")
-public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
+open class BaseRequest: NSObject, URLSessionTaskDelegate {
     
     
     // MARK: - Constants
     
-    public static let contentType = "Content-Type"
+    open static let contentType = "Content-Type"
     
     
     
     // MARK: - Properties
     
     /// URL that the request is being sent to.
-    public private(set) var resourceUrl: String
+    open fileprivate(set) var resourceUrl: String
     
     /// The HTTP method (GET, POST, etc.).
-    public let httpMethod: HttpMethod
+    open let httpMethod: HttpMethod
     
     /// Request timeout measured in seconds.
-    public var timeout: Double
+    open var timeout: Double
     
     /// All request headers.
-    public var headers: [String: String] = [:]
+    open var headers: [String: String] = [:]
     
     /// Query parameters to append to the `resourceURL`.
-    public var queryParameters: [String: String]?
+    open var queryParameters: [String: String]?
     
     /// The request body is set when sending the request via `send(requestBody:completionHandler:)`.
-    public private(set) var requestBody: NSData?
+    open fileprivate(set) var requestBody: Data?
     
     /// Determines whether request should follow HTTP redirects.
-    public var allowRedirects : Bool = true
+    open var allowRedirects : Bool = true
     
     /// Deterimes the cache policy to use for sending request.
-    public var cachePolicy: NSURLRequestCachePolicy = .UseProtocolCachePolicy
+    open var cachePolicy: NSURLRequest.CachePolicy = .useProtocolCachePolicy
     
     
     
@@ -428,26 +428,26 @@ public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
     // The old session that handles sending requests.
     // This will be replaced by `urlSession` once BMSSecurity 3.0 is released.
     // Public access required by BMSSecurity framework.
-    public var networkSession: NSURLSession?
+    open var networkSession: Foundation.URLSession?
     
     // The new session that handles sending requests.
     // Meant to replace `networkSession`.
     // Public access required by BMSSecurity framework.
-    public var urlSession: BMSURLSession!
+    open var urlSession: BMSURLSession!
     
     // The unique ID to keep track of each request.
     // Public access required by BMSAnalytics framework.
-    public private(set) var trackingId: String = ""
+    open fileprivate(set) var trackingId: String = ""
     
     // Metadata for the request.
     // This will obtain a value when the Analytics class from BMSAnalytics is initialized.
     // Public access required by BMSAnalytics framework.
-    public static var requestAnalyticsData: String?
+    open static var requestAnalyticsData: String?
     
     // The current request.
     var networkRequest: NSMutableURLRequest
     
-    private static let logger = Logger.logger(name: Logger.bmsLoggerPrefix + "request")
+    fileprivate static let logger = Logger.logger(name: Logger.bmsLoggerPrefix + "request")
     
     
     
@@ -471,11 +471,11 @@ public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
                headers: [String: String]? = nil,
                queryParameters: [String: String]? = nil,
                timeout: Double = BMSClient.sharedInstance.requestTimeout,
-               cachePolicy: NSURLRequestCachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy,
+               cachePolicy: NSURLRequest.CachePolicy = NSURLRequest.CachePolicy.useProtocolCachePolicy,
                autoRetries: Int = 0) {
     
         // Relative URL
-        if (!url.containsString("http://") && !url.containsString("https://")),
+        if (!url.contains("http://") && !url.contains("https://")),
             let bmsAppRoute = BMSClient.sharedInstance.bluemixAppRoute {
             
             self.resourceUrl = bmsAppRoute + url
@@ -493,12 +493,12 @@ public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
         self.queryParameters = queryParameters
         
         // Set timeout and initialize network session and request
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = timeout
         
         self.cachePolicy = cachePolicy
         
-        self.networkRequest = NSMutableURLRequest(URL: NSURL(string: "PLACEHOLDER")!)
+        self.networkRequest = NSMutableURLRequest(url: URL(string: "PLACEHOLDER")!)
         
         super.init()
         
@@ -519,11 +519,11 @@ public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
         - parameter requestBody: The HTTP request body.
         - parameter completionHandler: The block that will be called when this request finishes.
     */
-    public func send(requestBody requestBody: NSData? = nil, completionHandler: BMSCompletionHandler?) {
+    open func send(requestBody: Data? = nil, completionHandler: BMSCompletionHandler?) {
         
         self.requestBody = requestBody
 
-        if let url = NSURL(string: self.resourceUrl) {
+        if let url = URL(string: self.resourceUrl) {
             buildAndSendRequest(url: url, callback: completionHandler)
         }
         else {
@@ -538,12 +538,12 @@ public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
     
     // MARK: - Methods (internal)
     
-    private func buildAndSendRequest(url url: NSURL, callback: BMSCompletionHandler?) {
+    fileprivate func buildAndSendRequest(url: URL, callback: BMSCompletionHandler?) {
 
         // Wrapper for the original completion handler that converts the NSURLResponse into a Response object
-        let buildAndSendResponse = { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+        let buildAndSendResponse = { (data: Data?, response: URLResponse?, error: NSError?) -> Void in
             
-            let networkResponse = Response(responseData: data, httpResponse: response as? NSHTTPURLResponse, isRedirect: self.allowRedirects)
+            let networkResponse = Response(responseData: data, httpResponse: response as? HTTPURLResponse, isRedirect: self.allowRedirects)
             
             var error = error
             if error == nil, let statusCode = networkResponse.statusCode where statusCode >= 400 {
@@ -570,9 +570,9 @@ public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
         
         // Build request
         resourceUrl = String(requestUrl)
-        networkRequest.URL = requestUrl
-        networkRequest.HTTPMethod = httpMethod.rawValue
-        networkRequest.HTTPBody = requestBody
+        networkRequest.url = requestUrl
+        networkRequest.httpMethod = httpMethod.rawValue
+        networkRequest.httpBody = requestBody
         networkRequest.cachePolicy = cachePolicy
         for header in self.headers {
             networkRequest.setValue(header.1, forHTTPHeaderField: header.0)
@@ -583,7 +583,7 @@ public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
         // Send request
         // Use `networkSession` instead of `urlSession` only if using an old version of BMSSecurity that doesn't support BMSURLSession.
         if networkSession != nil {
-            self.networkSession!.dataTaskWithRequest(networkRequest, completionHandler: buildAndSendResponse).resume()
+            self.networkSession!.dataTask(with: networkRequest, completionHandler: buildAndSendResponse).resume()
         }
         else {
             self.urlSession.dataTaskWithRequest(networkRequest, completionHandler: buildAndSendResponse).resume()
@@ -600,25 +600,25 @@ public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
 
         - returns: The original URL with the query parameters appended to it
     */
-    static func append(queryParameters parameters: [String: String], toURL originalUrl: NSURL) -> NSURL? {
+    static func append(queryParameters parameters: [String: String], toURL originalUrl: URL) -> URL? {
     
         if parameters.isEmpty {
             return originalUrl
         }
         
-        var parametersInURLFormat = [NSURLQueryItem]()
+        var parametersInURLFormat = [URLQueryItem]()
         for (key, value) in parameters {
-            parametersInURLFormat += [NSURLQueryItem(name: key, value: value)]
+            parametersInURLFormat += [URLQueryItem(name: key, value: value)]
         }
         
-        if let newUrlComponents = NSURLComponents(URL: originalUrl, resolvingAgainstBaseURL: false) {
+        if let newUrlComponents = URLComponents(url: originalUrl, resolvingAgainstBaseURL: false) {
             if newUrlComponents.queryItems != nil {
-                newUrlComponents.queryItems!.appendContentsOf(parametersInURLFormat)
+                newUrlComponents.queryItems!.append(contentsOf: parametersInURLFormat)
             }
             else {
                 newUrlComponents.queryItems = parametersInURLFormat
             }
-            return newUrlComponents.URL
+            return newUrlComponents.url
         }
         else {
             return nil
@@ -630,13 +630,13 @@ public class BaseRequest: NSObject, NSURLSessionTaskDelegate {
     // MARK: - NSURLSessionTaskDelegate
     
     // Handle HTTP redirection
-    public func URLSession(session: NSURLSession,
-                          task: NSURLSessionTask,
-                          willPerformHTTPRedirection response: NSHTTPURLResponse,
-                          newRequest request: NSURLRequest,
-                          completionHandler: ((NSURLRequest?) -> Void)) {
+    open func urlSession(_ session: URLSession,
+                          task: URLSessionTask,
+                          willPerformHTTPRedirection response: HTTPURLResponse,
+                          newRequest request: URLRequest,
+                          completionHandler: (@escaping (URLRequest?) -> Void)) {
     
-        var redirectRequest: NSURLRequest?
+        var redirectRequest: URLRequest?
         if allowRedirects {
             BaseRequest.logger.debug(message: "Redirecting: " + String(session))
             redirectRequest = request

@@ -396,13 +396,13 @@ public protocol LoggerDelegate {
 
     - Note: The `Logger` class sets an uncaught exception handler to log application crashes. If you wish to set your own exception handler, do so **before** calling `logger(name:)`, or the `Logger` exception handler will be overwritten.
 */
-public class Logger {
+open class Logger {
     
     
     // MARK: Properties
     
     /// The name that identifies this `Logger` instance.
-    public let name: String
+    open let name: String
     
     /// Logs below this severity level will be ignored, so they will not be recorded or printed to the console.
     /// For example, setting the value to `.warn` will record fatal, error, and warn logs, but not info or debug logs.
@@ -410,24 +410,24 @@ public class Logger {
     /// The default value is `LogLevel.debug`.
     ///
     /// Set the value to `LogLevel.none` to turn off all logging.
-    public static var logLevelFilter: LogLevel = LogLevel.debug
+    open static var logLevelFilter: LogLevel = LogLevel.debug
     
     /// If set to `true`, debug logs from Bluemix Mobile Services frameworks will be displayed on the console.
     /// This is useful if you need to debug an issue that you believe is related to Bluemix Mobile Services.
-    public static var isInternalDebugLoggingEnabled: Bool = false
+    open static var isInternalDebugLoggingEnabled: Bool = false
     
     /// Determines whether logs get stored locally on the device.
     /// Must be set to `true` to be able to later send logs to the Mobile Analytics service.
-    public static var isLogStorageEnabled: Bool = false
+    open static var isLogStorageEnabled: Bool = false
     
     /// The maximum file size (in bytes) for log storage.
     /// Logs from `Logger` and logs from `Analytics` are stored in separate files, both of which are limited by `maxLogStoreSize`.
-    public static var maxLogStoreSize: UInt64 = 100000
+    open static var maxLogStoreSize: UInt64 = 100000
     
     /// `True` if the app crashed recently due to an uncaught exception.
     /// `BMSAnalytics` automatically records uncaught exceptions, so there is no need to change the value of this property manually.
     /// It will be set back to `false` after analytics logs are sent to the server with `Analytics.send(completionHandler:)`.
-    public static var isUncaughtExceptionDetected: Bool {
+    open static var isUncaughtExceptionDetected: Bool {
         get {
             return Logger.delegate?.isUncaughtExceptionDetected ?? false
         }
@@ -442,13 +442,13 @@ public class Logger {
     
     // Used to persist all logs to the device's file system and send logs to the Mobile Analytics service.
     // Public access required by BMSAnalytics framework, which is required to initialize this property.
-    public static var delegate: LoggerDelegate?
+    open static var delegate: LoggerDelegate?
     
     // Each logger instance is distinguished only by its "name" property.
     internal static var loggerInstances: [String: Logger] = [:]
     
     // Prefix for all internal logger names.
-    public static let bmsLoggerPrefix = "bmssdk."
+    open static let bmsLoggerPrefix = "bmssdk."
     
     
     
@@ -462,7 +462,7 @@ public class Logger {
 
         - returns: A Logger instance.
     */
-    public static func logger(name identifier: String) -> Logger {
+    open static func logger(name identifier: String) -> Logger {
         
         if let existingLogger = Logger.loggerInstances[identifier] {
             return existingLogger
@@ -475,7 +475,7 @@ public class Logger {
         }
     }
     
-    private init(name: String) {
+    fileprivate init(name: String) {
         self.name = name
     }
 
@@ -487,7 +487,7 @@ public class Logger {
 
         - Note: Do not supply values for the `file`, `function`, or `line` parameters. These parameters take default values to automatically record the file, function, and line in which this method was called.
     */
-    public func debug(message message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    open func debug(message: String, file: String = #file, function: String = #function, line: Int = #line) {
     
         log(message: message, level: LogLevel.debug, calledFile: file, calledFunction: function, calledLineNumber: line)
     }
@@ -499,7 +499,7 @@ public class Logger {
 
         - Note: Do not supply values for the `file`, `function`, or `line` parameters. These parameters take default values to automatically record the file, function, and line in which this method was called.
     */
-    public func info(message message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    open func info(message: String, file: String = #file, function: String = #function, line: Int = #line) {
     
         log(message: message, level: LogLevel.info, calledFile: file, calledFunction: function, calledLineNumber: line)
     }
@@ -511,7 +511,7 @@ public class Logger {
 
         - Note: Do not supply values for the `file`, `function`, or `line` parameters. These parameters take default values to automatically record the file, function, and line in which this method was called.
     */
-    public func warn(message message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    open func warn(message: String, file: String = #file, function: String = #function, line: Int = #line) {
     
         log(message: message, level: LogLevel.warn, calledFile: file, calledFunction: function, calledLineNumber: line)
     }
@@ -523,7 +523,7 @@ public class Logger {
 
         - Note: Do not supply values for the `file`, `function`, or `line` parameters. These parameters take default values to automatically record the file, function, and line in which this method was called.
     */
-    public func error(message message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    open func error(message: String, file: String = #file, function: String = #function, line: Int = #line) {
     
         log(message: message, level: LogLevel.error, calledFile: file, calledFunction: function, calledLineNumber: line)
     }
@@ -535,13 +535,13 @@ public class Logger {
 
         - Note: Do not supply values for the `file`, `function`, or `line` parameters. These parameters take default values to automatically record the file, function, and line in which this method was called.
     */
-    public func fatal(message message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    open func fatal(message: String, file: String = #file, function: String = #function, line: Int = #line) {
     
         log(message: message, level: LogLevel.fatal, calledFile: file, calledFunction: function, calledLineNumber: line)
     }
     
     // Equivalent to the other log methods, but this method accepts data as JSON rather than a string.
-    internal func analytics(metadata metadata: [String: AnyObject], file: String = #file, function: String = #function, line: Int = #line) {
+    internal func analytics(metadata: [String: AnyObject], file: String = #file, function: String = #function, line: Int = #line) {
     
         log(message: "", level: LogLevel.analytics, calledFile: file, calledFunction: function, calledLineNumber: line, additionalMetadata: metadata)
     }
@@ -573,7 +573,7 @@ public class Logger {
     
     // Format: [DEBUG] [bmssdk.logger] logMessage in Logger.swift:234 :: "Some random message".
     // Public access required by BMSAnalytics framework.
-    public static func printLog(message logMessage: String, loggerName: String, level: LogLevel, calledFunction: String, calledFile: String, calledLineNumber: Int) {
+    open static func printLog(message logMessage: String, loggerName: String, level: LogLevel, calledFunction: String, calledFile: String, calledLineNumber: Int) {
         
         // Suppress console log output for apps that are being released to the App Store
         #if !RELEASE_BUILD

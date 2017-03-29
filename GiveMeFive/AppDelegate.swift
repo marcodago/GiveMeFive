@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         // Inizializzo il servizio di Google sign-in
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
         
         GIDSignIn.sharedInstance().delegate = self
         

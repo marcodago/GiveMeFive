@@ -90,7 +90,7 @@ open class BaseUserIdentity: UserIdentity {
 
 
 // This class represents the base user identity class, with default methods and keys
-public class BaseUserIdentity: UserIdentity {
+open class BaseUserIdentity: UserIdentity {
     
     
     public struct Key {
@@ -101,21 +101,21 @@ public class BaseUserIdentity: UserIdentity {
     }
     
     
-    public private(set) var jsonData : [String:String] = ([:])
+    open fileprivate(set) var jsonData : [String:String] = ([:])
     
-    public var ID: String? {
+    open var ID: String? {
         get {
             return jsonData[BaseUserIdentity.Key.ID]
         }
     }
     
-    public var authorizedBy: String? {
+    open var authorizedBy: String? {
         get {
             return jsonData[BaseUserIdentity.Key.authorizedBy]
         }
     }
     
-    public var displayName: String? {
+    open var displayName: String? {
         get {
             return jsonData[BaseUserIdentity.Key.displayName]
         }

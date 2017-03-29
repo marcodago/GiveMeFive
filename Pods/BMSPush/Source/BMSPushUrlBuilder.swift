@@ -203,11 +203,11 @@ import BMSCore
                 pwUrl_ += defaultProtocol
                 pwUrl_ += "://"
                 
-                if BMSClient.sharedInstance.bluemixRegion?.containsString("stage1-test") == true || BMSClient.sharedInstance.bluemixRegion?.containsString("stage1-dev") == true {
+                if BMSClient.sharedInstance.bluemixRegion?.contains("stage1-test") == true || BMSClient.sharedInstance.bluemixRegion?.contains("stage1-dev") == true {
                     
                     pwUrl_ += IMFPUSH
                     pwUrl_ += ".stage1.mybluemix.net"
-                    if BMSClient.sharedInstance.bluemixRegion?.containsString("stage1-test") == true {
+                    if BMSClient.sharedInstance.bluemixRegion?.contains("stage1-test") == true {
                         
                         reWritedomain = "stage1-test.ng.bluemix.net"
                     }
@@ -249,7 +249,7 @@ import BMSCore
             
         }
         
-        func getSubscribedDevicesUrl(devID:String) -> String {
+        func getSubscribedDevicesUrl(_ devID:String) -> String {
             
             var deviceIdUrl:String = getDevicesUrl()
             deviceIdUrl += FORWARDSLASH
@@ -272,7 +272,7 @@ import BMSCore
             return getCollectionUrl(SUBSCRIPTIONS)
         }
         
-        func getAvailableSubscriptionsUrl(deviceId : String) -> String {
+        func getAvailableSubscriptionsUrl(_ deviceId : String) -> String {
             
             var subscriptionURL = getCollectionUrl(SUBSCRIPTIONS)
             subscriptionURL += QUESTIONMARK
@@ -290,7 +290,7 @@ import BMSCore
             return unSubscriptionURL
         }
         
-        func getUnregisterUrl (deviceId : String) -> String {
+        func getUnregisterUrl (_ deviceId : String) -> String {
             
             var deviceUnregisterUrl:String = getDevicesUrl()
             deviceUnregisterUrl += FORWARDSLASH
@@ -299,7 +299,7 @@ import BMSCore
             return deviceUnregisterUrl
         }
     
-        func getSendMessageDeliveryStatus (messageId : String) -> String {
+        func getSendMessageDeliveryStatus (_ messageId : String) -> String {
             
             var sendMessageDeliveryStatusUrl:String = getCollectionUrl(MESSAGES)
             sendMessageDeliveryStatusUrl += FORWARDSLASH
@@ -308,7 +308,7 @@ import BMSCore
         }
 
     
-        internal func getCollectionUrl (collectionName:String) -> String {
+        internal func getCollectionUrl (_ collectionName:String) -> String {
             
             var collectionUrl:String = pwUrl_
             collectionUrl += collectionName

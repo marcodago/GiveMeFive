@@ -122,7 +122,7 @@ public struct RequestMetadata {
 
     
     // The URL of the resource that the request is being sent to.
-    public var url: NSURL?
+    public var url: URL?
     
     // The time at which the request is considered to have started.
     public let startTime: Int64
@@ -131,7 +131,7 @@ public struct RequestMetadata {
     public let trackingId: String
     
     // The response received.
-    public var response: NSURLResponse? = nil
+    public var response: URLResponse? = nil
     
     // The time at which the request is considered complete.
     public var endTime: Int64 = 0
@@ -156,17 +156,17 @@ public struct RequestMetadata {
         var responseMetadata: [String: AnyObject] = [:]
         responseMetadata["$category"] = "network"
         responseMetadata["$trackingid"] = trackingId
-        responseMetadata["$outboundTimestamp"] = NSNumber(longLong: startTime)
-        responseMetadata["$inboundTimestamp"] = NSNumber(longLong: endTime)
-        responseMetadata["$roundTripTime"] = NSNumber(integer: roundTripTime)
-        responseMetadata["$bytesSent"] = NSNumber(longLong: bytesSent)
-        responseMetadata["$bytesReceived"] = NSNumber(longLong: bytesReceived)
+        responseMetadata["$outboundTimestamp"] = NSNumber(value: startTime as Int64)
+        responseMetadata["$inboundTimestamp"] = NSNumber(value: endTime as Int64)
+        responseMetadata["$roundTripTime"] = NSNumber(value: roundTripTime as Int)
+        responseMetadata["$bytesSent"] = NSNumber(value: bytesSent as Int64)
+        responseMetadata["$bytesReceived"] = NSNumber(value: bytesReceived as Int64)
         
         if let urlString = url?.absoluteString {
             responseMetadata["$path"] = urlString
         }
         
-        if let httpResponse = response as? NSHTTPURLResponse {
+        if let httpResponse = response as? HTTPURLResponse {
             responseMetadata["$responseCode"] = httpResponse.statusCode
         }
         
@@ -175,7 +175,7 @@ public struct RequestMetadata {
     
     
     
-    public init(url: NSURL?, startTime: Int64, trackingId: String) {
+    public init(url: URL?, startTime: Int64, trackingId: String) {
         self.url = url
         self.startTime = startTime
         self.trackingId = trackingId

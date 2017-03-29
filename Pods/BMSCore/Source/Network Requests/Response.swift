@@ -107,33 +107,33 @@ public class Response {
 /**
     Contains useful response data from an HTTP request made by the `Request` class.
 */
-public class Response {
+open class Response {
     
     
     // MARK: - Properties
     
     /// The HTTP status of the response.
-    public let statusCode: Int?
+    open let statusCode: Int?
     
     /// HTTP headers from the response.
-    public let headers: [NSObject: AnyObject]?
+    open let headers: [AnyHashable: Any]?
     
     /// The body of the response.
     /// Returns nil if there is no body or the body cannot be converted to a `String`.
-    public let responseText: String?
+    open let responseText: String?
     
     /// The body of the response.
     /// Returns nil if there is no body or if the response is not valid `NSData`.
-    public let responseData: NSData?
+    open let responseData: Data?
     
     /// The response is considered successful if the returned status code is in the 2xx range.
-    public let isSuccessful: Bool
+    open let isSuccessful: Bool
     
     
     
     // MARK: - Properties (internal)
     
-    internal let httpResponse: NSHTTPURLResponse?
+    internal let httpResponse: HTTPURLResponse?
     
     internal let isRedirect: Bool
     
@@ -148,7 +148,7 @@ public class Response {
         - parameter httpResponse: Response object returned from the `NSURLSession` request.
         - parameter isRedirect:   True if the response requires a redirect.
     */
-    public init(responseData: NSData?, httpResponse: NSHTTPURLResponse?, isRedirect: Bool) {
+    public init(responseData: Data?, httpResponse: HTTPURLResponse?, isRedirect: Bool) {
     
         self.isRedirect = isRedirect
         self.httpResponse = httpResponse
@@ -156,7 +156,7 @@ public class Response {
         self.statusCode = httpResponse?.statusCode
         
         self.responseData = responseData
-        if responseData != nil, let responseAsNSString = NSString(data: responseData!, encoding: NSUTF8StringEncoding) {
+        if responseData != nil, let responseAsNSString = NSString(data: responseData!, encoding: String.Encoding.utf8) {
             self.responseText = String(responseAsNSString)
         }
         else {

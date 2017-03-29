@@ -8,7 +8,7 @@
 
 import Foundation
 
-    public class BMSPushClientOptions : NSObject {
+    open class BMSPushClientOptions : NSObject {
         
         var category: [BMSPushNotificationActionCategory]
         

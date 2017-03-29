@@ -162,7 +162,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             
             if esito != nil {
             
-                LBLwifidata = "\(esito)"
+                LBLwifidata = "\(String(describing: esito))"
             }
            
         } else {

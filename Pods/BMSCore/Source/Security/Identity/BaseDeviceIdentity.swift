@@ -112,7 +112,7 @@ open class BaseDeviceIdentity: DeviceIdentity {
     
     
 // This class represents the base device identity class, with default methods and keys
-public class BaseDeviceIdentity: DeviceIdentity {
+open class BaseDeviceIdentity: DeviceIdentity {
     
     
     public struct Key {
@@ -124,29 +124,29 @@ public class BaseDeviceIdentity: DeviceIdentity {
     }
     
     
-    public internal(set) var jsonData: [String:String] = ([:])
+    open internal(set) var jsonData: [String:String] = ([:])
     
-    public var ID: String? {
+    open var ID: String? {
         get {
             return jsonData[BaseDeviceIdentity.Key.ID]
         }
     }
     
-    public var OS: String? {
+    open var OS: String? {
         get {
             return jsonData[BaseDeviceIdentity.Key.OS]
         }
     }
     
     
-    public var OSVersion: String? {
+    open var OSVersion: String? {
         get {
             return jsonData[BaseDeviceIdentity.Key.OSVersion]
         }
     }
     
     
-    public var model: String? {
+    open var model: String? {
         get {
             return jsonData[BaseDeviceIdentity.Key.model]
         }
@@ -161,10 +161,10 @@ public class BaseDeviceIdentity: DeviceIdentity {
             jsonData[BaseDeviceIdentity.Key.OSVersion] = WKInterfaceDevice.currentDevice().systemVersion
             jsonData[BaseDeviceIdentity.Key.model] =  WKInterfaceDevice.currentDevice().model
         #else
-            jsonData[BaseDeviceIdentity.Key.ID] = UIDevice.currentDevice().identifierForVendor?.UUIDString
-            jsonData[BaseDeviceIdentity.Key.OS] =  UIDevice.currentDevice().systemName
-            jsonData[BaseDeviceIdentity.Key.OSVersion] = UIDevice.currentDevice().systemVersion
-            jsonData[BaseDeviceIdentity.Key.model] =  UIDevice.currentDevice().model
+            jsonData[BaseDeviceIdentity.Key.ID] = UIDevice.current.identifierForVendor?.uuidString
+            jsonData[BaseDeviceIdentity.Key.OS] =  UIDevice.current.systemName
+            jsonData[BaseDeviceIdentity.Key.OSVersion] = UIDevice.current.systemVersion
+            jsonData[BaseDeviceIdentity.Key.model] =  UIDevice.current.model
         #endif
     }
     

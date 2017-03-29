@@ -130,7 +130,7 @@ public class BMSClient {
 /**
     A singleton that serves as the entry point to Bluemix client-server communication.
 */
-public class BMSClient {
+open class BMSClient {
     
     
     // MARK: - Constants
@@ -168,26 +168,26 @@ public class BMSClient {
     // MARK: - Properties
     
     /// The singleton that is used for all `BMSClient` activity.
-    public static let sharedInstance = BMSClient()
+    open static let sharedInstance = BMSClient()
     
     /// Specifies the base Bluemix application backend URL.
-    public private(set) var bluemixAppRoute: String?
+    open fileprivate(set) var bluemixAppRoute: String?
     
     /// Specifies the region where the Bluemix service is hosted.
-    public private(set) var bluemixRegion: String?
+    open fileprivate(set) var bluemixRegion: String?
     
     /// Specifies the Bluemix application backend identifier.
-    public private(set) var bluemixAppGUID: String?
+    open fileprivate(set) var bluemixAppGUID: String?
     
     /// Specifies the allowed timeout (in seconds) for all `Request` network requests.
-    public var requestTimeout: Double = 20.0
+    open var requestTimeout: Double = 20.0
     
     
     
     // MARK: - Properties (internal)
     
     // Handles the authentication process for network requests.
-    public var authorizationManager: AuthorizationManager
+    open var authorizationManager: AuthorizationManager
     
     
     
@@ -204,7 +204,7 @@ public class BMSClient {
         - parameter backendAppGUID:            (Optional) The GUID of the Bluemix application.
         - parameter bluemixRegion:             The region where your Bluemix application is hosted. Use one of the `BMSClient.Region` constants.
     */
-    public func initialize(bluemixAppRoute bluemixAppRoute: String? = nil, bluemixAppGUID: String? = nil, bluemixRegion: String...) {
+    open func initialize(bluemixAppRoute: String? = nil, bluemixAppGUID: String? = nil, bluemixRegion: String...) {
     
         self.bluemixAppRoute = bluemixAppRoute
         self.bluemixAppGUID = bluemixAppGUID
@@ -213,7 +213,7 @@ public class BMSClient {
     
     
     // Prevent users from using BMSClient() initializer - They must use BMSClient.sharedInstance
-    private init() {
+    fileprivate init() {
         self.authorizationManager = BaseAuthorizationManager()
     }
     

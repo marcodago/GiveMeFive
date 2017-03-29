@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7A17A6E7BFD00EE3A8A2D692CC837E20"
-               BuildableName = "GoogleToolboxForMac.framework"
-               BlueprintName = "GoogleToolboxForMac"
+               BlueprintIdentifier = "7B3A659776AB2E686EE9CED721A7CEDB"
+               BuildableName = "Pods_GiveMeFive.framework"
+               BlueprintName = "Pods-GiveMeFive"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7A17A6E7BFD00EE3A8A2D692CC837E20"
-            BuildableName = "GoogleToolboxForMac.framework"
-            BlueprintName = "GoogleToolboxForMac"
+            BlueprintIdentifier = "7B3A659776AB2E686EE9CED721A7CEDB"
+            BuildableName = "Pods_GiveMeFive.framework"
+            BlueprintName = "Pods-GiveMeFive"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -49,7 +49,7 @@ open class Request: BaseRequest {
 
     `Request` is functionally equivalent to `BaseRequest`. For more information on how to use `Request`, see the documentation for `BaseRequest`.
 */
-public class Request: BaseRequest {
+open class Request: BaseRequest {
 
     // This is a placeholder for the next major version release, in which BaseRequest will be renamed to Request.
 }
