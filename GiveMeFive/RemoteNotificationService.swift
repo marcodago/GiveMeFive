@@ -13,9 +13,6 @@ import Foundation
 
 class RemoteNotificationService {
     
-//    static private let APPGUID = "50f67e2d-952b-41ea-83a6-ef0af87b2c3e"         // Internal CIO Bluemix instance
-//    static private let clientSecret = "fb50af74-50fd-4a50-9cab-f18072206644"    // Internal CIO Bluemix instance
-    
     static private let APPGUID = "86292849-18c2-437a-8746-4198ba9b46b1"         // External Bluemix instance
     static private let clientSecret = "bbd83621-0f6a-4acf-ac29-2ffdd144cccf"    // External Bluemix instance
     static private let myBMSClient = BMSClient.sharedInstance
@@ -29,10 +26,10 @@ class RemoteNotificationService {
     
     static func registerDeviceToken(_ deviceToken: Data) {
         push.initializeWithAppGUID(appGUID: APPGUID, clientSecret: clientSecret)
-        push.registerWithDeviceToken(deviceToken: deviceToken) { (response, statusCode, error) -> Void in
-//      let userID = String( UserDefaults.standard.string(forKey: "googleuserid")!)
-//      push.registerWithDeviceToken(deviceToken: deviceToken, WithUserId: userID) { response, statusCode, error in
-           
+        //        push.registerWithDeviceToken(deviceToken: deviceToken) { (response, statusCode, error) -> Void in
+        let userID = String( UserDefaults.standard.string(forKey: "googleuserid")!)
+        push.registerWithDeviceToken(deviceToken: deviceToken, WithUserId: userID) { response, statusCode, error in
+            
             if error.isEmpty {
                 print("Response during device registration : \(String(describing: response))")
                 print("status code during device registration : \(String(describing: statusCode))")
