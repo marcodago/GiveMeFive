@@ -73,8 +73,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         for i in 0..<deviceToken.count {
             token += String(format: "%02.2hhx", deviceToken[i] as CVarArg)
         }
-        
         print(token)
+        
+        let payload = "&devicetoken=\(token)"
+        
+        _ = SupportingFunctions.LoadPushTokenIntoCloudantDB(payload: payload)
+
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
