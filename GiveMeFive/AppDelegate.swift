@@ -20,9 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        RemoteNotificationService.initializeAPN()
-                
+        
         // Memorizzo il primo UUID generato e lo riutilizzo per fornire indicazione univoca del device connesso
         let userDefaults = UserDefaults.standard
         var usaTouch: String = "0"
@@ -33,7 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
             userDefaults.set(false, forKey: "switchStateTouch")
             userDefaults.synchronize()
         }
-        
+
+        RemoteNotificationService.initializeAPN()
+
         usaTouch = String(userDefaults.string(forKey: "switchStateTouch")!)
         
         if usaTouch == "1" {
@@ -67,18 +67,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        RemoteNotificationService.registerDeviceToken(deviceToken)
-        print("device Token", deviceToken.base64EncodedString())
-        var token: String = ""
-        for i in 0..<deviceToken.count {
-            token += String(format: "%02.2hhx", deviceToken[i] as CVarArg)
-        }
-        print(token)
-        
-        let payload = "&devicetoken=\(token)"
-        
-        _ = SupportingFunctions.LoadPushTokenIntoCloudantDB(payload: payload)
 
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.object(forKey: "pushenable") == nil {
+            
+            RemoteNotificationService.registerDeviceToken(deviceToken)
+            print("device Token", deviceToken.base64EncodedString())
+            var token: String = ""
+            for i in 0..<deviceToken.count {
+                token += String(format: "%02.2hhx", deviceToken[i] as CVarArg)
+            }
+            
+            let payload = "&devicetoken=\(token)"
+            _ = SupportingFunctions.LoadPushTokenIntoCloudantDB(payload: payload)
+            let pushenable = true
+            userDefaults.set(pushenable, forKey: "pushenable")
+            userDefaults.synchronize()
+        }
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {

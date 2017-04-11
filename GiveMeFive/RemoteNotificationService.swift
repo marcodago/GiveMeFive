@@ -27,7 +27,6 @@ class RemoteNotificationService {
     static func registerDeviceToken(_ deviceToken: Data) {
         
         push.initializeWithAppGUID(appGUID: APPGUID, clientSecret: clientSecret)
-
         push.registerWithDeviceToken(deviceToken: deviceToken) { (response, statusCode, error) -> Void in
             
             if error.isEmpty {

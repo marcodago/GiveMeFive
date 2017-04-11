@@ -156,10 +156,10 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         let xLat = Double(round(10000 * x) / 10000)
         let xLon = Double(round(10000 * y) / 10000)
 
-        let esito = translateMACtoLocation(mac: apMACid)    // to be used to pass AP location
-
         if wifiname == "IBM" {
-            
+
+            let esito = translateMACtoLocation(mac: apMACid)    // to be used to pass AP location
+
             if esito != nil {
             
                 LBLwifidata = "\(String(describing: esito))"
