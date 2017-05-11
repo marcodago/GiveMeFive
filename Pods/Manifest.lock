@@ -1,16 +1,17 @@
 PODS:
-  - BMSAnalyticsAPI (2.2.0)
-  - BMSCore (2.3.1):
+  - BMSAnalyticsAPI (2.2.1)
+  - BMSCore (2.3.2):
     - BMSAnalyticsAPI (~> 2.2)
-  - BMSPush (3.1.1):
+  - BMSPush (3.2.2):
     - BMSCore (~> 2.0)
-  - FirebaseAnalytics (3.7.0):
-    - FirebaseCore (~> 3.5)
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (3.5.2):
+  - FirebaseCore (3.6.0):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (1.0.9)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
   - Google/Core (3.0.3):
     - FirebaseAnalytics (~> 3.2)
   - Google/SignIn (3.0.3):
@@ -46,12 +47,12 @@ DEPENDENCIES:
   - Google/SignIn
 
 SPEC CHECKSUMS:
-  BMSAnalyticsAPI: 2dae02bc3321b944ae947a7d2f0f009d8035f8e7
-  BMSCore: 59a1a6769d398f55b8bd83be647e084812b924e0
-  BMSPush: b438b9c7dba18a9a486cad9cefcf310fcefa7dee
-  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
-  FirebaseCore: a024587e43778508700af8c6b1209f7c4516ba02
-  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  BMSAnalyticsAPI: 2e07dee6452e3cdbdc5fd0ee7362b66a281e3963
+  BMSCore: 30674d30566134125e9bee043ccbea652445ca92
+  BMSPush: 491ac7ca80bf9f4e6be8a664f2525d72dd047be3
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0

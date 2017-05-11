@@ -56,7 +56,7 @@ public enum BMSCoreError: Error {
 /**
     Indicates a failure that occurred within the BMSCore framework.
 */
-public enum BMSCoreError: Int, ErrorProtocol {
+public enum BMSCoreError: Int, ErrorType {
     
     
     /// The URL provided in the `Request` initializer is invalid.

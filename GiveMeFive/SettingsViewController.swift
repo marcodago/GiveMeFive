@@ -64,6 +64,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, NSURLConnec
         saveSwitchesStates()
     }
     
+    @IBOutlet weak var invia: UIButton!
     @IBOutlet var privacyread: UIButton!
     @IBAction func privacypressed(_ sender: AnyObject) {
         let privacyPage = self.storyboard!.instantiateViewController(withIdentifier: "PrivacyVC")
@@ -132,9 +133,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, NSURLConnec
         UserDefaults.standard.synchronize();
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        invia.layer.cornerRadius = 15.0
+        invia.layer.shadowColor = UIColor.black.cgColor
+        invia.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        invia.layer.shadowRadius = 10.0
+        invia.layer.shadowOpacity = 0.8
         
         let switch_positionTouch = String(UserDefaults.standard.string(forKey: "switchStateTouch")!)
         if switch_positionTouch == "1" {

@@ -8,31 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		908C17F50408F32F00A77762 /* Pods_GiveMeFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 889FC8D785419AD37A052763 /* Pods_GiveMeFive.framework */; };
-		9107B0F71CE4C7E1003DC769 /* Two Fingers-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9107B0F61CE4C7E1003DC769 /* Two Fingers-50.png */; };
-		9108DA361E51B41900F01A31 /* touchID.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA351E51B41900F01A31 /* touchID.png */; };
-		9108DA411E51D72500F01A31 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA381E51D72500F01A31 /* Contents.json */; };
-		9108DA421E51D72500F01A31 /* TouchID_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA391E51D72500F01A31 /* TouchID_off.png */; };
-		9108DA431E51D72500F01A31 /* TouchID_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3A1E51D72500F01A31 /* TouchID_off@2x.png */; };
-		9108DA441E51D72500F01A31 /* TouchID_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3B1E51D72500F01A31 /* TouchID_off@3x.png */; };
-		9108DA451E51D72500F01A31 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3D1E51D72500F01A31 /* Contents.json */; };
-		9108DA461E51D72500F01A31 /* TouchID_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3E1E51D72500F01A31 /* TouchID_on.png */; };
-		9108DA471E51D72500F01A31 /* TouchID_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA3F1E51D72500F01A31 /* TouchID_on@2x.png */; };
-		9108DA481E51D72500F01A31 /* TouchID_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9108DA401E51D72500F01A31 /* TouchID_on@3x.png */; };
 		912281A01C4460D500A4F51F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9122819F1C4460D500A4F51F /* WebKit.framework */; };
 		912446421C3EF7EF00B87A7F /* GM5 background.png in Resources */ = {isa = PBXBuildFile; fileRef = 912446381C3EF7EF00B87A7F /* GM5 background.png */; };
-		912446431C3EF7EF00B87A7F /* GM5 Icon big.png in Resources */ = {isa = PBXBuildFile; fileRef = 912446391C3EF7EF00B87A7F /* GM5 Icon big.png */; };
-		912446441C3EF7EF00B87A7F /* GM5 Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9124463A1C3EF7EF00B87A7F /* GM5 Icon.png */; };
 		9127F0F91E3F8682009C2E38 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127F0F81E3F8682009C2E38 /* Utils.swift */; };
+		912F99F11EC48A1400D86EFB /* GM5 Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 912F99F01EC48A1400D86EFB /* GM5 Icon.png */; };
 		913378071E867CE500E35FF1 /* captcha.wav in Resources */ = {isa = PBXBuildFile; fileRef = 913378061E867CE500E35FF1 /* captcha.wav */; };
 		913E02AB1E82EC5B00D1F3CC /* RemoteNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E02AA1E82EC5B00D1F3CC /* RemoteNotificationService.swift */; };
-		9144439D1C6B158400753BD9 /* Checklist-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 914443981C6B158400753BD9 /* Checklist-50.png */; };
-		9144439E1C6B158400753BD9 /* Home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 914443991C6B158400753BD9 /* Home-50.png */; };
-		9144439F1C6B158400753BD9 /* Map Marker-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9144439A1C6B158400753BD9 /* Map Marker-50.png */; };
-		914443A01C6B158400753BD9 /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9144439B1C6B158400753BD9 /* Settings-50.png */; };
-		914443A11C6B158400753BD9 /* Speech Bubble-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9144439C1C6B158400753BD9 /* Speech Bubble-50.png */; };
 		9145DE531E6F038B00F55ED9 /* gm5-ap-seg.json in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE521E6F038B00F55ED9 /* gm5-ap-seg.json */; };
-		914757041CE99AC800E7167F /* Apple Watch Apps-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 914757021CE99AC800E7167F /* Apple Watch Apps-50.png */; };
-		914757051CE99AC800E7167F /* watch-friends-watchos2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 914757031CE99AC800E7167F /* watch-friends-watchos2.jpg */; };
 		91513D401C0A42BC00505E46 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91513D3F1C0A42BC00505E46 /* MapViewController.swift */; };
 		91513D431C0A42BC00505E46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91513D411C0A42BC00505E46 /* Main.storyboard */; };
 		91513D451C0A42BC00505E46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91513D441C0A42BC00505E46 /* Assets.xcassets */; };
@@ -57,21 +39,11 @@
 		919886A61C0C54170082C5E0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919886A51C0C54170082C5E0 /* AddressBookUI.framework */; };
 		919886CC1C0D9BAD0082C5E0 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919886CB1C0D9BAD0082C5E0 /* LocalAuthentication.framework */; };
 		919D01171CAA991E0030FDEB /* SupportingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D01161CAA991E0030FDEB /* SupportingFunctions.swift */; };
-		91B8AFF11CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B8AFEF1CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png */; };
-		91B8AFF21CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B8AFF01CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png */; };
-		91C1A33A1CF44BB100130DA2 /* IBM logo-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C1A3391CF44BB100130DA2 /* IBM logo-50.png */; };
 		91C4F9A21DE5AC4C00B62492 /* TouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C4F9A11DE5AC4C00B62492 /* TouchIDViewController.swift */; };
-		91C865D21CE5208B00538D14 /* Cool-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C865D11CE5208B00538D14 /* Cool-50.png */; };
 		91CC8F3E1DBA54EB00398AFD /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC8F3D1DBA54EB00398AFD /* PrivacyViewController.swift */; };
 		91CC8F401DBA59CD00398AFD /* PrivacyPolicy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 91CC8F3F1DBA59CD00398AFD /* PrivacyPolicy.pdf */; };
-		91D74D3D1CF31F76003AE1F1 /* Camera-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D74D3A1CF31F76003AE1F1 /* Camera-50.png */; };
-		91D74D3E1CF31F76003AE1F1 /* Microphone-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D74D3B1CF31F76003AE1F1 /* Microphone-50.png */; };
-		91D74D3F1CF31F76003AE1F1 /* Swift-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D74D3C1CF31F76003AE1F1 /* Swift-50.png */; };
-		91DCF3CC1CA42E6600AE7F2D /* Busy_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CA1CA42E6600AE7F2D /* Busy_button.png */; };
-		91DCF3CD1CA42E6600AE7F2D /* Free_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CB1CA42E6600AE7F2D /* Free_button.png */; };
 		91DCF3CF1CA5501800AE7F2D /* PWD_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CE1CA5501800AE7F2D /* PWD_help.png */; };
 		91E827101D9D7DEA0046F7D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */; };
-		91FE1DF81C52366A0042627C /* GM5 small-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FE1DF71C52366A0042627C /* GM5 small-Icon.png */; };
 		91FE1DFA1C5238980042627C /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,31 +74,13 @@
 		2ABC11D07C5204B51DD8E9E3 /* Pods-GiveMeFive.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiveMeFive.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive.distribution.xcconfig"; sourceTree = "<group>"; };
 		889FC8D785419AD37A052763 /* Pods_GiveMeFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GiveMeFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F71B0BE03A84FAB3FCA6B1F /* Pods-GiveMeFive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiveMeFive.release.xcconfig"; path = "Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive.release.xcconfig"; sourceTree = "<group>"; };
-		9107B0F61CE4C7E1003DC769 /* Two Fingers-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Two Fingers-50.png"; sourceTree = "<group>"; };
-		9108DA351E51B41900F01A31 /* touchID.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touchID.png; sourceTree = "<group>"; };
-		9108DA381E51D72500F01A31 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		9108DA391E51D72500F01A31 /* TouchID_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TouchID_off.png; sourceTree = "<group>"; };
-		9108DA3A1E51D72500F01A31 /* TouchID_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TouchID_off@2x.png"; sourceTree = "<group>"; };
-		9108DA3B1E51D72500F01A31 /* TouchID_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TouchID_off@3x.png"; sourceTree = "<group>"; };
-		9108DA3D1E51D72500F01A31 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		9108DA3E1E51D72500F01A31 /* TouchID_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TouchID_on.png; sourceTree = "<group>"; };
-		9108DA3F1E51D72500F01A31 /* TouchID_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TouchID_on@2x.png"; sourceTree = "<group>"; };
-		9108DA401E51D72500F01A31 /* TouchID_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TouchID_on@3x.png"; sourceTree = "<group>"; };
 		9122819F1C4460D500A4F51F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		912446381C3EF7EF00B87A7F /* GM5 background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 background.png"; sourceTree = "<group>"; };
-		912446391C3EF7EF00B87A7F /* GM5 Icon big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon big.png"; sourceTree = "<group>"; };
-		9124463A1C3EF7EF00B87A7F /* GM5 Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon.png"; sourceTree = "<group>"; };
 		9127F0F81E3F8682009C2E38 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		912F99F01EC48A1400D86EFB /* GM5 Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon.png"; sourceTree = "<group>"; };
 		913378061E867CE500E35FF1 /* captcha.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = captcha.wav; sourceTree = "<group>"; };
 		913E02AA1E82EC5B00D1F3CC /* RemoteNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationService.swift; sourceTree = "<group>"; };
-		914443981C6B158400753BD9 /* Checklist-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checklist-50.png"; sourceTree = "<group>"; };
-		914443991C6B158400753BD9 /* Home-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50.png"; sourceTree = "<group>"; };
-		9144439A1C6B158400753BD9 /* Map Marker-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map Marker-50.png"; sourceTree = "<group>"; };
-		9144439B1C6B158400753BD9 /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings-50.png"; sourceTree = "<group>"; };
-		9144439C1C6B158400753BD9 /* Speech Bubble-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble-50.png"; sourceTree = "<group>"; };
 		9145DE521E6F038B00F55ED9 /* gm5-ap-seg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "gm5-ap-seg.json"; sourceTree = "<group>"; };
-		914757021CE99AC800E7167F /* Apple Watch Apps-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Apple Watch Apps-50.png"; sourceTree = "<group>"; };
-		914757031CE99AC800E7167F /* watch-friends-watchos2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "watch-friends-watchos2.jpg"; sourceTree = "<group>"; };
 		91513D3F1C0A42BC00505E46 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		91513D421C0A42BC00505E46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91513D441C0A42BC00505E46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,21 +109,11 @@
 		919886A51C0C54170082C5E0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		919886CB1C0D9BAD0082C5E0 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		919D01161CAA991E0030FDEB /* SupportingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportingFunctions.swift; sourceTree = "<group>"; };
-		91B8AFEF1CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon Watch 38mm.png"; sourceTree = "<group>"; };
-		91B8AFF01CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 Icon Watch 42mm.png"; sourceTree = "<group>"; };
-		91C1A3391CF44BB100130DA2 /* IBM logo-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IBM logo-50.png"; sourceTree = "<group>"; };
 		91C4F9A11DE5AC4C00B62492 /* TouchIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDViewController.swift; sourceTree = "<group>"; };
-		91C865D11CE5208B00538D14 /* Cool-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cool-50.png"; sourceTree = "<group>"; };
 		91CC8F3D1DBA54EB00398AFD /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		91CC8F3F1DBA59CD00398AFD /* PrivacyPolicy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = PrivacyPolicy.pdf; path = GiveMeFive/PrivacyPolicy.pdf; sourceTree = "<group>"; };
-		91D74D3A1CF31F76003AE1F1 /* Camera-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera-50.png"; sourceTree = "<group>"; };
-		91D74D3B1CF31F76003AE1F1 /* Microphone-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Microphone-50.png"; sourceTree = "<group>"; };
-		91D74D3C1CF31F76003AE1F1 /* Swift-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Swift-50.png"; sourceTree = "<group>"; };
-		91DCF3CA1CA42E6600AE7F2D /* Busy_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Busy_button.png; path = ../GiveMeFive/Busy_button.png; sourceTree = "<group>"; };
-		91DCF3CB1CA42E6600AE7F2D /* Free_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Free_button.png; path = ../GiveMeFive/Free_button.png; sourceTree = "<group>"; };
 		91DCF3CE1CA5501800AE7F2D /* PWD_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PWD_help.png; sourceTree = "<group>"; };
 		91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		91FE1DF71C52366A0042627C /* GM5 small-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GM5 small-Icon.png"; sourceTree = "<group>"; };
 		91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		DDF4DD70C2A5D2BC82D1BA74 /* Pods-GiveMeFive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiveMeFive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,57 +158,11 @@
 			name = Support;
 			sourceTree = "<group>";
 		};
-		9108DA371E51D72500F01A31 /* TouchID_off.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				9108DA381E51D72500F01A31 /* Contents.json */,
-				9108DA391E51D72500F01A31 /* TouchID_off.png */,
-				9108DA3A1E51D72500F01A31 /* TouchID_off@2x.png */,
-				9108DA3B1E51D72500F01A31 /* TouchID_off@3x.png */,
-			);
-			name = TouchID_off.imageset;
-			path = GiveMeFive/Assets.xcassets/TouchID_off.imageset;
-			sourceTree = SOURCE_ROOT;
-		};
-		9108DA3C1E51D72500F01A31 /* TouchID_on.imageset */ = {
-			isa = PBXGroup;
-			children = (
-				9108DA3D1E51D72500F01A31 /* Contents.json */,
-				9108DA3E1E51D72500F01A31 /* TouchID_on.png */,
-				9108DA3F1E51D72500F01A31 /* TouchID_on@2x.png */,
-				9108DA401E51D72500F01A31 /* TouchID_on@3x.png */,
-			);
-			name = TouchID_on.imageset;
-			path = GiveMeFive/Assets.xcassets/TouchID_on.imageset;
-			sourceTree = SOURCE_ROOT;
-		};
 		912446371C3EF7EF00B87A7F /* images */ = {
 			isa = PBXGroup;
 			children = (
-				9108DA371E51D72500F01A31 /* TouchID_off.imageset */,
-				9108DA3C1E51D72500F01A31 /* TouchID_on.imageset */,
-				9108DA351E51B41900F01A31 /* touchID.png */,
-				91C1A3391CF44BB100130DA2 /* IBM logo-50.png */,
-				91D74D3A1CF31F76003AE1F1 /* Camera-50.png */,
-				91D74D3B1CF31F76003AE1F1 /* Microphone-50.png */,
-				91D74D3C1CF31F76003AE1F1 /* Swift-50.png */,
-				914757021CE99AC800E7167F /* Apple Watch Apps-50.png */,
-				914757031CE99AC800E7167F /* watch-friends-watchos2.jpg */,
-				91C865D11CE5208B00538D14 /* Cool-50.png */,
-				9107B0F61CE4C7E1003DC769 /* Two Fingers-50.png */,
-				91B8AFEF1CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png */,
-				91B8AFF01CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png */,
+				912F99F01EC48A1400D86EFB /* GM5 Icon.png */,
 				91DCF3CE1CA5501800AE7F2D /* PWD_help.png */,
-				914443991C6B158400753BD9 /* Home-50.png */,
-				9144439A1C6B158400753BD9 /* Map Marker-50.png */,
-				9144439C1C6B158400753BD9 /* Speech Bubble-50.png */,
-				9144439B1C6B158400753BD9 /* Settings-50.png */,
-				914443981C6B158400753BD9 /* Checklist-50.png */,
-				91FE1DF71C52366A0042627C /* GM5 small-Icon.png */,
-				91DCF3CA1CA42E6600AE7F2D /* Busy_button.png */,
-				91DCF3CB1CA42E6600AE7F2D /* Free_button.png */,
-				912446391C3EF7EF00B87A7F /* GM5 Icon big.png */,
-				9124463A1C3EF7EF00B87A7F /* GM5 Icon.png */,
 				912446381C3EF7EF00B87A7F /* GM5 background.png */,
 			);
 			path = images;
@@ -435,44 +333,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				912446441C3EF7EF00B87A7F /* GM5 Icon.png in Resources */,
-				914757041CE99AC800E7167F /* Apple Watch Apps-50.png in Resources */,
-				91D74D3E1CF31F76003AE1F1 /* Microphone-50.png in Resources */,
-				914757051CE99AC800E7167F /* watch-friends-watchos2.jpg in Resources */,
+				912F99F11EC48A1400D86EFB /* GM5 Icon.png in Resources */,
 				912446421C3EF7EF00B87A7F /* GM5 background.png in Resources */,
 				91DCF3CF1CA5501800AE7F2D /* PWD_help.png in Resources */,
-				9108DA361E51B41900F01A31 /* touchID.png in Resources */,
-				91D74D3F1CF31F76003AE1F1 /* Swift-50.png in Resources */,
 				91513D561C0A461200505E46 /* LaunchScreen.storyboard in Resources */,
 				91513D451C0A42BC00505E46 /* Assets.xcassets in Resources */,
-				91DCF3CD1CA42E6600AE7F2D /* Free_button.png in Resources */,
-				9108DA481E51D72500F01A31 /* TouchID_on@3x.png in Resources */,
-				9108DA411E51D72500F01A31 /* Contents.json in Resources */,
-				914443A11C6B158400753BD9 /* Speech Bubble-50.png in Resources */,
-				91D74D3D1CF31F76003AE1F1 /* Camera-50.png in Resources */,
 				91CC8F401DBA59CD00398AFD /* PrivacyPolicy.pdf in Resources */,
 				91513D431C0A42BC00505E46 /* Main.storyboard in Resources */,
 				91E827101D9D7DEA0046F7D8 /* GoogleService-Info.plist in Resources */,
-				91DCF3CC1CA42E6600AE7F2D /* Busy_button.png in Resources */,
-				91C865D21CE5208B00538D14 /* Cool-50.png in Resources */,
-				9108DA461E51D72500F01A31 /* TouchID_on.png in Resources */,
 				913378071E867CE500E35FF1 /* captcha.wav in Resources */,
 				9145DE531E6F038B00F55ED9 /* gm5-ap-seg.json in Resources */,
-				91B8AFF21CDBDD4E009BA125 /* GM5 Icon Watch 42mm.png in Resources */,
-				9108DA471E51D72500F01A31 /* TouchID_on@2x.png in Resources */,
-				9108DA451E51D72500F01A31 /* Contents.json in Resources */,
-				91FE1DF81C52366A0042627C /* GM5 small-Icon.png in Resources */,
-				91C1A33A1CF44BB100130DA2 /* IBM logo-50.png in Resources */,
-				9144439E1C6B158400753BD9 /* Home-50.png in Resources */,
-				9144439F1C6B158400753BD9 /* Map Marker-50.png in Resources */,
-				914443A01C6B158400753BD9 /* Settings-50.png in Resources */,
-				9108DA431E51D72500F01A31 /* TouchID_off@2x.png in Resources */,
-				9108DA441E51D72500F01A31 /* TouchID_off@3x.png in Resources */,
-				9107B0F71CE4C7E1003DC769 /* Two Fingers-50.png in Resources */,
-				9108DA421E51D72500F01A31 /* TouchID_off.png in Resources */,
-				912446431C3EF7EF00B87A7F /* GM5 Icon big.png in Resources */,
-				91B8AFF11CDBDD4E009BA125 /* GM5 Icon Watch 38mm.png in Resources */,
-				9144439D1C6B158400753BD9 /* Checklist-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

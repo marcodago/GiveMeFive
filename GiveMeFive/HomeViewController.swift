@@ -156,7 +156,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 
         super.viewDidLoad()
         
-        nome.text = String( describing: UserDefaults.standard.object(forKey: "googlename")! )
+        nome.text = "Ciao " + String( describing: UserDefaults.standard.object(forKey: "googlename")! )
         
         if UserDefaults.standard.string(forKey: "storedrole") != nil {
             role.text = "sei registrato come " + String( UserDefaults.standard.string(forKey: "storedrole")!)
@@ -186,7 +186,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     override func viewWillAppear(_ animated: Bool) {
         
-        nome.text = String( describing: UserDefaults.standard.object(forKey: "googlename")! )
+        nome.text = "Ciao " + String( describing: UserDefaults.standard.object(forKey: "googlename")! )
         
         if UserDefaults.standard.string(forKey: "storedrole") != nil {
             role.text = "sei registrato come " + String( UserDefaults.standard.string(forKey: "storedrole")!)

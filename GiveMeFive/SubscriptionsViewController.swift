@@ -38,6 +38,7 @@ class SubscriptionsViewController: UIViewController, UITextFieldDelegate, NSURLC
         }
     }
     
+    @IBOutlet weak var sottoscrivi: UIButton!
     @IBAction func subscribe_clicked(_ sender: UIButton) {
         
         //Inizializzo i parametri di indirizzo e tipologia del POST
@@ -273,6 +274,13 @@ class SubscriptionsViewController: UIViewController, UITextFieldDelegate, NSURLC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sottoscrivi.layer.cornerRadius = 15.0
+        sottoscrivi.layer.shadowColor = UIColor.black.cgColor
+        sottoscrivi.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        sottoscrivi.layer.shadowRadius = 10.0
+        sottoscrivi.layer.shadowOpacity = 0.8
+
         
         switchPreloadValues()
         

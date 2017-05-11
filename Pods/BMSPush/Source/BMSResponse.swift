@@ -14,65 +14,66 @@
 import UIKit
 import BMSCore
 
+// MARK: - Swift 3
+
 #if swift(>=3.0)
+
+/**
+     This is the extension of `Response` class in the `BMSCore`.
+     It is used to handle the responses from the push REST API calls.
+ */
+public extension Response {
+    
+    // MARK: Methods (Only for using in BMSPushClient)
     
     /**
-     This is the extension of `Response` class in the `BMSCore`.
+     This methode will convert the response that get while calling the `retrieveSubscriptionsWithCompletionHandler` in `BMSPushClient' class into an array of Tags and send to the Client app.
      
-     It is used to handle the responses from the push REST API calls.
+     This will use the public property `responseText` in the `Response` Class.
      */
-    public extension Response {
+    public func subscriptions() -> NSMutableArray {
         
-        // MARK: Methods (Only for using in BMSPushClient)
         
-        /**
-         This methode will convert the response that get while calling the `retrieveSubscriptionsWithCompletionHandler` in `BMSPushClient' class into an array of Tags and send to the Client app.
-         
-         This will use the public property `responseText` in the `Response` Class.
-         */
-        public func subscriptions() -> NSMutableArray {
+        // let finalSubscription = NSMutableDictionary()
+        
+        let subscription = NSMutableArray()
+        
+        if  let  subscriptionDictionary = convertStringToDictionary(text: self.responseText!) as NSDictionary? {
             
-            
-            // let finalSubscription = NSMutableDictionary()
-            
-            let subscription = NSMutableArray()
-            
-            if  let  subscriptionDictionary = convertStringToDictionary(text: self.responseText!)! as NSDictionary? {
+            if let subscriptionArray:NSArray = subscriptionDictionary.object(forKey: IMFPUSH_SUBSCRIPTIONS) as? NSArray {
                 
-                if let subscriptionArray:NSArray = subscriptionDictionary.object(forKey: IMFPUSH_SUBSCRIPTIONS) as? NSArray{
+                
+                var subscriptionResponsDic:NSDictionary?
+                
+                for  i in 0..<subscriptionArray.count {
                     
+                    subscriptionResponsDic = subscriptionArray.object(at: i) as? NSDictionary
                     
-                    var subscriptionResponsDic:NSDictionary?
-                    
-                    for  i in 0..<subscriptionArray.count {
-                        
-                        subscriptionResponsDic = subscriptionArray.object(at: i) as? NSDictionary
-                        
-                        subscription.add((subscriptionResponsDic?.object(forKey: IMFPUSH_TAGNAME))!)
-                    }
+                    subscription.add((subscriptionResponsDic?.object(forKey: IMFPUSH_TAGNAME))!)
                 }
-                
-                
-                //finalSubscription.setObject(subscription, forKey: IMFPUSH_SUBSCRIPTIONS)
             }
             
             
-            
-            return subscription;
-            
+            //finalSubscription.setObject(subscription, forKey: IMFPUSH_SUBSCRIPTIONS)
         }
         
-        /**
-         This methode will convert the response that get while calling the `subscribeToTags` in `BMSPushClient' class into an Dictionary of details and send to the Client app.
-         
-         This will use the public property `responseText` in the `Response` Class.
-         */
-        public func subscribeStatus() -> NSMutableDictionary {
-            
-            
-            let finalDict = NSMutableDictionary()
-            
-            let  subscriptions = convertStringToDictionary(text: self.responseText!)! as NSDictionary
+        
+        
+        return subscription;
+        
+    }
+    
+    /**
+     This methode will convert the response that get while calling the `subscribeToTags` in `BMSPushClient' class into an Dictionary of details and send to the Client app.
+     
+     This will use the public property `responseText` in the `Response` Class.
+     */
+    public func subscribeStatus() -> NSMutableDictionary {
+        
+        
+        let finalDict = NSMutableDictionary()
+        
+        if let subscriptions:NSDictionary = convertStringToDictionary(text: self.responseText!) as NSDictionary? {
             
             if let arraySub:NSArray = subscriptions.object(forKey: IMFPUSH_SUBSCRIPTIONEXISTS) as? NSArray {
                 
@@ -89,21 +90,22 @@ import BMSCore
                 
                 finalDict.setObject(arraySub, forKey:IMFPUSH_SUBSCRIPTIONS as NSCopying)
             }
-            
-            return finalDict;
         }
+        return finalDict;
+    }
+    
+    /**
+     This methode will convert the response that get while calling the `unsubscribeFromTags` in `BMSPushClient' class into an Dictionary of details and send to the Client app.
+     
+     This will use the public property `responseText` in the `Response` Class.
+     */
+    public func unsubscribeStatus() -> NSMutableDictionary {
         
-        /**
-         This methode will convert the response that get while calling the `unsubscribeFromTags` in `BMSPushClient' class into an Dictionary of details and send to the Client app.
-         
-         This will use the public property `responseText` in the `Response` Class.
-         */
-        public func unsubscribeStatus() -> NSMutableDictionary {
+        
+        let finalDict = NSMutableDictionary()
+        
+        if let subscriptions:NSDictionary = convertStringToDictionary(text: self.responseText!) as NSDictionary? {
             
-            
-            let finalDict = NSMutableDictionary()
-            
-            let  subscriptions = convertStringToDictionary(text: self.responseText!)! as NSDictionary
             
             if let arraySub:NSArray = subscriptions.object(forKey: IMFPUSH_SUBSCRIPTIONEXISTS) as? NSArray {
                 
@@ -121,20 +123,20 @@ import BMSCore
                 
                 finalDict.setObject(arraySub, forKey:IMFPUSH_SUBSCRIPTIONS as NSCopying)
             }
-            
-            return finalDict;
         }
+        return finalDict;
+    }
+    
+    /**
+     This methode will convert the response that get while calling the `retrieveAvailableTagsWithCompletionHandler` in `BMSPushClient' class into an array and send to the Client app.
+     
+     This will use the public property `responseText` in the `Response` Class.
+     */
+    public func availableTags() -> NSMutableArray {
         
-        /**
-         This methode will convert the response that get while calling the `retrieveAvailableTagsWithCompletionHandler` in `BMSPushClient' class into an array and send to the Client app.
-         
-         This will use the public property `responseText` in the `Response` Class.
-         */
-        public func availableTags() -> NSMutableArray {
-            
-            let tags = NSMutableArray()
-            
-            let  tagsDictionary = convertStringToDictionary(text: self.responseText!)! as NSDictionary
+        let tags = NSMutableArray()
+        
+        if let tagsDictionary:NSDictionary = convertStringToDictionary(text: self.responseText!) as NSDictionary? {
             
             if let tag:NSArray = tagsDictionary.object(forKey: IMFPUSH_TAGS) as? NSArray {
                 
@@ -148,166 +150,186 @@ import BMSCore
                     
                 }
             }
-            
-            return tags;
         }
-        
-        
-        private func convertStringToDictionary(text: String) -> [String:AnyObject]? {
-            if let data = text.data(using: String.Encoding.utf8) {
-                
-                return try! JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-            }
-            return nil
-        }
+        return tags;
     }
     
+    
+    private func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+        if let data = text.data(using: String.Encoding.utf8) {
+            
+            guard let result = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject] else {
+                return [:]
+            }
+            return result
+        }
+        return [:]
+    }
+}
+
+
+
+
+
+
+/**************************************************************************************************/
+
+
+
+
+
+// MARK: - Swift 2
+
 #else
+
+/**
+    This is the extension of `Response` class in the `BMSCore`.
+    It is used to handle the responses from the push REST API calls.
+*/
+public extension Response {
+    
+    // MARK: Methods (Only for using in BMSPushClient)
     
     /**
-     This is the extension of `Response` class in the `BMSCore`.
+     This methode will convert the response that get while calling the `retrieveSubscriptionsWithCompletionHandler` in `BMSPushClient' class into an array of Tags and send to the Client app.
      
-     It is used to handle the responses from the push REST API calls.
+     This will use the public property `responseText` in the `Response` Class.
      */
-    public extension Response {
+    public func subscriptions() -> NSMutableArray {
         
-        // MARK: Methods (Only for using in BMSPushClient)
         
-        /**
-         This methode will convert the response that get while calling the `retrieveSubscriptionsWithCompletionHandler` in `BMSPushClient' class into an array of Tags and send to the Client app.
-         
-         This will use the public property `responseText` in the `Response` Class.
-         */
-        public func subscriptions() -> NSMutableArray {
+        // let finalSubscription = NSMutableDictionary()
+        
+        let subscription = NSMutableArray()
+        
+        if  let  subscriptionDictionary:NSDictionary = convertStringToDictionary(self.responseText!)! as NSDictionary {
             
-            
-            // let finalSubscription = NSMutableDictionary()
-            
-            let subscription = NSMutableArray()
-            
-            if  let  subscriptionDictionary:NSDictionary = convertStringToDictionary(self.responseText!)! as NSDictionary {
+            if let subscriptionArray:NSArray = subscriptionDictionary.objectForKey(IMFPUSH_SUBSCRIPTIONS) as? NSArray {
                 
-                if let subscriptionArray:NSArray = subscriptionDictionary.object(forKey: IMFPUSH_SUBSCRIPTIONS) as? NSArray{
+                
+                var subscriptionResponsDic:NSDictionary?
+                
+                for  i in 0..<subscriptionArray.count {
                     
+                    subscriptionResponsDic = subscriptionArray.objectAtIndex(i) as? NSDictionary
                     
-                    var subscriptionResponsDic:NSDictionary?
-                    
-                    for  i in 0..<subscriptionArray.count {
-                        
-                        subscriptionResponsDic = subscriptionArray.object(at: i) as? NSDictionary
-                        
-                        subscription.add((subscriptionResponsDic?.object(forKey: IMFPUSH_TAGNAME))!)
-                    }
+                    subscription.addObject((subscriptionResponsDic?.objectForKey(IMFPUSH_TAGNAME))!)
                 }
-                
-                
-                //finalSubscription.setObject(subscription, forKey: IMFPUSH_SUBSCRIPTIONS)
             }
             
             
-            
-            return subscription;
-            
+            //finalSubscription.setObject(subscription, forKey: IMFPUSH_SUBSCRIPTIONS)
         }
         
-        /**
-         This methode will convert the response that get while calling the `subscribeToTags` in `BMSPushClient' class into an Dictionary of details and send to the Client app.
-         
-         This will use the public property `responseText` in the `Response` Class.
-         */
-        public func subscribeStatus() -> NSMutableDictionary {
+        
+        
+        return subscription;
+        
+    }
+    
+    /**
+     This methode will convert the response that get while calling the `subscribeToTags` in `BMSPushClient' class into an Dictionary of details and send to the Client app.
+     
+     This will use the public property `responseText` in the `Response` Class.
+     */
+    public func subscribeStatus() -> NSMutableDictionary {
+        
+        
+        let finalDict = NSMutableDictionary()
+        
+        if let subscriptions:NSDictionary = convertStringToDictionary(self.responseText!)! as NSDictionary {
             
-            
-            let finalDict = NSMutableDictionary()
-            
-            let  subscriptions = convertStringToDictionary(self.responseText!)! as NSDictionary
-            
-            if let arraySub:NSArray = subscriptions.object(forKey: IMFPUSH_SUBSCRIPTIONEXISTS) as? NSArray {
+            if let arraySub:NSArray = subscriptions.objectForKey(IMFPUSH_SUBSCRIPTIONEXISTS) as? NSArray {
                 
                 finalDict.setObject(arraySub, forKey:IMFPUSH_SUBSCRIPTIONEXISTS)
                 
             }
-            if let dictionarySub:NSDictionary = subscriptions.object(forKey: IMFPUSH_TAGSNOTFOUND) as? NSDictionary {
+            if let dictionarySub:NSDictionary = subscriptions.objectForKey(IMFPUSH_TAGSNOTFOUND) as? NSDictionary {
                 
                 
                 finalDict.setObject(dictionarySub, forKey:IMFPUSH_TAGSNOTFOUND)
                 
             }
-            if let arraySub:NSArray = subscriptions.object(forKey: IMFPUSH_SUBSCRIBED) as? NSArray {
+            if let arraySub:NSArray = subscriptions.objectForKey(IMFPUSH_SUBSCRIBED) as? NSArray {
                 
                 finalDict.setObject(arraySub, forKey:IMFPUSH_SUBSCRIPTIONS)
             }
-            
-            return finalDict;
         }
         
-        /**
-         This methode will convert the response that get while calling the `unsubscribeFromTags` in `BMSPushClient' class into an Dictionary of details and send to the Client app.
-         
-         This will use the public property `responseText` in the `Response` Class.
-         */
-        public func unsubscribeStatus() -> NSMutableDictionary {
+        return finalDict;
+    }
+    
+    /**
+     This methode will convert the response that get while calling the `unsubscribeFromTags` in `BMSPushClient' class into an Dictionary of details and send to the Client app.
+     
+     This will use the public property `responseText` in the `Response` Class.
+     */
+    public func unsubscribeStatus() -> NSMutableDictionary {
+        
+        
+        let finalDict = NSMutableDictionary()
+        
+        if let subscriptions:NSDictionary = convertStringToDictionary(self.responseText!)! as NSDictionary {
             
-            
-            let finalDict = NSMutableDictionary()
-            
-            let  subscriptions = convertStringToDictionary(self.responseText!)! as NSDictionary
-            
-            if let arraySub:NSArray = subscriptions.object(forKey: IMFPUSH_SUBSCRIPTIONEXISTS) as? NSArray {
+            if let arraySub:NSArray = subscriptions.objectForKey(IMFPUSH_SUBSCRIPTIONEXISTS) as? NSArray {
                 
                 
                 finalDict.setObject(arraySub, forKey:IMFPUSH_SUBSCRIPTIONEXISTS)
                 
             }
-            if let dictionarySub:NSDictionary = subscriptions.object(forKey: IMFPUSH_TAGSNOTFOUND) as? NSDictionary {
+            if let dictionarySub:NSDictionary = subscriptions.objectForKey(IMFPUSH_TAGSNOTFOUND) as? NSDictionary {
                 
                 
                 finalDict.setObject(dictionarySub, forKey:IMFPUSH_TAGSNOTFOUND)
                 
             }
-            if let arraySub:NSArray = subscriptions.object(forKey: IMFPUSH_SUBSCRIBED) as? NSArray {
+            if let arraySub:NSArray = subscriptions.objectForKey(IMFPUSH_SUBSCRIBED) as? NSArray {
                 
                 finalDict.setObject(arraySub, forKey:IMFPUSH_SUBSCRIPTIONS)
             }
-            
-            return finalDict;
         }
+        return finalDict;
+    }
+    
+    /**
+     This methode will convert the response that get while calling the `retrieveAvailableTagsWithCompletionHandler` in `BMSPushClient' class into an array and send to the Client app.
+     
+     This will use the public property `responseText` in the `Response` Class.
+     */
+    public func availableTags() -> NSMutableArray {
         
-        /**
-         This methode will convert the response that get while calling the `retrieveAvailableTagsWithCompletionHandler` in `BMSPushClient' class into an array and send to the Client app.
-         
-         This will use the public property `responseText` in the `Response` Class.
-         */
-        public func availableTags() -> NSMutableArray {
+        let tags = NSMutableArray()
+        
+        if let tagsDictionary:NSDictionary = convertStringToDictionary(self.responseText!)! as NSDictionary {
             
-            let tags = NSMutableArray()
-            
-            let  tagsDictionary = convertStringToDictionary(self.responseText!)! as NSDictionary
-            
-            if let tag:NSArray = tagsDictionary.object(forKey: IMFPUSH_TAGS) as? NSArray {
+            if let tag:NSArray = tagsDictionary.objectForKey(IMFPUSH_TAGS) as? NSArray {
                 
                 var tagResponseDic:NSDictionary?
                 
                 for  i in 0..<tag.count {
                     
-                    tagResponseDic = tag.object(at: i) as? NSDictionary
+                    tagResponseDic = tag.objectAtIndex(i) as? NSDictionary
                     
-                    tags.add((tagResponseDic?.object(forKey: IMFPUSH_NAME))!)
+                    tags.addObject((tagResponseDic?.objectForKey(IMFPUSH_NAME))!)
                     
                 }
             }
-            
-            return tags;
         }
         
-        
-        fileprivate func convertStringToDictionary(_ text: String) -> [String:AnyObject]? {
-            if let data = text.data(using: String.Encoding.utf8) {
-                
-                return try! JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-            }
-            return nil
-        }
+        return tags;
     }
     
+    
+    private func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+        if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
+            
+            guard let result = try? NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject] else {
+                return [:]
+            }
+            return result!
+        }
+        return [:]
+    }
+}
+
 #endif

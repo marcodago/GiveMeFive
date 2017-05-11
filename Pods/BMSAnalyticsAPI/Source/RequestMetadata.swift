@@ -52,10 +52,10 @@ public struct RequestMetadata {
     // Combines all of the metadata into a single JSON object
     public var combinedMetadata: [String: Any] {
         
-        var roundTripTime = 0
+        var roundTripTime: Int64 = 0
         // If this is not true, that means some BMSCore developer forgot to set the endTime somewhere
         if endTime > startTime {
-            roundTripTime = endTime - startTime
+            (roundTripTime, _) = Int64.subtractWithOverflow(endTime, startTime)
         }
         
         // Data for analytics logging
@@ -122,7 +122,7 @@ public struct RequestMetadata {
 
     
     // The URL of the resource that the request is being sent to.
-    public var url: URL?
+    public var url: NSURL?
     
     // The time at which the request is considered to have started.
     public let startTime: Int64
@@ -131,7 +131,7 @@ public struct RequestMetadata {
     public let trackingId: String
     
     // The response received.
-    public var response: URLResponse? = nil
+    public var response: NSURLResponse? = nil
     
     // The time at which the request is considered complete.
     public var endTime: Int64 = 0
@@ -156,17 +156,17 @@ public struct RequestMetadata {
         var responseMetadata: [String: AnyObject] = [:]
         responseMetadata["$category"] = "network"
         responseMetadata["$trackingid"] = trackingId
-        responseMetadata["$outboundTimestamp"] = NSNumber(value: startTime as Int64)
-        responseMetadata["$inboundTimestamp"] = NSNumber(value: endTime as Int64)
-        responseMetadata["$roundTripTime"] = NSNumber(value: roundTripTime as Int)
-        responseMetadata["$bytesSent"] = NSNumber(value: bytesSent as Int64)
-        responseMetadata["$bytesReceived"] = NSNumber(value: bytesReceived as Int64)
+        responseMetadata["$outboundTimestamp"] = NSNumber(longLong: startTime)
+        responseMetadata["$inboundTimestamp"] = NSNumber(longLong: endTime)
+        responseMetadata["$roundTripTime"] = NSNumber(integer: roundTripTime)
+        responseMetadata["$bytesSent"] = NSNumber(longLong: bytesSent)
+        responseMetadata["$bytesReceived"] = NSNumber(longLong: bytesReceived)
         
         if let urlString = url?.absoluteString {
             responseMetadata["$path"] = urlString
         }
         
-        if let httpResponse = response as? HTTPURLResponse {
+        if let httpResponse = response as? NSHTTPURLResponse {
             responseMetadata["$responseCode"] = httpResponse.statusCode
         }
         
@@ -175,7 +175,7 @@ public struct RequestMetadata {
     
     
     
-    public init(url: URL?, startTime: Int64, trackingId: String) {
+    public init(url: NSURL?, startTime: Int64, trackingId: String) {
         self.url = url
         self.startTime = startTime
         self.trackingId = trackingId
