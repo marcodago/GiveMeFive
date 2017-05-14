@@ -45,6 +45,9 @@
 		91DCF3CF1CA5501800AE7F2D /* PWD_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CE1CA5501800AE7F2D /* PWD_help.png */; };
 		91E827101D9D7DEA0046F7D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */; };
 		91FE1DFA1C5238980042627C /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */; };
+		91FF8EB71EC59C7A0062C9C1 /* green-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FF8EB51EC59C7A0062C9C1 /* green-light.png */; };
+		91FF8EB81EC59C7A0062C9C1 /* red-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FF8EB61EC59C7A0062C9C1 /* red-light.png */; };
+		91FF8EBA1EC5A0D60062C9C1 /* touchID.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FF8EB91EC5A0D60062C9C1 /* touchID.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -115,6 +118,9 @@
 		91DCF3CE1CA5501800AE7F2D /* PWD_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PWD_help.png; sourceTree = "<group>"; };
 		91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		91FF8EB51EC59C7A0062C9C1 /* green-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-light.png"; sourceTree = "<group>"; };
+		91FF8EB61EC59C7A0062C9C1 /* red-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-light.png"; sourceTree = "<group>"; };
+		91FF8EB91EC5A0D60062C9C1 /* touchID.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touchID.png; sourceTree = "<group>"; };
 		DDF4DD70C2A5D2BC82D1BA74 /* Pods-GiveMeFive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GiveMeFive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GiveMeFive/Pods-GiveMeFive.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +167,9 @@
 		912446371C3EF7EF00B87A7F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				91FF8EB91EC5A0D60062C9C1 /* touchID.png */,
+				91FF8EB51EC59C7A0062C9C1 /* green-light.png */,
+				91FF8EB61EC59C7A0062C9C1 /* red-light.png */,
 				912F99F01EC48A1400D86EFB /* GM5 Icon.png */,
 				91DCF3CE1CA5501800AE7F2D /* PWD_help.png */,
 				912446381C3EF7EF00B87A7F /* GM5 background.png */,
@@ -333,13 +342,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FF8EB71EC59C7A0062C9C1 /* green-light.png in Resources */,
 				912F99F11EC48A1400D86EFB /* GM5 Icon.png in Resources */,
 				912446421C3EF7EF00B87A7F /* GM5 background.png in Resources */,
+				91FF8EBA1EC5A0D60062C9C1 /* touchID.png in Resources */,
 				91DCF3CF1CA5501800AE7F2D /* PWD_help.png in Resources */,
 				91513D561C0A461200505E46 /* LaunchScreen.storyboard in Resources */,
 				91513D451C0A42BC00505E46 /* Assets.xcassets in Resources */,
 				91CC8F401DBA59CD00398AFD /* PrivacyPolicy.pdf in Resources */,
 				91513D431C0A42BC00505E46 /* Main.storyboard in Resources */,
+				91FF8EB81EC59C7A0062C9C1 /* red-light.png in Resources */,
 				91E827101D9D7DEA0046F7D8 /* GoogleService-Info.plist in Resources */,
 				913378071E867CE500E35FF1 /* captcha.wav in Resources */,
 				9145DE531E6F038B00F55ED9 /* gm5-ap-seg.json in Resources */,

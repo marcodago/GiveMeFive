@@ -23,8 +23,11 @@ struct Platform {
 
 class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate, NSURLConnectionDelegate {
     
+    var infraOK: Bool = true
     var esito: Bool = false
     
+    // Check infrastructure availability
+    @IBOutlet weak var availableBmix: UILabel!
     
     @IBOutlet weak var role: UILabel!
     @IBOutlet weak var nome: UILabel!
@@ -150,11 +153,24 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     override func viewDidLoad() {
         
         if #available(iOS 10, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in }
+            UNUserNotificationCenter.current().requestAuthorization(options:[.alert, .sound]) { (granted, error) in }
             UIApplication.shared.registerForRemoteNotifications()
         }
 
         super.viewDidLoad()
+        
+        if infraOK == true {
+            
+            availableBmix.text = "Infrastruttura Bluemix operativa"
+            availableBmix.textColor = UIColor(ciColor: .blue() )
+            
+        } else {
+            
+            availableBmix.text = "Infrastruttura Bluemix non disponibile"
+            availableBmix.textColor = UIColor(ciColor: .red() )
+ 
+        }
+
         
         nome.text = "Ciao " + String( describing: UserDefaults.standard.object(forKey: "googlename")! )
         
@@ -193,7 +209,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         } else {
             role.text = "registra il tuo ruolo"
         }
-        
+                
     }
     
     func saveCurrentLocation(_ center:CLLocationCoordinate2D){

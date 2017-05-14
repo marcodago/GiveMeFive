@@ -79,6 +79,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, NSURLConnec
         print("Email:\(Field_Email.text!)")
         print("EmpCode:\(Field_EmployeeCode.text!)")
         print("Company:\(Field_Company.text!)")
+        print("Mobile:\(Field_Mobile.text!)")
         print("EmergPhone:\(Field_EmergencyPhone.text!)")
         print("EmergContact:\(Field_EmergencyContact.text!)")
         
