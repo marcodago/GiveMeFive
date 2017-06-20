@@ -158,7 +158,9 @@ class HomeViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         }
 
         super.viewDidLoad()
-        
+      
+      UIApplication.shared.applicationIconBadgeNumber = 0
+      
         if infraOK == true {
             
             availableBmix.text = "Infrastruttura Bluemix operativa"

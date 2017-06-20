@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="m0c-bB-ho4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="m0c-bB-ho4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -910,7 +910,7 @@
         <!--Chat View Controller-->
         <scene sceneID="zdy-W1-kKY">
             <objects>
-                <viewController storyboardIdentifier="ChatVC" title="Messaggi" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" id="GP2-6i-81M" userLabel="Chat View Controller" customClass="ChatViewController" customModule="GiveMeFive" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatVC" title="Messaggi" extendedLayoutIncludesOpaqueBars="YES" modalTransitionStyle="flipHorizontal" id="GP2-6i-81M" userLabel="Chat View Controller" customClass="ChatViewController" customModule="GiveMeFive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vlT-oa-aaB"/>
                         <viewControllerLayoutGuide type="bottom" id="KzA-sJ-76x"/>

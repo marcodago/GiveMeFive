@@ -35,6 +35,7 @@
 		915929A91C98211000E49E23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915929A81C98211000E49E23 /* ViewController.swift */; };
 		9159E4641C4E244D00BC62A2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159E4631C4E244D00BC62A2 /* ChatViewController.swift */; };
 		91620A3B1C988D830016A848 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91620A3A1C988D830016A848 /* HomeViewController.swift */; };
+		918E611A1ED2E78700573B1D /* HQMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918E61191ED2E78700573B1D /* HQMapViewController.swift */; };
 		9193CDCB1DC15EF800B578E1 /* TabBarConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9193CDCA1DC15EF800B578E1 /* TabBarConfigurationViewController.swift */; };
 		919886A61C0C54170082C5E0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919886A51C0C54170082C5E0 /* AddressBookUI.framework */; };
 		919886CC1C0D9BAD0082C5E0 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919886CB1C0D9BAD0082C5E0 /* LocalAuthentication.framework */; };
@@ -107,6 +108,7 @@
 		9159E4631C4E244D00BC62A2 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		91620A3A1C988D830016A848 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		916B929A1C42B39100CA5F22 /* GiveMeFive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = GiveMeFive.entitlements; path = GiveMeFive/GiveMeFive.entitlements; sourceTree = "<group>"; };
+		918E61191ED2E78700573B1D /* HQMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQMapViewController.swift; sourceTree = "<group>"; };
 		9193CDCA1DC15EF800B578E1 /* TabBarConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarConfigurationViewController.swift; sourceTree = "<group>"; };
 		919886A41C0B19CA0082C5E0 /* GiveMeFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiveMeFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		919886A51C0C54170082C5E0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -198,6 +200,7 @@
 				9159E4631C4E244D00BC62A2 /* ChatViewController.swift */,
 				91620A3A1C988D830016A848 /* HomeViewController.swift */,
 				91513D3F1C0A42BC00505E46 /* MapViewController.swift */,
+				918E61191ED2E78700573B1D /* HQMapViewController.swift */,
 				91CC8F3D1DBA54EB00398AFD /* PrivacyViewController.swift */,
 				913E02AA1E82EC5B00D1F3CC /* RemoteNotificationService.swift */,
 				91513D4F1C0A443400505E46 /* SettingsViewController.swift */,
@@ -413,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				918E611A1ED2E78700573B1D /* HQMapViewController.swift in Sources */,
 				919D01171CAA991E0030FDEB /* SupportingFunctions.swift in Sources */,
 				913E02AB1E82EC5B00D1F3CC /* RemoteNotificationService.swift in Sources */,
 				915929A91C98211000E49E23 /* ViewController.swift in Sources */,
