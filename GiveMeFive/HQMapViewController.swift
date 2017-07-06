@@ -1,9 +1,8 @@
 //
 //  HQMapViewController.swift
-//  GiveMeFive
+//  GiveMeFive 1.4.0
 //
 //  Created by Marco D'Agostino on 22/05/17.
-//  Copyright © 2017 MWA@IBM. All rights reserved.
 //
 
 import UIKit

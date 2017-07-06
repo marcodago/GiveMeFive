@@ -1,6 +1,6 @@
 //
 //  SubscriptionViewController.swift
-//  GiveMeFive 1.3.5
+//  GiveMeFive 1.4.0
 //
 //  Created by Marco D'Agostino on 02/03/2017
 //
@@ -274,13 +274,6 @@ class SubscriptionsViewController: UIViewController, UITextFieldDelegate, NSURLC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sottoscrivi.layer.cornerRadius = 15.0
-        sottoscrivi.layer.shadowColor = UIColor.black.cgColor
-        sottoscrivi.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
-        sottoscrivi.layer.shadowRadius = 10.0
-        sottoscrivi.layer.shadowOpacity = 0.8
-
         
         switchPreloadValues()
         

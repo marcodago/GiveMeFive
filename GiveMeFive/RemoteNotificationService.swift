@@ -1,6 +1,6 @@
 //
 //  RemoteNotificationService.swift
-//  GiveMeFive 1.3.5
+//  GiveMeFive 1.4.0
 //
 //  Created by Marco D'Agostino on 22/03/17.
 //

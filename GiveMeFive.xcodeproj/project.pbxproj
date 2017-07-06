@@ -45,6 +45,7 @@
 		91CC8F401DBA59CD00398AFD /* PrivacyPolicy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 91CC8F3F1DBA59CD00398AFD /* PrivacyPolicy.pdf */; };
 		91DCF3CF1CA5501800AE7F2D /* PWD_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 91DCF3CE1CA5501800AE7F2D /* PWD_help.png */; };
 		91E827101D9D7DEA0046F7D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */; };
+		91FB0E501F0E06C900BFD8DB /* MyButtonsLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FB0E4F1F0E06C900BFD8DB /* MyButtonsLayouts.swift */; };
 		91FE1DFA1C5238980042627C /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */; };
 		91FF8EB71EC59C7A0062C9C1 /* green-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FF8EB51EC59C7A0062C9C1 /* green-light.png */; };
 		91FF8EB81EC59C7A0062C9C1 /* red-light.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FF8EB61EC59C7A0062C9C1 /* red-light.png */; };
@@ -119,6 +120,7 @@
 		91CC8F3F1DBA59CD00398AFD /* PrivacyPolicy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = PrivacyPolicy.pdf; path = GiveMeFive/PrivacyPolicy.pdf; sourceTree = "<group>"; };
 		91DCF3CE1CA5501800AE7F2D /* PWD_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PWD_help.png; sourceTree = "<group>"; };
 		91E8270F1D9D7DEA0046F7D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		91FB0E4F1F0E06C900BFD8DB /* MyButtonsLayouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButtonsLayouts.swift; sourceTree = "<group>"; };
 		91FE1DF91C5238980042627C /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		91FF8EB51EC59C7A0062C9C1 /* green-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-light.png"; sourceTree = "<group>"; };
 		91FF8EB61EC59C7A0062C9C1 /* red-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-light.png"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				919D01161CAA991E0030FDEB /* SupportingFunctions.swift */,
 				91C4F9A11DE5AC4C00B62492 /* TouchIDViewController.swift */,
 				9193CDCA1DC15EF800B578E1 /* TabBarConfigurationViewController.swift */,
+				91FB0E4F1F0E06C900BFD8DB /* MyButtonsLayouts.swift */,
 				9127F0F81E3F8682009C2E38 /* Utils.swift */,
 				915929A81C98211000E49E23 /* ViewController.swift */,
 				91513D441C0A42BC00505E46 /* Assets.xcassets */,
@@ -421,6 +424,7 @@
 				913E02AB1E82EC5B00D1F3CC /* RemoteNotificationService.swift in Sources */,
 				915929A91C98211000E49E23 /* ViewController.swift in Sources */,
 				91FE1DFA1C5238980042627C /* SubscriptionsViewController.swift in Sources */,
+				91FB0E501F0E06C900BFD8DB /* MyButtonsLayouts.swift in Sources */,
 				91513D551C0A461200505E46 /* AppDelegate.swift in Sources */,
 				91513D401C0A42BC00505E46 /* MapViewController.swift in Sources */,
 				9193CDCB1DC15EF800B578E1 /* TabBarConfigurationViewController.swift in Sources */,
