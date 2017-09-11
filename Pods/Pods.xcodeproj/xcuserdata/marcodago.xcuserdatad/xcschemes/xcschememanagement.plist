@@ -3,7 +3,48 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict/>
+	<dict>
+		<key>BMSAnalyticsAPI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BMSCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BMSPush.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GTMOAuth2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GiveMeFive.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0BED6AB7DF01B659560B31DFC645D4B4</key>
@@ -11,7 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>11644C8FA6F288BBF9259270685A0917</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>284965BFFC0872C08BAE8CEDC2840C6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30CE20DA8D01FDA28019B7CC6767E30B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -22,11 +73,6 @@
 			<true/>
 		</dict>
 		<key>7A17A6E7BFD00EE3A8A2D692CC837E20</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7B3A659776AB2E686EE9CED721A7CEDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

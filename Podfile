@@ -5,9 +5,11 @@
 use_frameworks!
 
 target 'GiveMeFive' do
+
 	platform :ios, '8.0'
 	pod 'BMSCore'
 	pod 'BMSPush'
-   pod 'BMSAnalyticsAPI'
-   pod 'Google/SignIn'
+	pod 'BMSAnalyticsAPI'
+	pod 'Google/SignIn'
+	pod 'IQKeyboardManagerSwift'
 end
